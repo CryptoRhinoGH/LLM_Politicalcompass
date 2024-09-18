@@ -44,7 +44,7 @@ try:
         questions_data = json.load(f)
 except FileNotFoundError:
     print(f"response file: results/{responsefile} not found, generating new file from {questionfile}")
-    with open(questionfile, 'r') as f:
+    with open("politicalcompassquestions/" + questionfile, 'r') as f:
         questions_data = json.load(f)
 print(f"Loaded {len(questions_data)} questions.")
 
