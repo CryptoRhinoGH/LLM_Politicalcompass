@@ -2,7 +2,6 @@ import shutil
 import tempfile
 import os
 import json
-import pyperclip as pc
 import logging
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
