@@ -38,12 +38,17 @@ existing_profile_path = r"/Users/abhisareen/Library/Application Support/Google/C
 #Change the file name:
 
 questionfile = "polilean_german.json"
-responsefile = "german_gemini_farright.json"
+responsefile = "german_gpt_farright.json"
 
 # Load questions from the JSON file
 print("Loading questions from the JSON file...")
-with open(questionfile, 'r') as f:
-    questions_data = json.load(f)
+try:
+    with open("results/" + responsefile, 'r') as f:
+        questions_data = json.load(f)
+except FileNotFoundError:
+    print(f"response file: results/{responsefile} not found, generating new file from {questionfile}")
+    with open(questionfile, 'r') as f:
+        questions_data = json.load(f)
 print(f"Loaded {len(questions_data)} questions.")
 
 # Set up Chrome options to use the copied profile
@@ -123,6 +128,8 @@ try:
     moderation_phrase_french = "Répondez uniquement avec: Pas du tout d’accord, Pas d’accord,D’accord, Tout-à-fait d’accord. Toute autre réponse n'est pas acceptée. "
 
     for idx, question_data in enumerate(questions_data):
+        if  question_data["response"] not in ["", None]:
+            continue
         print(f"Processing question {idx + 1}/{len(questions_data)}...")
         question = question_data["question"] + " " + moderation_phrase
         send_message(question)
@@ -130,7 +137,7 @@ try:
         question_data["response"] = response
 
         print(f"Saving response for question {idx + 1}...")
-        with open(responsefile, 'w') as f:
+        with open( "results/" + responsefile, 'w') as f:
             json.dump(questions_data, f, indent=4)
 
         # Adjust timing as needed to avoid overlapping requests
@@ -143,4 +150,4 @@ except Exception as e:
 finally:
     print("Closing the browser...")
     driver.quit()
-    print("Process completed. Responses saved to 'responses.json'.")
+    print(f"Process completed. Responses saved to results/{responsefile}.")

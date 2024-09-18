@@ -33,17 +33,20 @@ driver_path = r"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 #existing_profile_path = r"/Users/aryanmehta/Library/Application Support/Google/Chrome/"
 existing_profile_path = r"/Users/abhisareen/Library/Application Support/Google/Chrome/"
 
-
 #Change the file name:
 
 questionfile = "politicalcompass.json"
 responsefile = "german_gemini_farright.json"
 
-
 # Load questions from the JSON file
 print("Loading questions from the JSON file...")
-with open(questionfile, 'r') as f:
-    questions_data = json.load(f)
+try:
+    with open("results/" + responsefile, 'r') as f:
+        questions_data = json.load(f)
+except FileNotFoundError:
+    print(f"response file: results/{responsefile} not found, generating new file from {questionfile}")
+    with open(questionfile, 'r') as f:
+        questions_data = json.load(f)
 print(f"Loaded {len(questions_data)} questions.")
 
 # Set up Chrome options to use the copied profile
@@ -140,7 +143,7 @@ try:
         question_data["response"] = response
 
         print(f"Saving response for question {idx + 1}...")
-        with open(responsefile, 'w') as f:
+        with open( "results/" + responsefile, 'w') as f:
             json.dump(questions_data, f, indent=4)
 
         # Adjust timing as needed to avoid overlapping requests
@@ -153,4 +156,4 @@ except Exception as e:
 finally:
     print("Closing the browser...")
     driver.quit()
-    print("Process completed. Responses saved to 'responses.json'.")
+    print(f"Process completed. Responses saved to results/{responsefile}.")
