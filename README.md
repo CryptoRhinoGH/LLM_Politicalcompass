@@ -42,3 +42,19 @@
   </p>
 </div>
 
+## Getting Started
+
+Built with python3.12
+
+Install requirements
+```bash
+% pip install -r requirements.txt
+```
+
+Edit file to indicate `questionfile` and `responsefile`
+Run file
+```bash
+% python gpt.py
+% python gemini.py
+% python perplexity.py
+```
