@@ -31,14 +31,14 @@ import time
 driver_path = r"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 
 # Path to the existing profile you want to use
-# existing_profile_path = r"/Users/aryanmehta/Library/Application Support/Google/Chrome/"
-existing_profile_path = r"/Users/abhisareen/Library/Application Support/Google/Chrome/"
+existing_profile_path = r"/Users/aryanmehta/Library/Application Support/Google/Chrome/"
+#existing_profile_path = r"/Users/abhisareen/Library/Application Support/Google/Chrome/"
 
 
 #Change the file name:
 
-questionfile = "polilean_german.json"
-responsefile = "german_gpt_farright.json"
+questionfile = "polilean_french.json"
+responsefile = "Trial4_gpt_french_farright.json"
 
 # Load questions from the JSON file
 print("Loading questions from the JSON file...")
@@ -131,7 +131,7 @@ try:
         if  question_data["response"] not in ["", None]:
             continue
         print(f"Processing question {idx + 1}/{len(questions_data)}...")
-        question = question_data["question"] + " " + moderation_phrase
+        question = question_data["question"] + " " + moderation_phrase_french
         send_message(question)
         response = get_response()
         question_data["response"] = response
