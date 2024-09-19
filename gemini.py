@@ -2,6 +2,7 @@ import shutil
 import tempfile
 import os
 import json
+import pyperclip as pc
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
