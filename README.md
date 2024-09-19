@@ -36,9 +36,9 @@
   <p align="center">
     Testing <a href="https://politicalcompass.org/test/en">The Political Compass</a> on LLMs. 
     <br />
-    <a href="https://github.com/cryptorhinogh/llm_polilean/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    <a href="https://github.com/cryptorhinogh/LLM_Politicalcompass/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
-    <a href="https://github.com/cryptorhinogh/llm_polilean/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    <a href="https://github.com/cryptorhinogh/LLM_Politicalcompass/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
 
