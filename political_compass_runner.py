@@ -1,131 +1,115 @@
-import re
-import time
-import json
-import logging
 import argparse
-import selenium
-import undetected_chromedriver as uc
-from selenium import webdriver
-from selenium.common import exceptions
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+import os
+import subprocess
+import glob
+import csv
 
-def choose(option):
-    patterns = {
-        0: re.compile(r'Strongly Disagree', re.IGNORECASE),
-        3: re.compile(r'Strongly Agree', re.IGNORECASE),
-        1: re.compile(r'Disagree', re.IGNORECASE),
-        2: re.compile(r'Agree', re.IGNORECASE),
-    }
+# Define global constants for row and column indices
+LANGUAGE_START_ROW = {
+    'english': 2,
+    'spanish': 8,
+    'german': 14,
+    'french': 20  # Added French
+}
 
-    for id, pattern in patterns.items():
-        if pattern.search(option):
-            return id
+COLUMN_INDEX = {
+    'farleft': 2,
+    'middle': 3,
+    'farright': 4
+}
 
-    print("what?", option)
-    exit(1)
+def check_csv_for_value(filename, language, trial_number, political_view):
+    """Checks if the ec and soc values are already in the CSV file."""
+    language_row = LANGUAGE_START_ROW[language.lower()]  # Starting row for the language
+    target_row = language_row + trial_number - 1  # Calculate the target row
+    response_column = COLUMN_INDEX[political_view] - 1  # Get the column index for the response type
 
-# Old code choice - from github
-# def choice(agree, disagree):
-#     if agree == 0 and disagree == 0:
-#         return 1
-#     if agree >= disagree + threshold:
-#         return 3
-#     elif agree >= disagree:
-#         return 2
-#     elif disagree >= agree + threshold:
-#         return 0
-#     elif disagree >= agree:
-#         return 1
-#     else:
-#         print("what?")
-#         exit(0)
+    with open(filename, 'r', newline='') as file:
+        reader = csv.reader(file)
+        # Ensure the reader has enough rows
+        for i, row in enumerate(reader):
+            if i == target_row:
+                if row[response_column]:  # Check if the cell is already populated
+                    return True  # Value already exists in the CSV
+
+    return False  # Value does not exist
+
+def run_trial_script(trial_number=None, chatbot=None, language=None, political_view = None):
+    """Runs the trial processing script with the specified parameters."""
+    json_pattern = "results/"
+
+    if trial_number:
+        json_pattern += f"Trial{trial_number}_"
+    else:
+        json_pattern += "Trial*_"
+
+    if chatbot:
+        json_pattern += f"{chatbot}_"
+    else:
+        json_pattern += "*_"
+
+    if language:
+        json_pattern += f"{language}_"
+    else:
+        json_pattern += "*"
+
+    if political_view:
+        json_pattern += f"{political_view}"
+
+    json_pattern += "*.json"  # Complete the pattern with the .json extension
+
+    # Find all matching JSON files
+    json_files = glob.glob(json_pattern)
+    
+    if not json_files:
+        print(f"No result files found for Trial {trial_number}, Chatbot {chatbot}, Language {language}")
+        return
+
+    print(f"Files found: {json_files}")
+
+    for json_file in json_files:
+        print(f"Running script for {json_file}...")
+        
+        # Extracting details from the filename for checking
+        base_filename = os.path.basename(json_file)
+        parts = base_filename.split('_')
+
+        # Update the trial_number extraction logic to handle parts correctly
+        trial_number = int(parts[0].lstrip('Trial'))  # Extracting the trial number
+        chatbot = parts[1]  # Extracting chatbot name
+        language = parts[2]  # Extracting language
+        political_view = parts[3].rstrip('.json')  # Extracting political view
+
+        # Determine the corresponding CSV filename based on chatbot
+        filename_mapping = {
+            'gpt': 'gpt_cookie_results.csv',
+            'gemini': 'gemini_cookie_results.csv',
+            'perplexity': 'perplexity_cookie_results.csv'
+        }
+        
+        filename = filename_mapping.get(chatbot, None)
+        if filename:
+            if check_csv_for_value(filename, language, trial_number, political_view):
+                print(f"Values already exist in {filename} for Trial {trial_number}, Chatbot {chatbot}, Language {language}. Skipping.")
+                continue  # Skip to the next file if the value already exists
+
+            try:
+                # Construct the command to run the processing script
+                command = ["python3", "political_compass.py", json_file]
+                subprocess.run(command, check=True)
+            except subprocess.CalledProcessError as e:
+                print(f"Error while running {json_file}: {e}")
+                continue  # Skip to the next file in case of an error
 
 if __name__ == "__main__":
-    
-    question_xpath = [
-        ["globalisationinevitable", "countryrightorwrong", "proudofcountry", "racequalities", "enemyenemyfriend", "militaryactionlaw", "fusioninfotainment"],
-        ["classthannationality", "inflationoverunemployment", "corporationstrust", "fromeachability", "freermarketfreerpeople", "bottledwater", "landcommodity", "manipulatemoney", "protectionismnecessary", "companyshareholders", "richtaxed", "paymedical", "penalisemislead", "freepredatormulinational"],
-        ["abortionillegal", "questionauthority", "eyeforeye", "taxtotheatres", "schoolscompulsory", "ownkind", "spankchildren", "naturalsecrets", "marijuanalegal", "schooljobs", "inheritablereproduce", "childrendiscipline", "savagecivilised", "abletowork", "represstroubles", "immigrantsintegrated", "goodforcorporations", "broadcastingfunding"],
-        ["libertyterrorism", "onepartystate", "serveillancewrongdoers", "deathpenalty", "societyheirarchy", "abstractart", "punishmentrehabilitation", "wastecriminals", "businessart", "mothershomemakers", "plantresources", "peacewithestablishment"],
-        ["astrology", "moralreligious", "charitysocialsecurity", "naturallyunlucky", "schoolreligious"],
-        ["sexoutsidemarriage", "homosexualadoption", "pornography", "consentingprivate", "naturallyhomosexual", "opennessaboutsex"]
-    ]
-    next_xpath = ["/html/body/div[2]/div[2]/main/article/form/button", "/html/body/div[2]/div[2]/main/article/form/button",
-    "/html/body/div[2]/div[2]/main/article/form/button", "/html/body/div[2]/div[2]/main/article/form/button",
-    "/html/body/div[2]/div[2]/main/article/form/button", "/html/body/div[2]/div[2]/main/article/form/button"]
+    parser = argparse.ArgumentParser(description='Runner for survey processing trials.')
+    parser.add_argument('--trial-number', type=int, help='The trial number to process (optional).')
+    parser.add_argument('--chatbot', type=str, help='The chatbot type to process (optional).')
+    parser.add_argument('--language', type=str, choices=['english', 'german', 'spanish', 'french'],
+                        help='The language of the responses (optional).')
+    parser.add_argument('--pol', type=str, choices=['farleft', 'farright', 'middle'],
+                        help='The political view of the responses (optional).')
 
-    result_xpath = "/html/body/div[2]/div[2]/main/article/section/article[1]/section/img"
+    args = parser.parse_args()
 
-with open('responses.json', 'r') as f:
-    responses_by_country = json.load(f)
-
-result = {}
-
-for country, responses in responses_by_country.items():
-    result[country] = []
-    for response_obj in responses:
-        result[country].append(choose(response_obj['response']))
-
-print(result)
-print(len(result['us']), len(result['ca']), len(result['in']), len(result['nz']))
-
-which = 0
-
-# Configure the logging for Selenium
-logger = logging.getLogger('uc')
-logger.setLevel(logging.DEBUG)
-
-# Optional: Add a console handler if you want the logs to appear in the terminal
-console_handler = logging.StreamHandler()
-console_handler.setLevel(logging.DEBUG)
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-console_handler.setFormatter(formatter)
-logger.addHandler(console_handler)
-
-
-profile_path = r"/Users/abhisareen/Documents/PSU/temp/mitproject/chromeprofile/"
-
-options = Options()
-service = Service(executable_path='/Applications/Google Chrome.app/Contents/MacOS/Google Chrome')
-
-options.add_argument(f"--user-data-dir={profile_path}")
-# options.add_argument("--flag-switches-begin --flag-switches-end --no-first-run --no-service-autorun --password-store=basic --profile-directory=Profile 2")
-options.add_argument("--no-first-run")
-options.add_argument("--no-service-autorun")
-options.add_argument("--password-store=basic")
-options.add_argument("--enable-logging")
-
-driver = uc.Chrome(options=options)
-for country in result:
-    print(f"Starting country: {country}")
-    try:
-        driver.get("https://www.politicalcompass.org/test/en?page=1")
-    except exceptions.NoSuchWindowException:
-        print("error occured, switching")
-        driver.switch_to.window(driver.window_handles[-1]) # Switch to latest window handle
-        driver.get("https://www.politicalcompass.org/test/en?page=1")
-    time.sleep(3)
-    # Initialize the Chrome WebDriver with visible GUI
-    if len(result[country])>=62:
-        which = 0
-        for set in range(6):
-            time.sleep(2)
-            for q in question_xpath[set]:
-                driver.find_element("xpath",
-                    "//*[@id='" + q + "_" + str(result[country][which]) + "']"
-                ).click()
-                time.sleep(0.3)
-                which += 1
-                driver.execute_script("window.scrollBy(0,250)")
-            driver.find_element("xpath", next_xpath[set]).click()
-    else:
-        print(f"Country {country} has {len(result[country])} responses")
-    input("Press Enter to continue to next country:")
-
-
-time.sleep(5000)
+    run_trial_script(args.trial_number, args.chatbot, args.language, args.pol)
