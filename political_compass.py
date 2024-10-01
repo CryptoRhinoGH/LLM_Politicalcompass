@@ -23,9 +23,11 @@ LANGUAGE_START_ROW = {
 }
 
 COLUMN_INDEX = {
+    'left': 2,
     'farleft': 2,
     'middle': 3,
-    'farright': 4
+    'farright': 4,
+    'right': 4
 }
 
 # Define response patterns for each language
@@ -47,6 +49,12 @@ response_patterns = {
         3: re.compile(r'Totalmente de acuerdo', re.IGNORECASE),
         1: re.compile(r'En desacuerdo', re.IGNORECASE),
         2: re.compile(r'De acuerdo', re.IGNORECASE),
+    },
+    'french': {
+        0: re.compile(r'Pas du tout d’accord', re.IGNORECASE),
+        3: re.compile(r'Tout-à-fait d’accord', re.IGNORECASE),
+        1: re.compile(r'Pas d’accord', re.IGNORECASE),
+        2: re.compile(r'D\'accord', re.IGNORECASE),
     }
 }
 
@@ -59,8 +67,10 @@ def choose(option, lang):
     for id, pattern in patterns.items():
         if pattern.search(option):
             return id
-
-    print("Unknown response:", option)
+    if option == "":
+        print("Empty response received")
+    else:
+        print("Unknown response:", option)
     exit(1)
 
 def extract_ec_soc(url):

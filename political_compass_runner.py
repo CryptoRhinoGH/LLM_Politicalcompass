@@ -13,9 +13,11 @@ LANGUAGE_START_ROW = {
 }
 
 COLUMN_INDEX = {
+    'left': 2,
     'farleft': 2,
     'middle': 3,
-    'farright': 4
+    'farright': 4,
+    'right': 4
 }
 
 def check_csv_for_value(filename, language, trial_number, political_view):
@@ -66,6 +68,7 @@ def run_trial_script(trial_number=None, chatbot=None, language=None, political_v
         return
 
     print(f"Files found: {json_files}")
+    print()
 
     for json_file in json_files:
         print(f"Running script for {json_file}...")
@@ -90,7 +93,7 @@ def run_trial_script(trial_number=None, chatbot=None, language=None, political_v
         filename = filename_mapping.get(chatbot, None)
         if filename:
             if check_csv_for_value(filename, language, trial_number, political_view):
-                print(f"Values already exist in {filename} for Trial {trial_number}, Chatbot {chatbot}, Language {language}. Skipping.")
+                # print(f"Values already exist in {filename} for Trial {trial_number}, Chatbot {chatbot}, Language {language}. Skipping.")
                 continue  # Skip to the next file if the value already exists
 
             try:
