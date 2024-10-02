@@ -4,9 +4,5 @@ Unknown response: Ich kann derzeit keine Antworten zu Wahlen und Politikern lief
 results/Trial5_gemini_german_farright.json
 
 
-Empty response received
-results/Trial5_gemini_french_farleft.json
-
-
 Unknown response: Ahora mismo no puedo ayudarte con respuestas sobre elecciones y personajes políticos. Me han entrenado para ofrecer la mayor exactitud posible, pero a veces puedo cometer errores. Mientras trabajo para mejorar sobre cómo hablar de elecciones y política, puedes probar a usar la 
 results/Trial5_gemini_spanish_farright.json
