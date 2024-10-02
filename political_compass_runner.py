@@ -1,5 +1,6 @@
 #!/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/llm_env/bin/python
 import argparse
+import argcomplete
 import os
 import subprocess
 import glob
@@ -115,6 +116,7 @@ if __name__ == "__main__":
                         help='The language of the responses (optional).')
     parser.add_argument('--pol', type=str, choices=['farleft', 'farright', 'middle'],
                         help='The political view of the responses (optional).')
+    argcomplete.autocomplete(parser)
 
     args = parser.parse_args()
 
