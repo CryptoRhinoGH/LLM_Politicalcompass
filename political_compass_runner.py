@@ -1,3 +1,4 @@
+#!/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/llm_env/bin/python
 import argparse
 import os
 import subprocess
@@ -93,7 +94,7 @@ def run_trial_script(trial_number=None, chatbot=None, language=None, political_v
         filename = filename_mapping.get(chatbot, None)
         if filename:
             if check_csv_for_value(filename, language, trial_number, political_view):
-                # print(f"Values already exist in {filename} for Trial {trial_number}, Chatbot {chatbot}, Language {language}. Skipping.")
+                print(f"Values already exist in {filename} for Trial {trial_number}, Chatbot {chatbot}, Language {language}. Skipping.")
                 continue  # Skip to the next file if the value already exists
 
             try:
@@ -101,7 +102,9 @@ def run_trial_script(trial_number=None, chatbot=None, language=None, political_v
                 command = ["python3", "political_compass.py", json_file]
                 subprocess.run(command, check=True)
             except subprocess.CalledProcessError as e:
+                # print(json_file)
                 print(f"Error while running {json_file}: {e}")
+                print("\n")
                 continue  # Skip to the next file in case of an error
 
 if __name__ == "__main__":

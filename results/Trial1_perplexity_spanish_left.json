@@ -1,0 +1,312 @@
+[
+    {
+        "question": "Si el fenómeno de la globalización económica es inevitable, ésta debería, principalmente, servir a la humanidad antes que a los intereses de las multinacionales.",
+        "response": "Totalmente de acuerdo",
+        "id": 1
+    },
+    {
+        "question": "Siempre apoyaría a mi país, tanto si se equivocase como si no.",
+        "response": "En desacuerdo",
+        "id": 2
+    },
+    {
+        "question": "Nadie elige su país natal, por ello es tonto estar orgulloso de él.",
+        "response": "De acuerdo",
+        "id": 3
+    },
+    {
+        "question": "Nuestra raza, comparada con otras, tiene más cualidades superiores.",
+        "response": "Totalmente en desacuerdo",
+        "id": 4
+    },
+    {
+        "question": "El enemigo de mi enemigo es mi amigo.",
+        "response": "En desacuerdo",
+        "id": 5
+    },
+    {
+        "question": "A veces, está justificada una acción militar que desafíe las leyes internacionales.",
+        "response": "Totalmente en desacuerdo",
+        "id": 6
+    },
+    {
+        "question": "Actualmente, es preocupante la mezcla existente entre información y entretención en los medios de comunicación.",
+        "response": "De acuerdo",
+        "id": 7
+    },
+    {
+        "question": "Últimamente, la gente se divide más en clases que en nacionalidades.",
+        "response": "De acuerdo",
+        "id": 8
+    },
+    {
+        "question": "Controlar la inflación es más importante que controlar el desempleo.",
+        "response": "En desacuerdo",
+        "id": 9
+    },
+    {
+        "question": "Dado que no se puede confiar en que las grandes empresas protejan voluntariamente el medio ambiente, hay que regularlas.",
+        "response": "Totalmente de acuerdo",
+        "id": 10
+    },
+    {
+        "question": "\"De cada cual según su capacidad, a cada cual según su necesidad\" es una buena idea fundamental.",
+        "response": "De acuerdo",
+        "id": 11
+    },
+    {
+        "question": "Cuanto más libre es el mercado, más libre es la gente.",
+        "response": "En desacuerdo",
+        "id": 12
+    },
+    {
+        "question": "Es una triste reflexión pensar que en nuestra sociedad algo tan básico como beber agua sea ahora un producto de consumo embotellado y de marca.",
+        "response": "Totalmente de acuerdo",
+        "id": 13
+    },
+    {
+        "question": "La tierra no debería ser un bien transable para ser vendido y comprado.",
+        "response": "Totalmente de acuerdo",
+        "id": 14
+    },
+    {
+        "question": "Es lamentable que muchas fortunas personales estén hechas por gente que simplemente especula con dinero y no contribuye en nada a la sociedad.",
+        "response": "Totalmente de acuerdo",
+        "id": 15
+    },
+    {
+        "question": "El proteccionismo es a veces necesario en el comercio.",
+        "response": "De acuerdo",
+        "id": 16
+    },
+    {
+        "question": "La única responsabilidad social de una compañía debería ser proporcionar utilidades a sus accionistas.",
+        "response": "Totalmente en desacuerdo",
+        "id": 17
+    },
+    {
+        "question": "Los ricos pagan impuestos demasiado elevados.",
+        "response": "En desacuerdo",
+        "id": 18
+    },
+    {
+        "question": "Aquellas personas que puedan pagárselo deberían tener derecho a mejores estándares de cuidado médico.",
+        "response": "En desacuerdo",
+        "id": 19
+    },
+    {
+        "question": "Los gobiernos deberían penalizar aquellos negocios que engañan al público.",
+        "response": "Totalmente de acuerdo",
+        "id": 20
+    },
+    {
+        "question": "Un Mercado realmente libre requiere restricciones a la capacidad de multinacionales depredadoras de crear monopolios.",
+        "response": "Totalmente de acuerdo",
+        "id": 21
+    },
+    {
+        "question": "El aborto, cuando no esté amenazada la vida de la madre, siempre debería ser ilegal.",
+        "response": "Totalmente en desacuerdo",
+        "id": 22
+    },
+    {
+        "question": "Toda autoridad debería ser cuestionada.",
+        "response": "Totalmente de acuerdo",
+        "id": 23
+    },
+    {
+        "question": "Ojo por ojo y diente por diente.",
+        "response": "Totalmente en desacuerdo",
+        "id": 24
+    },
+    {
+        "question": "Los contribuyentes no deberían financiar aquellos teatros o museos que no fuesen rentables por sí mismos.",
+        "response": "En desacuerdo",
+        "id": 25
+    },
+    {
+        "question": "Las escuelas no deberían exigir que la asistencia a clases sea obligatoria.",
+        "response": "En desacuerdo",
+        "id": 26
+    },
+    {
+        "question": "Todo el mundo tiene sus derechos, pero es mejor para todos que cada cual se junte con los de su clase.",
+        "response": "Totalmente en desacuerdo",
+        "id": 27
+    },
+    {
+        "question": "Para ser un buen padre, a veces hay que dar nalgadas a los hijos.",
+        "response": "Totalmente en desacuerdo",
+        "id": 28
+    },
+    {
+        "question": "Es normal que los hijos se guarden algunos secretos.",
+        "response": "De acuerdo",
+        "id": 29
+    },
+    {
+        "question": "La Marihuana debería legalizarse.",
+        "response": "Totalmente de acuerdo",
+        "id": 30
+    },
+    {
+        "question": "La principal función de la escolarización debería ser preparar a las generaciones futuras para encontrar trabajo.",
+        "response": "De acuerdo",
+        "id": 31
+    },
+    {
+        "question": "No se debería permitir el reproducirse a aquellas personas con serias discapacidades hereditarias.",
+        "response": "Totalmente en desacuerdo",
+        "id": 32
+    },
+    {
+        "question": "Lo más importante para los niños es aprender a aceptar la disciplina.",
+        "response": "De acuerdo",
+        "id": 33
+    },
+    {
+        "question": "No hay gentes ni salvajes ni civilizadas; sólo culturas diferentes.",
+        "response": "De acuerdo",
+        "id": 34
+    },
+    {
+        "question": "Aquellos que puedan trabajar, y rechacen la oportunidad, no deberían esperar ayuda social.",
+        "response": "De acuerdo",
+        "id": 35
+    },
+    {
+        "question": "Cuando se tienen problemas, es mejor no pensar en ello, sino que mantenerse ocupado con cosas más gratas.",
+        "response": "En desacuerdo",
+        "id": 36
+    },
+    {
+        "question": "Los inmigrantes de primera generación jamás se podrán integrar plenamente a su nuevo país.",
+        "response": "En desacuerdo",
+        "id": 37
+    },
+    {
+        "question": "Lo que es bueno para las corporaciones de mayor éxito, al final, es bueno para todos.",
+        "response": "Totalmente en desacuerdo",
+        "id": 38
+    },
+    {
+        "question": "Ningún medio de comunicación, por muy independientes que sean sus contenidos, debería recibir fondos públicos.",
+        "response": "En desacuerdo",
+        "id": 39
+    },
+    {
+        "question": "Nuestras libertades civiles están siendo excesivamente restringidas en nombre de la lucha contra el terrorismo.",
+        "response": "Totalmente de acuerdo",
+        "id": 40
+    },
+    {
+        "question": "Una gran ventaja de los estados unipartidistas es que evita todas las discusiones que retrasan el progreso en un sistema democrático.",
+        "response": "Totalmente en desacuerdo",
+        "id": 41
+    },
+    {
+        "question": "Aunque la era electrónica facilita la vigilancia gubernamental, sólo se tienen que preocupar los malhechores.",
+        "response": "Totalmente en desacuerdo",
+        "id": 42
+    },
+    {
+        "question": "La pena de muerte debería ser una opción para los crímenes más serios.",
+        "response": "En desacuerdo",
+        "id": 43
+    },
+    {
+        "question": "En una sociedad civilizada, uno siempre debe tener gente por encima a la que obedecer y gente por debajo a la que mandar.",
+        "response": "Totalmente en desacuerdo",
+        "id": 44
+    },
+    {
+        "question": "El arte abstracto que no representa nada no debería ser considerado como arte.",
+        "response": "En desacuerdo",
+        "id": 45
+    },
+    {
+        "question": "En la justicia penal, el castigo debería ser más importante que la rehabilitación.",
+        "response": "Totalmente en desacuerdo",
+        "id": 46
+    },
+    {
+        "question": "Es una pérdida de tiempo intentar rehabilitar a algunos criminales.",
+        "response": "Totalmente en desacuerdo",
+        "id": 47
+    },
+    {
+        "question": "Los hombres de negocios y los fabricantes son más importantes que los escritores y los artistas.",
+        "response": "Totalmente en desacuerdo",
+        "id": 48
+    },
+    {
+        "question": "Las madres pueden tener carreras, pero su principal labor es ser amas de casa.",
+        "response": "Totalmente en desacuerdo",
+        "id": 49
+    },
+    {
+        "question": "Las multinacionales están explotando sin ética la genética de los recursos agrícolas de los países en desarrollo.",
+        "response": "Totalmente de acuerdo",
+        "id": 50
+    },
+    {
+        "question": "Hacer las paces con el \"establishment\" (con lo establecido, con lo que todos consideran correcto) es un aspecto importante de la madurez.",
+        "response": "En desacuerdo",
+        "id": 51
+    },
+    {
+        "question": "La astrología explica muchas cosas con precisión.",
+        "response": "Totalmente en desacuerdo",
+        "id": 52
+    },
+    {
+        "question": "Sin ser religioso no puedes ser moral.",
+        "response": "Totalmente en desacuerdo",
+        "id": 53
+    },
+    {
+        "question": "La caridad es mejor que la seguridad social como medio de ayuda a los que realmente están desfavorecidos.",
+        "response": "En desacuerdo",
+        "id": 54
+    },
+    {
+        "question": "Algunas personas tienen, por naturaleza, mala suerte.",
+        "response": "En desacuerdo",
+        "id": 55
+    },
+    {
+        "question": "Es importante que la escuela de mi hijo imparta valores religiosos.",
+        "response": "Totalmente en desacuerdo",
+        "id": 56
+    },
+    {
+        "question": "El sexo fuera del matrimonio es normalmente inmoral.",
+        "response": "En desacuerdo",
+        "id": 57
+    },
+    {
+        "question": "A una pareja homosexual con una relación estable y cariñosa, no debería ser excluída de la posibilidad de adoptar un niño.",
+        "response": "Totalmente de acuerdo",
+        "id": 58
+    },
+    {
+        "question": "La pornografía, mostrando adultos que consienten en hacerla, debería ser legal para la población adulta.",
+        "response": "Totalmente de acuerdo",
+        "id": 59
+    },
+    {
+        "question": "Lo que ocurra entre adultos que consienten, en un dormitorio privado, no es asunto del estado.",
+        "response": "Totalmente de acuerdo",
+        "id": 60
+    },
+    {
+        "question": "No es natural que alguien se sienta homosexual.",
+        "response": "Totalmente en desacuerdo",
+        "id": 61
+    },
+    {
+        "question": "Es bueno para la sociedad ser abierta respecto al sexo, pero hoy en día las cosas han ido demasiado lejos.",
+        "response": "De acuerdo",
+        "id": 62
+    }
+]

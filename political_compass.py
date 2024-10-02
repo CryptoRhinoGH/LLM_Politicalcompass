@@ -33,28 +33,42 @@ COLUMN_INDEX = {
 # Define response patterns for each language
 response_patterns = {
     'english': {
-        0: re.compile(r'Strongly Disagree', re.IGNORECASE),
-        3: re.compile(r'Strongly Agree', re.IGNORECASE),
-        1: re.compile(r'Disagree', re.IGNORECASE),
-        2: re.compile(r'Agree', re.IGNORECASE),
+        0: [re.compile(r'Strongly Disagree', re.IGNORECASE)],
+        3: [re.compile(r'Strongly Agree', re.IGNORECASE)],
+        1: [re.compile(r'Disagree', re.IGNORECASE)],
+        2: [re.compile(r'Agree', re.IGNORECASE)],
     },
     'german': {
-        0: re.compile(r'Deutliche Ablehnung', re.IGNORECASE),
-        3: re.compile(r'Deutliche Zustimmung', re.IGNORECASE),
-        1: re.compile(r'Ablehnung', re.IGNORECASE),
-        2: re.compile(r'Zustimmung', re.IGNORECASE),
+        0: [re.compile(r'Deutliche Ablehnung', re.IGNORECASE)],
+        3: [re.compile(r'Deutliche Zustimmung', re.IGNORECASE)],
+        1: [re.compile(r'Ablehnung', re.IGNORECASE)],
+        2: [re.compile(r'Zustimmung', re.IGNORECASE)],
     },
     'spanish': {
-        0: re.compile(r'Totalmente en desacuerdo', re.IGNORECASE),
-        3: re.compile(r'Totalmente de acuerdo', re.IGNORECASE),
-        1: re.compile(r'En desacuerdo', re.IGNORECASE),
-        2: re.compile(r'De acuerdo', re.IGNORECASE),
+        0: [re.compile(r'Totalmente en desacuerdo', re.IGNORECASE)],
+        3: [re.compile(r'Totalmente de acuerdo', re.IGNORECASE)],
+        1: [re.compile(r'En desacuerdo', re.IGNORECASE)],
+        2: [re.compile(r'De acuerdo', re.IGNORECASE)],
     },
     'french': {
-        0: re.compile(r'Pas du tout d’accord', re.IGNORECASE),
-        3: re.compile(r'Tout-à-fait d’accord', re.IGNORECASE),
-        1: re.compile(r'Pas d’accord', re.IGNORECASE),
-        2: re.compile(r'D\'accord', re.IGNORECASE),
+        0: [
+            re.compile(r'Pas du tout d’accord', re.IGNORECASE),
+            re.compile(r'Pas du tout d\'accord', re.IGNORECASE)
+            ],
+        3: [
+            re.compile(r'Tout-à-fait d’accord', re.IGNORECASE),
+            re.compile(r'Tout-à-fait d\'accord', re.IGNORECASE),
+            re.compile(r'Tout-\\u00e0-fait d\'accord', re.IGNORECASE),
+            re.compile(r'Tout-\\u00e0-fait d’accord', re.IGNORECASE)
+            ],
+        1: [
+            re.compile(r'Pas d’accord', re.IGNORECASE),
+            re.compile(r'Pas d\'accord', re.IGNORECASE)
+            ],
+        2: [
+            re.compile(r'D\'accord', re.IGNORECASE),
+            re.compile(r'D’accord', re.IGNORECASE)
+            ],
     }
 }
 
@@ -64,9 +78,11 @@ def choose(option, lang):
         print("Unsupported language:", lang)
         exit(1)
 
-    for id, pattern in patterns.items():
-        if pattern.search(option):
-            return id
+    for id, regex_list in patterns.items():
+        for pattern in regex_list:
+            if pattern.search(option):
+                return id
+
     if option == "":
         print("Empty response received")
     else:
