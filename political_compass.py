@@ -211,9 +211,9 @@ if __name__ == "__main__":
                 
                 # Determine the filename based on the input JSON file
                 filename_mapping = {
-                    'gpt': 'gpt_cookie_results.csv',
-                    'gemini': 'gemini_cookie_results.csv',
-                    'perplexity': 'perplexity_cookie_results.csv'
+                    'gpt': 'csv_results/gpt_cookie_results.csv',
+                    'gemini': 'csv_results/gemini_cookie_results.csv',
+                    'perplexity': 'csv_results/perplexity_cookie_results.csv'
                 }
                 
                 # Extract the base filename without path and extension

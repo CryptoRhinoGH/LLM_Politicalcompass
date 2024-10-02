@@ -87,9 +87,9 @@ def run_trial_script(trial_number=None, chatbot=None, language=None, political_v
 
         # Determine the corresponding CSV filename based on chatbot
         filename_mapping = {
-            'gpt': 'gpt_cookie_results.csv',
-            'gemini': 'gemini_cookie_results.csv',
-            'perplexity': 'perplexity_cookie_results.csv'
+            'gpt': 'csv_results/gpt_cookie_results.csv',
+            'gemini': 'csv_results/gemini_cookie_results.csv',
+            'perplexity': 'csv_results/perplexity_cookie_results.csv'
         }
         
         filename = filename_mapping.get(chatbot, None)
