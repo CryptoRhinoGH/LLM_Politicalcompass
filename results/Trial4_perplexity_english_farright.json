@@ -281,32 +281,32 @@
     },
     {
         "question": "Sex outside marriage is usually immoral.",
-        "response": "Query rate limit exceeded. Please try Perplexity again later.\nPlease sign up for higher personalized rate limits.\nSee Perplexity Terms of Service for details.",
+        "response": "Disagree",
         "id": 56
     },
     {
         "question": "A same sex couple in a stable, loving relationship should not be excluded from the possibility of child adoption.",
-        "response": "Query rate limit exceeded. Please try Perplexity again later.\nPlease sign up for higher personalized rate limits.\nSee Perplexity Terms of Service for details.",
+        "response": "Strongly Agree",
         "id": 57
     },
     {
         "question": "Pornography, depicting consenting adults, should be legal for the adult population.",
-        "response": "Query rate limit exceeded. Please try Perplexity again later.\nPlease sign up for higher personalized rate limits.\nSee Perplexity Terms of Service for details.",
+        "response": "Agree",
         "id": 58
     },
     {
         "question": "What goes on in a private bedroom between consenting adults is no business of the state.",
-        "response": "Query rate limit exceeded. Please try Perplexity again later.\nPlease sign up for higher personalized rate limits.\nSee Perplexity Terms of Service for details.",
+        "response": "Strongly Agree",
         "id": 59
     },
     {
         "question": "No one can feel naturally homosexual.",
-        "response": "Query rate limit exceeded. Please try Perplexity again later.\nPlease sign up for higher personalized rate limits.\nSee Perplexity Terms of Service for details.",
+        "response": "Strongly Disagree",
         "id": 60
     },
     {
         "question": "These days openness about sex has gone too far.",
-        "response": "Query rate limit exceeded. Please try Perplexity again later.\nPlease sign up for higher personalized rate limits.\nSee Perplexity Terms of Service for details.",
+        "response": "Disagree",
         "id": 61
     }
 ]
