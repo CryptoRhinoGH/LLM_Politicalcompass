@@ -100,11 +100,11 @@ def append_to_csv(filename, language, trial_number, political_view, ec, soc):
     """Appends the extracted values to the corresponding CSV file."""
     language_row = int(LANGUAGE_START_ROW[language.lower()])  # Starting row for the language
     target_row = language_row + trial_number - 1 # Calculate the target row
-    print(f"target row {target_row}")
+    # print(f"target row {target_row}")
 
     # Determine the response type from the filename
     response_column = COLUMN_INDEX.get(political_view) - 1 # Get the column index for the response type
-    print(f"column {response_column}")
+    # print(f"column {response_column}")
 
     # Open the CSV file and append the values in the correct row and column
     with open(filename, 'r', newline='') as file:
@@ -205,7 +205,7 @@ if __name__ == "__main__":
             # Extract ec and soc values after completing the survey
             current_url = driver.current_url
             ec_soc_values = extract_ec_soc(current_url)
-            print(ec_soc_values)
+            # print(ec_soc_values)
             if ec_soc_values:
                 ec, soc = ec_soc_values
                 

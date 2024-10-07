@@ -73,7 +73,7 @@ def run_trial_script(trial_number=None, chatbot=None, language=None, political_v
     print()
 
     for json_file in json_files:
-        # print(f"Running script for {json_file}...")
+        print(f"Running script for {json_file}...")
         
         # Extracting details from the filename for checking
         base_filename = os.path.basename(json_file)
@@ -103,8 +103,8 @@ def run_trial_script(trial_number=None, chatbot=None, language=None, political_v
                 command = ["python3", "political_compass.py", json_file]
                 subprocess.run(command, check=True)
             except subprocess.CalledProcessError as e:
-                print(json_file)
-                # print(f"Error while running {json_file}: {e}")
+                # print(json_file)
+                print(f"Error while running {json_file}: {e}")
                 print("\n")
                 continue  # Skip to the next file in case of an error
 
