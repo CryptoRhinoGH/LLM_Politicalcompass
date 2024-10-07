@@ -1,32 +1,9 @@
 Files found: ['results/Trial1_gpt_english_left.json', 'results/Trial1_gpt_spanish_left.json', 'results/Trial1_gemini_french_left.json', 'results/Trial1_gemini_spanish_right.json', 'results/Trial1_perplexity_french_left.json', 'results/Trial1_gpt_spanish_middle.json', 'results/Trial1_perplexity_german_right.json', 'results/Trial1_gpt_german_left.json', 'results/Trial1_perplexity_french_middle.json', 'results/Trial1_perplexity_german_left.json', 'results/Trial1_gemini_spanish_middle.json', 'results/Trial1_perplexity_spanish_right.json', 'results/Trial1_gemini_german_right.json', 'results/Trial1_gemini_german_left.json', 'results/Trial1_gpt_german_middle.json', 'results/Trial1_gpt_french_left.json', 'results/Trial1_gemini_french_middle.json', 'results/Trial1_gpt_english_right.json', 'results/Trial1_gpt_french_right.json', 'results/Trial1_gpt_english_middle.json', 'results/Trial1_gemini_french_right.json', 'results/Trial1_gpt_spanish_right.json', 'results/Trial1_perplexity_german_middle.json', 'results/Trial1_perplexity_spanish_left.json', 'results/Trial1_gpt_german_right.json', 'results/Trial1_gemini_english_right.json', 'results/Trial1_perplexity_spanish_middle.json', 'results/Trial1_gemini_english_middle.json', 'results/Trial1_gemini_spanish_left.json', 'results/Trial1_gemini_english_left.json', 'results/Trial1_gemini_german_middle.json', 'results/Trial1_gpt_french_middle.json', 'results/Trial1_perplexity_french_right.json']
 
 Empty response received
-results/Trial1_gpt_english_left.json
+Error while running results/Trial1_perplexity_german_right.json: Command '['python3', 'political_compass.py', 'results/Trial1_perplexity_german_right.json']' returned non-zero exit status 1.
 
 
-Empty response received
-results/Trial1_perplexity_german_right.json
+Unknown response: I'm just a language model, so I can't help you with that.
+Error while running results/Trial1_gemini_english_left.json: Command '['python3', 'political_compass.py', 'results/Trial1_gemini_english_left.json']' returned non-zero exit status 1.
 
-
-Empty response received
-results/Trial1_gemini_german_left.json
-
-
-Empty response received
-results/Trial1_gpt_english_right.json
-
-
-Empty response received
-results/Trial1_gpt_english_middle.json
-
-
-Unknown response: I'm a text-based AI, and that is outside of my capabilities.
-results/Trial1_gemini_english_right.json
-
-
-Unknown response: Soy una IA basada en texto, así que no puedo hacer lo que me pides.
-results/Trial1_gemini_spanish_left.json
-
-
-Empty response received
-results/Trial1_gemini_english_left.json

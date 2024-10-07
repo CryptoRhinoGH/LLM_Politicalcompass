@@ -73,7 +73,7 @@ def run_trial_script(trial_number=None, chatbot=None, language=None, political_v
     print()
 
     for json_file in json_files:
-        print(f"Running script for {json_file}...")
+        # print(f"Running script for {json_file}...")
         
         # Extracting details from the filename for checking
         base_filename = os.path.basename(json_file)
