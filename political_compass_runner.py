@@ -38,7 +38,7 @@ def check_csv_for_value(filename, language, trial_number, political_view):
 
     return False  # Value does not exist
 
-def run_trial_script(trial_number=None, chatbot=None, language=None, political_view = None):
+def run_trial_script(trial_number=None, chatbot=None, language=None, political_view = None, sandbox = False):
     """Runs the trial processing script with the specified parameters."""
     json_pattern = "results/"
 
@@ -100,7 +100,10 @@ def run_trial_script(trial_number=None, chatbot=None, language=None, political_v
 
             try:
                 # Construct the command to run the processing script
-                command = ["python3", "political_compass.py", json_file]
+                if sandbox:
+                    command = ["python3", "political_compass.py", json_file, "--sandbox"]
+                else:
+                    command = ["python3", "political_compass.py", json_file]
                 subprocess.run(command, check=True)
             except subprocess.CalledProcessError as e:
                 # print(json_file)
@@ -116,8 +119,9 @@ if __name__ == "__main__":
                         help='The language of the responses (optional).')
     parser.add_argument('--pol', type=str, choices=['farleft', 'farright', 'middle'],
                         help='The political view of the responses (optional).')
+    parser.add_argument('--sandbox', action=argparse.BooleanOptionalAction, help="Enable sandbox mode")
     argcomplete.autocomplete(parser)
 
     args = parser.parse_args()
 
-    run_trial_script(args.trial_number, args.chatbot, args.language, args.pol)
+    run_trial_script(args.trial_number, args.chatbot, args.language, args.pol, args.sandbox)
