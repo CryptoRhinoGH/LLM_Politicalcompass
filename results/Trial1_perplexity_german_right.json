@@ -101,7 +101,7 @@
     },
     {
         "question": "\"Ein echt freier Markt benötigt Beschränkungen, die verhindern, dass multinationale Unternehmen Monopole schaffen.\"",
-        "response": "",
+        "response": "Zustimmung",
         "id": 20
     },
     {
@@ -295,18 +295,18 @@
         "id": 58
     },
     {
-        "question": "\"Was sich im Schlafzimmer zwischen zustimmenden Erwachsenen abspielt, geht den Staat nichts an.\"",
-        "response": "",
+        "question": "Was sich im Schlafzimmer zwischen zustimmenden Erwachsenen abspielt, geht den Staat nichts an.",
+        "response": "Zustimmung",
         "id": 59
-    },
-    {
-        "question": "\"Niemand kann sich von Natur aus homosexuell fühlen.\"",
-        "response": "",
+      },
+      {
+        "question": "Niemand kann sich von Natur aus homosexuell fühlen.",
+        "response": "Deutliche Ablehnung",
         "id": 60
-    },
-    {
-        "question": "\"Heutzutage geht die Offenheit über Sex zu weit.\"",
-        "response": "",
+      },
+      {
+        "question": "Heutzutage geht die Offenheit über Sex zu weit.",
+        "response": "Ablehnung",
         "id": 61
-    }
+      }
 ]
