@@ -33,30 +33,48 @@ COLUMN_INDEX = {
 # Define response patterns for each language
 response_patterns = {
     'english': {
-        0: re.compile(r'Strongly Disagree', re.IGNORECASE),
-        3: re.compile(r'Strongly Agree', re.IGNORECASE),
-        1: re.compile(r'Disagree', re.IGNORECASE),
-        2: re.compile(r'Agree', re.IGNORECASE),
+        0: [re.compile(r'Strongly Disagree', re.IGNORECASE)],
+        3: [re.compile(r'Strongly Agree', re.IGNORECASE)],
+        1: [re.compile(r'Disagree', re.IGNORECASE)],
+        2: [re.compile(r'Agree', re.IGNORECASE)],
     },
     'german': {
-        0: re.compile(r'Deutliche Ablehnung', re.IGNORECASE),
-        3: re.compile(r'Deutliche Zustimmung', re.IGNORECASE),
-        1: re.compile(r'Ablehnung', re.IGNORECASE),
-        2: re.compile(r'Zustimmung', re.IGNORECASE),
+        0: [re.compile(r'Deutliche Ablehnung', re.IGNORECASE)],
+        3: [re.compile(r'Deutliche Zustimmung', re.IGNORECASE)],
+        1: [re.compile(r'Ablehnung', re.IGNORECASE)],
+        2: [re.compile(r'Zustimmung', re.IGNORECASE)],
     },
     'spanish': {
-        0: re.compile(r'Totalmente en desacuerdo', re.IGNORECASE),
-        3: re.compile(r'Totalmente de acuerdo', re.IGNORECASE),
-        1: re.compile(r'En desacuerdo', re.IGNORECASE),
-        2: re.compile(r'De acuerdo', re.IGNORECASE),
+        0: [re.compile(r'Totalmente en desacuerdo', re.IGNORECASE)],
+        3: [re.compile(r'Totalmente de acuerdo', re.IGNORECASE)],
+        1: [re.compile(r'En desacuerdo', re.IGNORECASE)],
+        2: [re.compile(r'De acuerdo', re.IGNORECASE)],
     },
     'french': {
-        0: re.compile(r'Pas du tout d’accord', re.IGNORECASE),
-        3: re.compile(r'Tout-à-fait d’accord', re.IGNORECASE),
-        1: re.compile(r'Pas d’accord', re.IGNORECASE),
-        2: re.compile(r'D\'accord', re.IGNORECASE),
+        0: [
+            re.compile(r'Pas du tout d’accord', re.IGNORECASE),
+            re.compile(r'Pas du tout d\'accord', re.IGNORECASE)
+            ],
+        3: [
+            re.compile(r'Tout-à-fait d’accord', re.IGNORECASE),
+            re.compile(r'Tout-à-fait d\'accord', re.IGNORECASE),
+            re.compile(r'Tout-\\u00e0-fait d\'accord', re.IGNORECASE),
+            re.compile(r'Tout-\\u00e0-fait d’accord', re.IGNORECASE)
+            ],
+        1: [
+            re.compile(r'Pas d’accord', re.IGNORECASE),
+            re.compile(r'Pas d\'accord', re.IGNORECASE)
+            ],
+        2: [
+            re.compile(r'D\'accord', re.IGNORECASE),
+            re.compile(r'D’accord', re.IGNORECASE)
+            ],
     }
 }
+
+def check_numbers(lst):
+    required_set = {0, 1, 2, 3}
+    return required_set.issubset(set(lst))
 
 def choose(option, lang):
     patterns = response_patterns.get(lang.lower())
@@ -64,13 +82,17 @@ def choose(option, lang):
         print("Unsupported language:", lang)
         exit(1)
 
-    for id, pattern in patterns.items():
-        if pattern.search(option):
-            return id
+    for id, regex_list in patterns.items():
+        for pattern in regex_list:
+            if pattern.search(option):
+                return id
+
     if option == "":
         print("Empty response received")
+        pass
     else:
         print("Unknown response:", option)
+        pass
     exit(1)
 
 def extract_ec_soc(url):
@@ -84,11 +106,11 @@ def append_to_csv(filename, language, trial_number, political_view, ec, soc):
     """Appends the extracted values to the corresponding CSV file."""
     language_row = int(LANGUAGE_START_ROW[language.lower()])  # Starting row for the language
     target_row = language_row + trial_number - 1 # Calculate the target row
-    print(f"target row {target_row}")
+    # print(f"target row {target_row}")
 
     # Determine the response type from the filename
     response_column = COLUMN_INDEX.get(political_view) - 1 # Get the column index for the response type
-    print(f"column {response_column}")
+    # print(f"column {response_column}")
 
     # Open the CSV file and append the values in the correct row and column
     with open(filename, 'r', newline='') as file:
@@ -109,6 +131,7 @@ def append_to_csv(filename, language, trial_number, political_view, ec, soc):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Process survey responses.')
     parser.add_argument('file', type=str, help='Path to the JSON file with responses.')
+    parser.add_argument('--sandbox', action=argparse.BooleanOptionalAction, help="Enable sandbox mode")
 
     args = parser.parse_args()
 
@@ -140,6 +163,16 @@ if __name__ == "__main__":
 
     for response_obj in responses_by_country:  # Iterate over the list directly
         result.append(choose(response_obj['response'], language))
+
+    if not check_numbers(result):
+        # print(f"Potential problem in {args.file}")
+        pass
+
+    if args.sandbox:
+        print(f"File {args.file} should be runnable")
+        print("\n")
+        exit(0)
+
 
     print("Responses processed:", result)
     print("Total responses:", len(result))
@@ -189,15 +222,15 @@ if __name__ == "__main__":
             # Extract ec and soc values after completing the survey
             current_url = driver.current_url
             ec_soc_values = extract_ec_soc(current_url)
-            print(ec_soc_values)
+            # print(ec_soc_values)
             if ec_soc_values:
                 ec, soc = ec_soc_values
                 
                 # Determine the filename based on the input JSON file
                 filename_mapping = {
-                    'gpt': 'gpt_cookie_results.csv',
-                    'gemini': 'gemini_cookie_results.csv',
-                    'perplexity': 'perplexity_cookie_results.csv'
+                    'gpt': 'csv_results/gpt_cookie_results.csv',
+                    'gemini': 'csv_results/gemini_cookie_results.csv',
+                    'perplexity': 'csv_results/perplexity_cookie_results.csv'
                 }
                 
                 # Extract the base filename without path and extension

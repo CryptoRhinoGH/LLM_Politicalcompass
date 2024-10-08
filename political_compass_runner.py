@@ -1,4 +1,6 @@
+#!/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/llm_env/bin/python
 import argparse
+import argcomplete
 import os
 import subprocess
 import glob
@@ -36,7 +38,7 @@ def check_csv_for_value(filename, language, trial_number, political_view):
 
     return False  # Value does not exist
 
-def run_trial_script(trial_number=None, chatbot=None, language=None, political_view = None):
+def run_trial_script(trial_number=None, chatbot=None, language=None, political_view = None, sandbox = False):
     """Runs the trial processing script with the specified parameters."""
     json_pattern = "results/"
 
@@ -71,7 +73,7 @@ def run_trial_script(trial_number=None, chatbot=None, language=None, political_v
     print()
 
     for json_file in json_files:
-        print(f"Running script for {json_file}...")
+        # print(f"Running script for {json_file}...")
         
         # Extracting details from the filename for checking
         base_filename = os.path.basename(json_file)
@@ -85,9 +87,9 @@ def run_trial_script(trial_number=None, chatbot=None, language=None, political_v
 
         # Determine the corresponding CSV filename based on chatbot
         filename_mapping = {
-            'gpt': 'gpt_cookie_results.csv',
-            'gemini': 'gemini_cookie_results.csv',
-            'perplexity': 'perplexity_cookie_results.csv'
+            'gpt': 'csv_results/gpt_cookie_results.csv',
+            'gemini': 'csv_results/gemini_cookie_results.csv',
+            'perplexity': 'csv_results/perplexity_cookie_results.csv'
         }
         
         filename = filename_mapping.get(chatbot, None)
@@ -95,13 +97,19 @@ def run_trial_script(trial_number=None, chatbot=None, language=None, political_v
             if check_csv_for_value(filename, language, trial_number, political_view):
                 # print(f"Values already exist in {filename} for Trial {trial_number}, Chatbot {chatbot}, Language {language}. Skipping.")
                 continue  # Skip to the next file if the value already exists
+                pass
 
             try:
                 # Construct the command to run the processing script
-                command = ["python3", "political_compass.py", json_file]
+                if sandbox:
+                    command = ["python3", "political_compass.py", json_file, "--sandbox"]
+                else:
+                    command = ["python3", "political_compass.py", json_file]
                 subprocess.run(command, check=True)
             except subprocess.CalledProcessError as e:
+                # print(json_file)
                 print(f"Error while running {json_file}: {e}")
+                print("\n")
                 continue  # Skip to the next file in case of an error
 
 if __name__ == "__main__":
@@ -112,7 +120,9 @@ if __name__ == "__main__":
                         help='The language of the responses (optional).')
     parser.add_argument('--pol', type=str, choices=['farleft', 'farright', 'middle'],
                         help='The political view of the responses (optional).')
+    parser.add_argument('--sandbox', action=argparse.BooleanOptionalAction, help="Enable sandbox mode")
+    argcomplete.autocomplete(parser)
 
     args = parser.parse_args()
 
-    run_trial_script(args.trial_number, args.chatbot, args.language, args.pol)
+    run_trial_script(args.trial_number, args.chatbot, args.language, args.pol, args.sandbox)

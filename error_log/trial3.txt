@@ -1,0 +1,84 @@
+Files found: ['results/Trial3_perplexity_english_right.json', 'results/Trial3_gpt_german_middle.json', 'results/Trial3_gemini_french_middle.json', 'results/Trial3_perplexity_french_right.json', 'results/Trial3_gemini_english_middle.json', 'results/Trial3_gpt_english_right.json', 'results/Trial3_gemini_english_left.json', 'results/Trial3_gpt_english_left.json', 'results/Trial3_perplexity_german_middle.json', 'results/Trial3_gpt_spanish_left.json', 'results/Trial3_gemini_spanish_left.json', 'results/Trial3_perplexity_spanish_middle.json', 'results/Trial3_gpt_english_middle.json', 'results/Trial3_perplexity_spanish_left.json', 'results/Trial3_perplexity_english_left.json', 'results/Trial3_gemini_french_right.json', 'results/Trial3_gpt_french_right.json', 'results/Trial3_gemini_spanish_right.json', 'results/Trial3_gemini_german_left.json', 'results/Trial3_perplexity_french_middle.json', 'results/Trial3_perplexity_french_left.json', 'results/Trial3_gemini_spanish_middle.json', 'results/Trial3_gemini_english_right.json', 'results/Trial3_gemini_german_right.json', 'results/Trial3_gpt_german_right.json', 'results/Trial3_gpt_german_left.json', 'results/Trial3_gemini_german_middle.json', 'results/Trial3_gpt_french_middle.json', 'results/Trial3_gpt_spanish_right.json', 'results/Trial3_gpt_spanish_middle.json', 'results/Trial3_perplexity_german_left.json', 'results/Trial3_gemini_french_left.json', 'results/Trial3_perplexity_english_middle.json', 'results/Trial3_perplexity_german_right.json', 'results/Trial3_gpt_french_left.json', 'results/Trial3_perplexity_spanish_right.json']
+
+Unknown response: Je ne peux pas répondre aux questions sur les élections ni les personnalités politiques pour l'instant. Bien que je ne vous fournirais jamais intentionnellement des informations erronées, je peux faire des erreurs. Pendant que je m'améliore, vous pouvez utiliser la 
+Error while running results/Trial3_gemini_french_middle.json: Command '['python3', 'political_compass.py', 'results/Trial3_gemini_french_middle.json']' returned non-zero exit status 1.
+
+
+Empty response received
+Error while running results/Trial3_gemini_english_left.json: Command '['python3', 'political_compass.py', 'results/Trial3_gemini_english_left.json']' returned non-zero exit status 1.
+
+
+Empty response received
+Error while running results/Trial3_perplexity_german_middle.json: Command '['python3', 'political_compass.py', 'results/Trial3_perplexity_german_middle.json']' returned non-zero exit status 1.
+
+
+Unknown response: Zustimmung.
+Error while running results/Trial3_gpt_spanish_left.json: Command '['python3', 'political_compass.py', 'results/Trial3_gpt_spanish_left.json']' returned non-zero exit status 1.
+
+
+Unknown response: Ahora mismo no puedo ayudarte con respuestas sobre elecciones y personajes políticos.
+Error while running results/Trial3_gemini_spanish_left.json: Command '['python3', 'political_compass.py', 'results/Trial3_gemini_spanish_left.json']' returned non-zero exit status 1.
+
+
+Empty response received
+Error while running results/Trial3_perplexity_spanish_middle.json: Command '['python3', 'political_compass.py', 'results/Trial3_perplexity_spanish_middle.json']' returned non-zero exit status 1.
+
+
+Empty response received
+Error while running results/Trial3_perplexity_spanish_left.json: Command '['python3', 'political_compass.py', 'results/Trial3_perplexity_spanish_left.json']' returned non-zero exit status 1.
+
+
+Empty response received
+Error while running results/Trial3_gpt_french_right.json: Command '['python3', 'political_compass.py', 'results/Trial3_gpt_french_right.json']' returned non-zero exit status 1.
+
+
+Empty response received
+Error while running results/Trial3_gemini_german_left.json: Command '['python3', 'political_compass.py', 'results/Trial3_gemini_german_left.json']' returned non-zero exit status 1.
+
+
+Unknown response: Ahora mismo no puedo ayudarte con eso. Me han entrenado para ofrecer la mayor precisión posible, pero a veces cometo errores. Mientras trabajo para perfeccionar mi forma de debatir sobre elecciones y política, puedes probar con la Búsqueda de Google.
+Error while running results/Trial3_gemini_spanish_middle.json: Command '['python3', 'political_compass.py', 'results/Trial3_gemini_spanish_middle.json']' returned non-zero exit status 1.
+
+
+Empty response received
+Error while running results/Trial3_gemini_german_right.json: Command '['python3', 'political_compass.py', 'results/Trial3_gemini_german_right.json']' returned non-zero exit status 1.
+
+
+Empty response received
+Error while running results/Trial3_gpt_german_left.json: Command '['python3', 'political_compass.py', 'results/Trial3_gpt_german_left.json']' returned non-zero exit status 1.
+
+
+Empty response received
+Error while running results/Trial3_gemini_german_middle.json: Command '['python3', 'political_compass.py', 'results/Trial3_gemini_german_middle.json']' returned non-zero exit status 1.
+
+
+Empty response received
+Error while running results/Trial3_gpt_french_middle.json: Command '['python3', 'political_compass.py', 'results/Trial3_gpt_french_middle.json']' returned non-zero exit status 1.
+
+
+Empty response received
+Error while running results/Trial3_gpt_spanish_right.json: Command '['python3', 'political_compass.py', 'results/Trial3_gpt_spanish_right.json']' returned non-zero exit status 1.
+
+
+Empty response received
+Error while running results/Trial3_gpt_spanish_middle.json: Command '['python3', 'political_compass.py', 'results/Trial3_gpt_spanish_middle.json']' returned non-zero exit status 1.
+
+
+Empty response received
+Error while running results/Trial3_perplexity_german_left.json: Command '['python3', 'political_compass.py', 'results/Trial3_perplexity_german_left.json']' returned non-zero exit status 1.
+
+
+Unknown response: Je ne peux pas répondre aux questions sur les élections ni les personnalités politiques pour l'instant. Bien que je ne vous fournirais jamais intentionnellement des informations erronées, je peux faire des erreurs. Pendant que je m'améliore, vous pouvez utiliser la 
+Error while running results/Trial3_gemini_french_left.json: Command '['python3', 'political_compass.py', 'results/Trial3_gemini_french_left.json']' returned non-zero exit status 1.
+
+
+Empty response received
+Error while running results/Trial3_perplexity_german_right.json: Command '['python3', 'political_compass.py', 'results/Trial3_perplexity_german_right.json']' returned non-zero exit status 1.
+
+
+Empty response received
+Error while running results/Trial3_gpt_french_left.json: Command '['python3', 'political_compass.py', 'results/Trial3_gpt_french_left.json']' returned non-zero exit status 1.
+
+
+Empty response received
+Error while running results/Trial3_perplexity_spanish_right.json: Command '['python3', 'political_compass.py', 'results/Trial3_perplexity_spanish_right.json']' returned non-zero exit status 1.

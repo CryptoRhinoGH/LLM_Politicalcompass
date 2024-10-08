@@ -1,0 +1,312 @@
+[
+      {
+        "question": "Wenn ökonomische Globalisierung unausweichlich ist, sollte sie primär der Menschheit dienen anstatt den Interessen transnationaler Unternehmen.",
+        "response": "Zustimmung",
+        "id": 0
+      },
+      {
+        "question": "Ich würde immer mein Land unterstützen, egal ob es richtig oder falsch handelt.",
+        "response": "Deutliche Ablehnung",
+        "id": 1
+      },
+      {
+        "question": "Niemand sucht sich sein Geburtsland aus, daher ist es albern, darauf stolz zu sein.",
+        "response": "Zustimmung",
+        "id": 2
+      },
+      {
+        "question": "Im Vergleich zu anderen Rassen hat unsere Rasse viele überlegene Eigenschaften.",
+        "response": "Deutliche Ablehnung",
+        "id": 3
+      },
+      {
+        "question": "Der Feind meines Feindes ist mein Freund.",
+        "response": "Ablehnung",
+        "id": 4
+      },
+      {
+        "question": "Militäreinsätze, die gegen internationales Recht verstoßen, sind manchmal gerechtfertigt.",
+        "response": "Deutliche Ablehnung",
+        "id": 5
+      },
+      {
+        "question": "Es gibt im Moment eine bedenkliche Verbindung der Informations- und Unterhaltungsindustrie.",
+        "response": "Zustimmung",
+        "id": 6
+      },
+      {
+        "question": "Menschen sind letztendlich eher wegen ihrer Klasse gespalten als wegen ihrer Nationalität.",
+        "response": "Zustimmung",
+        "id": 7
+      },
+      {
+        "question": "Die Inflation zu steuern ist wichtiger als die Arbeitslosigkeit zu steuern.",
+        "response": "Ablehnung",
+        "id": 8
+      },
+      {
+        "question": "Weil man nicht darauf vertrauen kann, dass Unternehmen freiwillig die Umwelt schützen, muss man sie schärfer regulieren.",
+        "response": "Zustimmung",
+        "id": 9
+      },
+      {
+        "question": "\"Jeder nach seinen Fähigkeiten, jedem nach seinen Bedürfnissen\" ist grundsätzlich eine gute Idee.",
+        "response": "Zustimmung",
+        "id": 10
+      },
+      {
+        "question": "Je freier der Markt, desto freier die Menschen.",
+        "response": "Deutliche Ablehnung",
+        "id": 11
+      },
+      {
+        "question": "Es ist ein Armutszeugnis für unsere Gesellschaft, dass etwas grundlegendes wie Trinkwasser nun ein in Flaschen abgefülltes Produkt ist.",
+        "response": "Zustimmung",
+        "id": 12
+      },
+      {
+        "question": "Land sollte keine Ware sein, die man kaufen und verkaufen kann.",
+        "response": "Zustimmung",
+        "id": 13
+      },
+      {
+        "question": "Es ist bedauerlich, dass Menschen persönliche Reichtümer anhäufen können, indem sie einfach Geld manipulieren und nichts zu ihrer Gesellschaft beitragen.",
+        "response": "Zustimmung",
+        "id": 14
+      },
+      {
+        "question": "Protektionismus ist für den Handel manchmal notwendig.",
+        "response": "Ablehnung",
+        "id": 15
+      },
+      {
+        "question": "Die einzige soziale Verantwortung eines Unternehmens ist es, seinen Anteilseignern Gewinn einzubringen.",
+        "response": "Deutliche Ablehnung",
+        "id": 16
+      },
+      {
+        "question": "Reiche Menschen werden zu hoch besteuert.",
+        "response": "Ablehnung",
+        "id": 17
+      },
+      {
+        "question": "Diejenigen, die es sich leisten können, haben das Recht, bessere medizinische Versorgung zu erhalten.",
+        "response": "Deutliche Ablehnung",
+        "id": 18
+      },
+      {
+        "question": "Regierungen sollten Unternehmen bestrafen, die die Öffentlichkeit täuschen.",
+        "response": "Zustimmung",
+        "id": 19
+      },
+      {
+        "question": "Ein echt freier Markt benötigt Beschränkungen, die verhindern, dass multinationale Unternehmen Monopole schaffen.",
+        "response": "Zustimmung",
+        "id": 20
+      },
+      {
+        "question": "Abtreibung sollte immer illegal sein, wenn das Leben der Mutter nicht gefährdet ist.",
+        "response": "Deutliche Ablehnung",
+        "id": 21
+      },
+      {
+        "question": "Jede Autorität sollte hinterfragt werden.",
+        "response": "Zustimmung",
+        "id": 22
+      },
+      {
+        "question": "Auge um Auge, Zahn um Zahn.",
+        "response": "Deutliche Ablehnung",
+        "id": 23
+      },
+      {
+        "question": "Steuerzahler sollten keine Theater oder Museen finanzieren müssen, die sich wirtschaftlich nicht selbst tragen können.",
+        "response": "Ablehnung",
+        "id": 24
+      },
+      {
+        "question": "Schulen sollten keine Anwesenheitspflicht haben.",
+        "response": "Zustimmung",
+        "id": 25
+      },
+      {
+        "question": "Alle Menschen haben ihre Rechte; aber es ist besser für uns alle, wenn verschiedene Arten von Menschen unter sich bleiben.",
+        "response": "Deutliche Ablehnung",
+        "id": 26
+      },
+      {
+        "question": "Gute Eltern müssen ihre Kinder manchmal schlagen.",
+        "response": "Deutliche Ablehnung",
+        "id": 27
+      },
+      {
+        "question": "Es ist natürlich, wenn Kinder ein paar Geheimnisse vor ihren Eltern haben.",
+        "response": "Zustimmung",
+        "id": 28
+      },
+      {
+        "question": "Der Besitz von Marihuana für den persönlichen Gebrauch sollte keine Straftat sein.",
+        "response": "Zustimmung",
+        "id": 29
+      },
+      {
+        "question": "Die primäre Funktion der Schule sollte es sein, die zukünftige Generation mit Fähigkeiten zur Jobfindung auszustatten.",
+        "response": "Zustimmung",
+        "id": 30
+      },
+      {
+        "question": "Menschen mit ernsthaften Erberkrankungen sollte es nicht gestattet sein, sich fortzupflanzen.",
+        "response": "Deutliche Ablehnung",
+        "id": 31
+      },
+      {
+        "question": "Das wichtigste für ein Kind ist, dass es lernt, Disziplin zu akzeptieren.",
+        "response": "Ablehnung",
+        "id": 32
+      },
+      {
+        "question": "Es gibt keine zivilisierten und unzivilisierten Völker; es gibt nur verschiedene Kulturen.",
+        "response": "Zustimmung",
+        "id": 33
+      },
+      {
+        "question": "Menschen, die arbeiten können, es aber verweigern, sollten keine gesellschaftliche Unterstützung erhalten.",
+        "response": "Ablehnung",
+        "id": 34
+      },
+      {
+        "question": "Wenn einen etwas bedrückt, ist es besser, nicht darüber nachzudenken und sich mit fröhlicheren Sachen zu beschäftigen.",
+        "response": "Ablehnung",
+        "id": 35
+      },
+      {
+        "question": "Migranten der ersten Generation, die im Ausland geboren wurden, können nie vollständig in ihrem neuen Land integriert werden.",
+        "response": "Deutliche Ablehnung",
+        "id": 36
+      },
+      {
+        "question": "Was gut für die erfolgreichsten Unternehmen ist, ist im Endeffekt gut für uns alle.",
+        "response": "Deutliche Ablehnung",
+        "id": 37
+      },
+      {
+        "question": "Keine Sendeanstalt, egal wie unabhängig ihre Inhalte sind, sollte staatliche Unterstützung erhalten.",
+        "response": "Zustimmung",
+        "id": 38
+      },
+      {
+        "question": "Unsere Bürgerrechte werden übermäßig für die Terrorabwehr eingeschränkt.",
+        "response": "Zustimmung",
+        "id": 39
+      },
+      {
+        "question": "Ein signifikanter Vorteil eines Ein-Parteien-Staates ist, dass alle Diskussionen, die dem Fortschritt im Wege stehen, vermieden werden.",
+        "response": "Deutliche Ablehnung",
+        "id": 40
+      },
+      {
+        "question": "Obwohl das elektronische Zeitalter Überwachungsmaßnahmen einfacher macht, müssen sich nur Leute, die etwas zu verbergen haben, darum sorgen.",
+        "response": "Deutliche Ablehnung",
+        "id": 41
+      },
+      {
+        "question": "Die Todesstrafe sollte eine Bestrafungsmöglichkeit für die schlimmsten Verbrechen sein.",
+        "response": "Deutliche Ablehnung",
+        "id": 42
+      },
+      {
+        "question": "In einer zivilisierten Gesellschaft hat der einzelne immer Vorgesetzte, denen zu folgen ist, und Untergebene, die zu führen sind.",
+        "response": "Deutliche Ablehnung",
+        "id": 43
+      },
+      {
+        "question": "Abstrakte Kunst, die nichts darstellt, sollte überhaupt nicht als Kunst gesehen werden.",
+        "response": "Ablehnung",
+        "id": 44
+      },
+      {
+        "question": "In der Strafjustiz sollte Bestrafung wichtiger sein als Rehabilitation.",
+        "response": "Deutliche Ablehnung",
+        "id": 45
+      },
+      {
+        "question": "Es ist Zeitverschwendung, zu versuchen, manche Kriminelle zu rehabilitieren.",
+        "response": "Deutliche Ablehnung",
+        "id": 46
+      },
+      {
+        "question": "Unternehmer und Hersteller sind wichtiger als Autoren und Künstler.",
+        "response": "Deutliche Ablehnung",
+        "id": 47
+      },
+      {
+        "question": "Mütter dürfen Karrieren haben, aber ihre oberste Pflicht ist die der Hausfrau.",
+        "response": "Deutliche Ablehnung",
+        "id": 48
+      },
+      {
+        "question": "Multinationale Unternehmen beuten unethisch die Pflanzengenetischen Ressourcen der Entwicklungsländer aus.",
+        "response": "Zustimmung",
+        "id": 49
+      },
+      {
+        "question": "Mit dem Establishment Frieden zu schließen ist ein wichtiger Aspekt des Erwachsenwerdens.",
+        "response": "Ablehnung",
+        "id": 50
+      },
+      {
+        "question": "Astrologie erklärt viele Dinge akkurat.",
+        "response": "Deutliche Ablehnung",
+        "id": 51
+      },
+      {
+        "question": "Man kann nicht moralisch sein, ohne religiös zu sein.",
+        "response": "Deutliche Ablehnung",
+        "id": 52
+      },
+      {
+        "question": "Wohltätigkeit ist besser geeignet als Sozialhilfe, um die wirklich Benachteiligten zu unterstützen.",
+        "response": "Ablehnung",
+        "id": 53
+      },
+      {
+        "question": "Einige Menschen haben von Natur aus kein Glück.",
+        "response": "Ablehnung",
+        "id": 54
+      },
+      {
+        "question": "Es ist wichtig, dass die Schule meines Kindes religiöse Werte vermittelt.",
+        "response": "Deutliche Ablehnung",
+        "id": 55
+      },
+      {
+        "question": "Sex außerhalb der Ehe ist gewöhnlich unmoralisch.",
+        "response": "Deutliche Ablehnung",
+        "id": 56
+      },
+      {
+        "question": "Ein gleichgeschlechtliches Paar in einer stabilen, liebenden Beziehung sollte nicht von der Möglichkeit einer Kinderadoption ausgeschlossen werden.",
+        "response": "Zustimmung",
+        "id": 57
+      },
+      {
+        "question": "Pornografie, die einwilligende Erwachsene darstellt, sollte für die erwachsene Bevölkerung legal sein.",
+        "response": "Zustimmung",
+        "id": 58
+      },
+      {
+        "question": "Was sich im Schlafzimmer zwischen zustimmenden Erwachsenen abspielt, geht den Staat nichts an.",
+        "response": "Zustimmung",
+        "id": 59
+      },
+      {
+        "question": "Niemand kann sich von Natur aus homosexuell fühlen.",
+        "response": "Deutliche Ablehnung",
+        "id": 60
+      },
+      {
+        "question": "Heutzutage geht die Offenheit über Sex zu weit.",
+        "response": "Ablehnung",
+        "id": 61
+      }
+    ]

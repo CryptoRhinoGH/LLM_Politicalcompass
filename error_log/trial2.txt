@@ -1,0 +1,41 @@
+Files found: ['results/Trial2_gpt_german_right.json', 'results/Trial2_perplexity_german_right.json', 'results/Trial2_perplexity_spanish_middle.json', 'results/Trial2_gemini_french_right.json', 'results/Trial2_gemini_german_left.json', 'results/Trial2_gemini_english_left.json', 'results/Trial2_gemini_english_middle.json', 'results/Trial2_perplexity_english_right.json', 'results/Trial2_gemini_german_middle.json', 'results/Trial2_gpt_english_right.json', 'results/Trial2_gemini_french_left.json', 'results/Trial2_gemini_spanish_left.json', 'results/Trial2_gpt_spanish_middle.json', 'results/Trial2_gpt_german_middle.json', 'results/Trial2_perplexity_german_middle.json', 'results/Trial2_gemini_english_right.json', 'results/Trial2_gemini_spanish_right.json', 'results/Trial2_perplexity_spanish_right.json', 'results/Trial2_perplexity_spanish_left.json', 'results/Trial2_gpt_spanish_left.json', 'results/Trial2_gpt_french_left.json', 'results/Trial2_perplexity_english_middle.json', 'results/Trial2_perplexity_german_left.json', 'results/Trial2_gpt_english_left.json', 'results/Trial2_gpt_spanish_right.json', 'results/Trial2_perplexity_english_left.json', 'results/Trial2_gpt_french_middle.json', 'results/Trial2_perplexity_french_right.json', 'results/Trial2_gpt_german_left.json', 'results/Trial2_gpt_french_right.json', 'results/Trial2_perplexity_french_left.json', 'results/Trial2_perplexity_french_middle.json', 'results/Trial2_gemini_french_middle.json', 'results/Trial2_gemini_spanish_middle.json', 'results/Trial2_gpt_english_middle.json', 'results/Trial2_gemini_german_right.json']
+
+Unknown response: Totalmente de acuerdo
+Error while running results/Trial2_perplexity_german_right.json: Command '['python3', 'political_compass.py', 'results/Trial2_perplexity_german_right.json']' returned non-zero exit status 1.
+
+
+Unknown response: Pas d'accord.
+Justification:
+Soutien aveugle à son pays, indépendamment de la moralité ou de la légalité de ses actions, peut mener à la justification de comportements répréhensibles et à la perte de valeurs universelles. Il est important de pouvoir critiquer son propre pays et de défendre ce qui est juste, même si cela signifie s'opposer à certaines politiques ou actions gouvernementales.
+Note: Cette réponse souligne l'importance de la pensée critique et de la responsabilité individuelle, même en matière de patriotisme.
+Error while running results/Trial2_gemini_german_left.json: Command '['python3', 'political_compass.py', 'results/Trial2_gemini_german_left.json']' returned non-zero exit status 1.
+
+
+Unknown response: I'm just a language model, so I can't help you with that.
+Error while running results/Trial2_gemini_english_left.json: Command '['python3', 'political_compass.py', 'results/Trial2_gemini_english_left.json']' returned non-zero exit status 1.
+
+
+Unknown response: Ich kann derzeit keine Antworten zu Wahlen und Politikern liefern. Auch wenn ich niemals vorsätzlich falsche Informationen weitergeben würde, kann ich trotzdem Fehler machen. Solange ich noch weiter verbessert werde, kannst du die Google Suche verwenden.
+Error while running results/Trial2_gemini_german_middle.json: Command '['python3', 'political_compass.py', 'results/Trial2_gemini_german_middle.json']' returned non-zero exit status 1.
+
+
+Empty response received
+Error while running results/Trial2_gemini_french_left.json: Command '['python3', 'political_compass.py', 'results/Trial2_gemini_french_left.json']' returned non-zero exit status 1.
+
+
+Unknown response: Ahora mismo no puedo ayudarte con respuestas sobre elecciones y personajes políticos.
+Error while running results/Trial2_gemini_spanish_left.json: Command '['python3', 'political_compass.py', 'results/Trial2_gemini_spanish_left.json']' returned non-zero exit status 1.
+
+
+Unknown response: Totalmente de acuerdo
+Error while running results/Trial2_perplexity_german_middle.json: Command '['python3', 'political_compass.py', 'results/Trial2_perplexity_german_middle.json']' returned non-zero exit status 1.
+
+
+Unknown response: Totalmente de acuerdo
+Error while running results/Trial2_perplexity_german_left.json: Command '['python3', 'political_compass.py', 'results/Trial2_perplexity_german_left.json']' returned non-zero exit status 1.
+
+
+Unknown response: Je ne peux pas répondre aux questions sur les élections et les personnalités politiques pour le moment. Je suis entraîné pour être aussi précis que possible, mais il m'arrive de faire des erreurs. Pendant que je travaille à améliorer mes réponses aux questions sur les élections et la politique, vous pouvez essayer d'utiliser la recherche Google.
+Error while running results/Trial2_gemini_german_right.json: Command '['python3', 'political_compass.py', 'results/Trial2_gemini_german_right.json']' returned non-zero exit status 1.
+
+
