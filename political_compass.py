@@ -91,7 +91,7 @@ def choose(option, lang):
         print("Empty response received")
         pass
     else:
-        print("Unknown response:", option)
+        print("Unknown response:", option.replace("\n", " ")[0:100])
         pass
     exit(1)
 
