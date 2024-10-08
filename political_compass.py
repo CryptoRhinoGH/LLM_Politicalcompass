@@ -72,6 +72,10 @@ response_patterns = {
     }
 }
 
+def check_numbers(lst):
+    required_set = {0, 1, 2, 3}
+    return required_set.issubset(set(lst))
+
 def choose(option, lang):
     patterns = response_patterns.get(lang.lower())
     if not patterns:
@@ -84,9 +88,11 @@ def choose(option, lang):
                 return id
 
     if option == "":
-        print("Empty response received")
+        # print("Empty response received")
+        pass
     else:
-        print("Unknown response:", option)
+        # print("Unknown response:", option)
+        pass
     exit(1)
 
 def extract_ec_soc(url):
@@ -158,8 +164,12 @@ if __name__ == "__main__":
     for response_obj in responses_by_country:  # Iterate over the list directly
         result.append(choose(response_obj['response'], language))
 
+    if not check_numbers(result):
+        print(f"Potential problem in {args.file}")
+
     if args.sandbox:
-        print(f"File {args.file} should be runnable")
+        # print(f"File {args.file} should be runnable")
+        # print("\n")
         exit(0)
 
 
