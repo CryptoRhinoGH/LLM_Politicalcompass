@@ -165,7 +165,7 @@ if __name__ == "__main__":
         result.append(choose(response_obj['response'], language))
 
     if not check_numbers(result):
-        # print(f"Potential problem in {args.file}")
+        print(f"Potential problem in {args.file}")
         pass
 
     if args.sandbox:

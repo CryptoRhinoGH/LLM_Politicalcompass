@@ -9,17 +9,17 @@ Spanish
 Trial 1,"ec=-7.63, soc=-7.28","ec=-7.38, soc=-7.74","ec=-8.13, soc=-7.74"
 Trial 2,,"ec=-8.0, soc=-7.44","ec=-7.88, soc=-7.54"
 Trial 3,,,"ec=-7.88, soc=-7.64"
-Trial 4,"ec=-7.38, soc=-7.38",,"ec=-7.25, soc=-7.18"
+Trial 4,"ec=-7.38, soc=-7.38","ec=-6.75, soc=-7.85","ec=-7.25, soc=-7.18"
 Trial 5,"ec=-7.13, soc=-8.05","ec=-7.88, soc=-7.85","ec=-7.63, soc=-7.69"
 German
 Trial 1,"ec=-7.63, soc=-7.28","ec=-8.25, soc=-7.64","ec=-7.63, soc=-7.54"
 Trial 2,,,
 Trial 3,,,
-Trial 4,,"ec=-8.13, soc=-7.38",
+Trial 4,"ec=-8.0, soc=-7.79","ec=-8.13, soc=-7.38",
 Trial 5,"ec=-7.13, soc=-6.82","ec=-7.38, soc=-7.28","ec=-6.5, soc=-7.44"
 French
 Trial 1,"ec=0.38, soc=1.79","ec=0.38, soc=1.74","ec=0.38, soc=2.1"
 Trial 2,,"ec=-7.0, soc=-7.13","ec=-7.25, soc=-6.77"
 Trial 3,,,"ec=-7.25, soc=-6.77"
-Trial 4,,,
+Trial 4,,,"ec=-6.63, soc=-7.64"
 Trial 5,"ec=-6.38, soc=-6.92","ec=0.38, soc=2.0","ec=0.38, soc=2.1"

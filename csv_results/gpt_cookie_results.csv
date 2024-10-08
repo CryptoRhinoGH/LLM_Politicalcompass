@@ -3,13 +3,13 @@ English
 Trial 1,"ec=-6.75, soc=-7.08","ec=-7.5, soc=-6.51","ec=-7.5, soc=-6.51"
 Trial 2,"ec=-5.88, soc=-6.51","ec=-6.13, soc=-6.26","ec=-7.38, soc=-6.51"
 Trial 3,"ec=-5.88, soc=-6.51","ec=-6.13, soc=-6.26","ec=-7.38, soc=-6.51"
-Trial 4,"ec=-7.75, soc=-7.69","ec=-8.13, soc=-7.18",
+Trial 4,"ec=-7.75, soc=-7.69","ec=-8.13, soc=-7.18","ec=-8.13, soc=-7.79"
 Trial 5,"ec=-8.13, soc=-7.69","ec=-8.13, soc=-7.69","ec=-7.5, soc=-7.59"
 Spanish
 Trial 1,"ec=-7.5, soc=-6.82","ec=-7.25, soc=-6.77","ec=-7.38, soc=-6.97"
 Trial 2,"ec=-7.5, soc=-6.82","ec=-7.25, soc=-6.77","ec=-7.63, soc=-6.97"
 Trial 3,,,
-Trial 4,,,
+Trial 4,"ec=-7.75, soc=-7.69",,"ec=-8.0, soc=-7.69"
 Trial 5,"ec=-7.0, soc=-7.69","ec=-8.5, soc=-7.95","ec=-8.0, soc=-7.54"
 German
 Trial 1,"ec=-6.13, soc=-6.97","ec=-5.75, soc=-6.82","ec=-5.75, soc=-6.72"
