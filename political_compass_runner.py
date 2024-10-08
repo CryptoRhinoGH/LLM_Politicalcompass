@@ -96,7 +96,7 @@ def run_trial_script(trial_number=None, chatbot=None, language=None, political_v
         if filename:
             if check_csv_for_value(filename, language, trial_number, political_view):
                 # print(f"Values already exist in {filename} for Trial {trial_number}, Chatbot {chatbot}, Language {language}. Skipping.")
-                # continue  # Skip to the next file if the value already exists
+                continue  # Skip to the next file if the value already exists
                 pass
 
             try:
@@ -108,8 +108,8 @@ def run_trial_script(trial_number=None, chatbot=None, language=None, political_v
                 subprocess.run(command, check=True)
             except subprocess.CalledProcessError as e:
                 # print(json_file)
-                # print(f"Error while running {json_file}: {e}")
-                # print("\n")
+                print(f"Error while running {json_file}: {e}")
+                print("\n")
                 continue  # Skip to the next file in case of an error
 
 if __name__ == "__main__":

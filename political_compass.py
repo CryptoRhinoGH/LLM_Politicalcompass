@@ -88,10 +88,10 @@ def choose(option, lang):
                 return id
 
     if option == "":
-        # print("Empty response received")
+        print("Empty response received")
         pass
     else:
-        # print("Unknown response:", option)
+        print("Unknown response:", option)
         pass
     exit(1)
 
@@ -165,11 +165,12 @@ if __name__ == "__main__":
         result.append(choose(response_obj['response'], language))
 
     if not check_numbers(result):
-        print(f"Potential problem in {args.file}")
+        # print(f"Potential problem in {args.file}")
+        pass
 
     if args.sandbox:
-        # print(f"File {args.file} should be runnable")
-        # print("\n")
+        print(f"File {args.file} should be runnable")
+        print("\n")
         exit(0)
 
 
