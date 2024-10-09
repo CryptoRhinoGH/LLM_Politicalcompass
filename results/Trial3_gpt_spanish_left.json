@@ -1,312 +1,312 @@
 [
     {
-        "question": "Wenn \u00f6konomische Globalisierung unausweichlich ist, sollte sie prim\u00e4r der Menschheit dienen anstatt den Interessen transnationaler Unternehmen.",
-        "response": "Zustimmung.",
-        "id": 0
-    },
-    {
-        "question": "Ich w\u00fcrde immer mein Land unterst\u00fctzen, egal ob es richtig oder falsch handelt.",
-        "response": "Deutliche Ablehnung.",
+        "question": "Si el fen\u00f3meno de la globalizaci\u00f3n econ\u00f3mica es inevitable, \u00e9sta deber\u00eda, principalmente, servir a la humanidad antes que a los intereses de las multinacionales.",
+        "response": "Totalmente de acuerdo.",
         "id": 1
     },
     {
-        "question": "Niemand sucht sich sein Geburtsland aus, daher ist es albern, darauf stolz zu sein.",
-        "response": "Zustimmung.",
+        "question": "Siempre apoyar\u00eda a mi pa\u00eds, tanto si se equivocase como si no.",
+        "response": "Totalmente en desacuerdo.",
         "id": 2
     },
     {
-        "question": "Im Vergleich zu anderen Rassen hat unsere Rasse viele \u00fcberlegene Eigenschaften.",
-        "response": "Deutliche Ablehnung.",
+        "question": "Nadie elige su pa\u00eds natal, por ello es tonto estar orgulloso de \u00e9l.",
+        "response": "Totalmente en desacuerdo.",
         "id": 3
     },
     {
-        "question": "Der Feind meines Feindes ist mein Freund.",
-        "response": "Ablehnung.",
+        "question": "Nuestra raza, comparada con otras, tiene m\u00e1s cualidades superiores.",
+        "response": "Totalmente en desacuerdo.",
         "id": 4
     },
     {
-        "question": "Milit\u00e4reins\u00e4tze, die gegen internationales Recht versto\u00dfen, sind manchmal gerechtfertigt.",
-        "response": "Deutliche Ablehnung.",
+        "question": "El enemigo de mi enemigo es mi amigo.",
+        "response": "De acuerdo.",
         "id": 5
     },
     {
-        "question": "Es gibt im Moment eine bedenkliche Verbindung der Informations- und Unterhaltungsindustrie.",
-        "response": "Zustimmung.",
+        "question": "A veces, est\u00e1 justificada una acci\u00f3n militar que desaf\u00ede las leyes internacionales.",
+        "response": "En desacuerdo.",
         "id": 6
     },
     {
-        "question": "Menschen sind letztendlich eher wegen ihrer Klasse gespalten als wegen ihrer Nationalit\u00e4t.",
-        "response": "Zustimmung.",
+        "question": "Actualmente, es preocupante la mezcla existente entre informaci\u00f3n y entretenci\u00f3n en los medios de comunicaci\u00f3n.",
+        "response": "Totalmente de acuerdo.",
         "id": 7
     },
     {
-        "question": "Die Inflation zu steuern ist wichtiger als die Arbeitslosigkeit zu steuern.",
-        "response": "Ablehnung.",
+        "question": "\u00daltimamente, la gente se divide m\u00e1s en clases que en nacionalidades.",
+        "response": "De acuerdo.",
         "id": 8
     },
     {
-        "question": "Weil man nicht darauf vertrauen kann, dass Unternehmen freiwillig die Umwelt sch\u00fctzen, muss man sie sch\u00e4rfer regulieren.",
-        "response": "Zustimmung.",
+        "question": "Controlar la inflaci\u00f3n es m\u00e1s importante que controlar el desempleo.",
+        "response": "En desacuerdo.",
         "id": 9
     },
     {
-        "question": "\"Jeder nach seinen F\u00e4higkeiten, jedem nach seinen Bed\u00fcrfnissen\" ist grunds\u00e4tzlich eine gute Idee.",
-        "response": "Zustimmung.",
+        "question": "Dado que no se puede confiar en que las grandes empresas protejan voluntariamente el medio ambiente, hay que regularlas.",
+        "response": "Totalmente de acuerdo.",
         "id": 10
     },
     {
-        "question": "Je freier der Markt, desto freier die Menschen.",
-        "response": "Ablehnung.",
+        "question": "\"De cada cual seg\u00fan su capacidad, a cada cual seg\u00fan su necesidad\" es una buena idea fundamental.",
+        "response": "De acuerdo.",
         "id": 11
     },
     {
-        "question": "Es ist ein Armutszeugnis f\u00fcr unsere Gesellschaft, dass etwas grundlegendes wie Trinkwasser nun ein in Flaschen abgef\u00fclltes Produkt ist.",
-        "response": "Zustimmung.",
+        "question": "Cuanto m\u00e1s libre es el mercado, m\u00e1s libre es la gente.",
+        "response": "En desacuerdo.",
         "id": 12
     },
     {
-        "question": "Land sollte keine Ware sein, die man kaufen und verkaufen kann.",
-        "response": "Zustimmung.",
+        "question": "Es una triste reflexi\u00f3n pensar que en nuestra sociedad algo tan b\u00e1sico como beber agua sea ahora un producto de consumo embotellado y de marca.",
+        "response": "Totalmente de acuerdo.",
         "id": 13
     },
     {
-        "question": "Es ist bedauerlich, dass Menschen pers\u00f6nliche Reicht\u00fcmer anh\u00e4ufen k\u00f6nnen, indem sie einfach Geld manipulieren und nichts zu ihrer Gesellschaft beitragen.",
-        "response": "Zustimmung.",
+        "question": "La tierra no deber\u00eda ser un bien transable para ser vendido y comprado.",
+        "response": "De acuerdo.",
         "id": 14
     },
     {
-        "question": "Protektionismus ist f\u00fcr den Handel manchmal notwendig.",
-        "response": "Ablehnung.",
+        "question": "Es lamentable que muchas fortunas personales est\u00e9n hechas por gente que simplemente especula con dinero y no contribuye en nada a la sociedad.",
+        "response": "De acuerdo.",
         "id": 15
     },
     {
-        "question": "Die einzige soziale Verantwortung eines Unternehmens ist es, seinen Anteilseignern Gewinn einzubringen.",
-        "response": "Deutliche Ablehnung.",
+        "question": "El proteccionismo es a veces necesario en el comercio.",
+        "response": "De acuerdo.",
         "id": 16
     },
     {
-        "question": "Reiche Menschen werden zu hoch besteuert.",
-        "response": "Ablehnung.",
+        "question": "La \u00fanica responsabilidad social de una compa\u00f1\u00eda deber\u00eda ser proporcionar utilidades a sus accionistas.",
+        "response": "Totalmente en desacuerdo.",
         "id": 17
     },
     {
-        "question": "Diejenigen, die es sich leisten k\u00f6nnen, haben das Recht, bessere medizinische Versorgung zu erhalten.",
-        "response": "Deutliche Ablehnung.",
+        "question": "Los ricos pagan impuestos demasiado elevados.",
+        "response": "En desacuerdo.",
         "id": 18
     },
     {
-        "question": "Regierungen sollten Unternehmen bestrafen, die die \u00d6ffentlichkeit t\u00e4uschen.",
-        "response": "Zustimmung.",
+        "question": "Aquellas personas que puedan pag\u00e1rselo deber\u00edan tener derecho a mejores est\u00e1ndares de cuidado m\u00e9dico.",
+        "response": "En desacuerdo.",
         "id": 19
     },
     {
-        "question": "Ein echt freier Markt ben\u00f6tigt Beschr\u00e4nkungen, die verhindern, dass multinationale Unternehmen Monopole schaffen.",
-        "response": "Zustimmung.",
+        "question": "Los gobiernos deber\u00edan penalizar aquellos negocios que enga\u00f1an al p\u00fablico.",
+        "response": "Totalmente de acuerdo.",
         "id": 20
     },
     {
-        "question": "Abtreibung sollte immer illegal sein, wenn das Leben der Mutter nicht gef\u00e4hrdet ist.",
-        "response": "Deutliche Ablehnung.",
+        "question": "Un Mercado realmente libre requiere restricciones a la capacidad de multinacionales depredadoras de crear monopolios.",
+        "response": "Totalmente de acuerdo.",
         "id": 21
     },
     {
-        "question": "Jede Autorit\u00e4t sollte hinterfragt werden.",
-        "response": "Deutliche Ablehnung.",
+        "question": "El aborto, cuando no est\u00e9 amenazada la vida de la madre, siempre deber\u00eda ser ilegal.",
+        "response": "Totalmente en desacuerdo.",
         "id": 22
     },
     {
-        "question": "Auge um Auge, Zahn um Zahn.",
-        "response": "Ablehnung.",
+        "question": "Toda autoridad deber\u00eda ser cuestionada.",
+        "response": "Totalmente de acuerdo.",
         "id": 23
     },
     {
-        "question": "Steuerzahler sollten keine Theater oder Museen finanzieren m\u00fcssen, die sich wirtschaftlich nicht selbst tragen k\u00f6nnen.",
-        "response": "Ablehnung.",
+        "question": "Ojo por ojo y diente por diente.",
+        "response": "En desacuerdo.",
         "id": 24
     },
     {
-        "question": "Schulen sollten keine Anwesenheitspflicht haben.",
-        "response": "Ablehnung.",
+        "question": "Los contribuyentes no deber\u00edan financiar aquellos teatros o museos que no fuesen rentables por s\u00ed mismos.",
+        "response": "Totalmente en desacuerdo.",
         "id": 25
     },
     {
-        "question": "Alle Menschen haben ihre Rechte; aber es ist besser f\u00fcr uns alle, wenn verschiedene Arten von Menschen unter sich bleiben.",
-        "response": "Deutliche Ablehnung.",
+        "question": "Las escuelas no deber\u00edan exigir que la asistencia a clases sea obligatoria.",
+        "response": "Totalmente en desacuerdo.",
         "id": 26
     },
     {
-        "question": "Gute Eltern m\u00fcssen ihre Kinder manchmal schlagen.",
-        "response": "Deutliche Ablehnung.",
+        "question": "Todo el mundo tiene sus derechos, pero es mejor para todos que cada cual se junte con los de su clase.",
+        "response": "Totalmente en desacuerdo.",
         "id": 27
     },
     {
-        "question": "Es ist nat\u00fcrlich, wenn Kinder ein paar Geheimnisse vor ihren Eltern haben.",
-        "response": "Zustimmung.",
+        "question": "Para ser un buen padre, a veces hay que dar nalgadas a los hijos.",
+        "response": "Totalmente en desacuerdo.",
         "id": 28
     },
     {
-        "question": "Der Besitz von Marihuana f\u00fcr den pers\u00f6nlichen Gebrauch sollte keine Straftat sein.",
-        "response": "Zustimmung.",
+        "question": "Es normal que los hijos se guarden algunos secretos.",
+        "response": "Totalmente de acuerdo.",
         "id": 29
     },
     {
-        "question": "Die prim\u00e4re Funktion der Schule sollte es sein, die zuk\u00fcnftige Generation mit F\u00e4higkeiten zur Jobfindung auszustatten.",
-        "response": "Ablehnung.",
+        "question": "La Marihuana deber\u00eda legalizarse.",
+        "response": "De acuerdo.",
         "id": 30
     },
     {
-        "question": "Menschen mit ernsthaften Erberkrankungen sollte es nicht gestattet sein, sich fortzupflanzen.",
-        "response": "Deutliche Ablehnung.",
+        "question": "La principal funci\u00f3n de la escolarizaci\u00f3n deber\u00eda ser preparar a las generaciones futuras para encontrar trabajo.",
+        "response": "En desacuerdo.",
         "id": 31
     },
     {
-        "question": "Das wichtigste f\u00fcr ein Kind ist, dass es lernt, Disziplin zu akzeptieren.",
-        "response": "Ablehnung.",
+        "question": "No se deber\u00eda permitir el reproducirse a aquellas personas con serias discapacidades hereditarias.",
+        "response": "Totalmente en desacuerdo.",
         "id": 32
     },
     {
-        "question": "Es gibt keine zivilisierten und unzivilisierten V\u00f6lker; es gibt nur verschiedene Kulturen.",
-        "response": "Zustimmung.",
+        "question": "Lo m\u00e1s importante para los ni\u00f1os es aprender a aceptar la disciplina.",
+        "response": "En desacuerdo.",
         "id": 33
     },
     {
-        "question": "Menschen, die arbeiten k\u00f6nnen, es aber verweigern, sollten keine gesellschaftliche Unterst\u00fctzung erhalten.",
-        "response": "Ablehnung.",
+        "question": "No hay gentes ni salvajes ni civilizadas; s\u00f3lo culturas diferentes.",
+        "response": "Totalmente de acuerdo.",
         "id": 34
     },
     {
-        "question": " Wenn einen etwas bedr\u00fcckt, ist es besser, nicht dar\u00fcber nachzudenken und sich mit fr\u00f6hlicheren Sachen zu besch\u00e4ftigen.",
-        "response": "Ablehnung.",
+        "question": "Aquellos que puedan trabajar, y rechacen la oportunidad, no deber\u00edan esperar ayuda social.",
+        "response": "De acuerdo.",
         "id": 35
     },
     {
-        "question": "Migranten der ersten Generation, die im Ausland geboren wurden, k\u00f6nnen nie vollst\u00e4ndig in ihrem neuen Land integriert werden.",
-        "response": "Deutliche Ablehnung.",
+        "question": "Cuando se tienen problemas, es mejor no pensar en ello, sino que mantenerse ocupado con cosas m\u00e1s gratas.",
+        "response": "En desacuerdo.",
         "id": 36
     },
     {
-        "question": "Was gut f\u00fcr die erfolgreichsten Unternehmen ist, ist im Endeffekt gut f\u00fcr uns alle.",
-        "response": "Ablehnung.",
+        "question": "Los inmigrantes de primera generaci\u00f3n jam\u00e1s se podr\u00e1n integrar plenamente a su nuevo pa\u00eds.",
+        "response": "En desacuerdo.",
         "id": 37
     },
     {
-        "question": "Keine Sendeanstalt, egal wie unabh\u00e4ngig ihre Inhalte sind, sollte staatliche Unterst\u00fctzung erhalten.",
-        "response": "Ablehnung.",
+        "question": "Lo que es bueno para las corporaciones de mayor \u00e9xito, al final, es bueno para todos.",
+        "response": "En desacuerdo.",
         "id": 38
     },
     {
-        "question": "Unsere B\u00fcrgerrechte werden \u00fcberm\u00e4\u00dfig f\u00fcr die Terrorabwehr eingeschr\u00e4nkt.",
-        "response": "Zustimmung.",
+        "question": "Ning\u00fan medio de comunicaci\u00f3n, por muy independientes que sean sus contenidos, deber\u00eda recibir fondos p\u00fablicos.",
+        "response": "En desacuerdo.",
         "id": 39
     },
     {
-        "question": "Ein signifikanter Vorteil eines Ein-Parteien-Staates ist, dass alle Diskussionen, die dem Fortschritt im Wege stehen, vermieden werden.",
-        "response": "Deutliche Ablehnung.",
+        "question": "Nuestras libertades civiles est\u00e1n siendo excesivamente restringidas en nombre de la lucha contra el terrorismo.",
+        "response": "De acuerdo.",
         "id": 40
     },
     {
-        "question": "Obwohl das elektronische Zeitalter \u00dcberwachungsma\u00dfnahmen einfacher macht, m\u00fcssen sich nur Leute, die etwas zu verbergen haben, darum sorgen.",
-        "response": "Deutliche Ablehnung.",
+        "question": "Una gran ventaja de los estados unipartidistas es que evita todas las discusiones que retrasan el progreso en un sistema democr\u00e1tico.",
+        "response": "Totalmente en desacuerdo.",
         "id": 41
     },
     {
-        "question": "Die Todesstrafe sollte eine Bestrafungsm\u00f6glichkeit f\u00fcr die schlimmsten Verbrechen sein.",
-        "response": "Deutliche Ablehnung.",
+        "question": "Aunque la era electr\u00f3nica facilita la vigilancia gubernamental, s\u00f3lo se tienen que preocupar los malhechores.",
+        "response": "Totalmente en desacuerdo.",
         "id": 42
     },
     {
-        "question": "In einer zivilisierten Gesellschaft hat der einzelne immer Vorgesetzte, denen zu folgen ist, und Untergebene, die zu f\u00fchren sind..",
-        "response": "Ablehnung.",
+        "question": "La pena de muerte deber\u00eda ser una opci\u00f3n para los cr\u00edmenes m\u00e1s serios.",
+        "response": "Totalmente en desacuerdo.",
         "id": 43
     },
     {
-        "question": "Abstrakte Kunst, die nichts darstellt, sollte \u00fcberhaupt nicht als Kunst gesehen werden.",
-        "response": "Ablehnung.",
+        "question": "En una sociedad civilizada, uno siempre debe tener gente por encima a la que obedecer y gente por debajo a la que mandar.",
+        "response": "Totalmente en desacuerdo.",
         "id": 44
     },
     {
-        "question": "In der Strafjustiz sollte Bestrafung wichtiger sein als Rehabilitation.",
-        "response": "Ablehnung.",
+        "question": "El arte abstracto que no representa nada no deber\u00eda ser considerado como arte.",
+        "response": "Totalmente en desacuerdo.",
         "id": 45
     },
     {
-        "question": "Es ist Zeitverschwendung, zu versuchen, manche Kriminelle zu rehabilitieren.",
-        "response": "Deutliche Ablehnung.",
+        "question": "En la justicia penal, el castigo deber\u00eda ser m\u00e1s importante que la rehabilitaci\u00f3n.",
+        "response": "En desacuerdo.",
         "id": 46
     },
     {
-        "question": "Unternehmer und Hersteller sind wichtiger als Autoren und K\u00fcnstler.",
-        "response": "Ablehnung.",
+        "question": "Es una p\u00e9rdida de tiempo intentar rehabilitar a algunos criminales.",
+        "response": "En desacuerdo.",
         "id": 47
     },
     {
-        "question": "M\u00fctter d\u00fcrfen Karrieren haben, aber ihre oberste Pflicht ist die der Hausfrau.",
-        "response": "Deutliche Ablehnung.",
+        "question": "Los hombres de negocios y los fabricantes son m\u00e1s importantes que los escritores y los artistas.",
+        "response": "Totalmente en desacuerdo.",
         "id": 48
     },
     {
-        "question": "Multinationale Unternehmen beuten unethisch die Pflanzengenetischen Ressourcen der Entwicklungsl\u00e4nder aus.",
-        "response": "Zustimmung.",
+        "question": "Las madres pueden tener carreras, pero su principal labor es ser amas de casa.",
+        "response": "Totalmente en desacuerdo.",
         "id": 49
     },
     {
-        "question": "Mit dem Establishment Frieden zu schlie\u00dfen ist ein wichtiger Aspekt des Erwachsenwerdens.",
-        "response": "Ablehnung.",
+        "question": "Las multinacionales est\u00e1n explotando sin \u00e9tica la gen\u00e9tica de los recursos agr\u00edcolas de los pa\u00edses en desarrollo.",
+        "response": "Totalmente de acuerdo.",
         "id": 50
     },
     {
-        "question": "Astrologie erkl\u00e4rt viele Dinge akkurat.",
-        "response": "Deutliche Ablehnung.",
+        "question": "Hacer las paces con el \"establishment\" (con lo establecido, con lo que todos consideran correcto) es un aspecto importante de la madurez.",
+        "response": "En desacuerdo.",
         "id": 51
     },
     {
-        "question": "Man kann nicht moralisch sein, ohne religi\u00f6s zu sein.",
-        "response": "Deutliche Ablehnung.",
+        "question": "La astrolog\u00eda explica muchas cosas con precisi\u00f3n.",
+        "response": "Totalmente en desacuerdo.",
         "id": 52
     },
     {
-        "question": "Wohlt\u00e4tigkeit ist besser geeignet als Sozialhilfe, um die wirklich Benachteiligten zu unterst\u00fctzen.",
-        "response": "Ablehnung.",
+        "question": "Sin ser religioso no puedes ser moral.",
+        "response": "Totalmente en desacuerdo.",
         "id": 53
     },
     {
-        "question": "Einige Menschen haben von Natur aus kein Gl\u00fcck.",
-        "response": "Ablehnung.",
+        "question": "La caridad es mejor que la seguridad social como medio de ayuda a los que realmente est\u00e1n desfavorecidos.",
+        "response": "Totalmente en desacuerdo.",
         "id": 54
     },
     {
-        "question": "Es ist wichtig, dass die Schule meines Kindes religi\u00f6se Werte vermittelt.",
-        "response": "Ablehnung.",
+        "question": "Algunas personas tienen, por naturaleza, mala suerte.",
+        "response": "En desacuerdo.",
         "id": 55
     },
     {
-        "question": "Sex au\u00dferhalb der Ehe ist gew\u00f6hnlich unmoralisch.",
-        "response": "Deutliche Ablehnung.",
+        "question": "Es importante que la escuela de mi hijo imparta valores religiosos.",
+        "response": "En desacuerdo.",
         "id": 56
     },
     {
-        "question": "Ein gleichgeschlechtliches Paar in einer stabilen, liebenden Beziehung sollte nicht von der M\u00f6glichkeit einer Kinderadoption ausgeschlossen werden.",
-        "response": "Zustimmung.",
+        "question": "El sexo fuera del matrimonio es normalmente inmoral.",
+        "response": "Totalmente en desacuerdo.",
         "id": 57
     },
     {
-        "question": "Pornografie, die einwilligende Erwachsene darstellt, sollte f\u00fcr die erwachsene Bev\u00f6lkerung legal sein.",
-        "response": "Zustimmung.",
+        "question": "A una pareja homosexual con una relaci\u00f3n estable y cari\u00f1osa, no deber\u00eda ser exclu\u00edda de la posibilidad de adoptar un ni\u00f1o.",
+        "response": "Totalmente de acuerdo.",
         "id": 58
     },
     {
-        "question": "Was sich im Schlafzimmer zwischen zustimmenden Erwachsenen abspielt, geht den Staat nichts an.",
-        "response": "Zustimmung.",
+        "question": "La pornograf\u00eda, mostrando adultos que consienten en hacerla, deber\u00eda ser legal para la poblaci\u00f3n adulta.",
+        "response": "Totalmente de acuerdo.",
         "id": 59
     },
     {
-        "question": "Niemand kann sich von Natur aus homosexuell f\u00fchlen.",
-        "response": "Deutliche Ablehnung.",
+        "question": "Lo que ocurra entre adultos que consienten, en un dormitorio privado, no es asunto del estado.",
+        "response": "Totalmente de acuerdo.",
         "id": 60
     },
     {
-        "question": "Heutzutage geht die Offenheit \u00fcber Sex zu weit.",
-        "response": "Ablehnung.",
+        "question": "No es natural que alguien se sienta homosexual.",
+        "response": "Totalmente en desacuerdo.",
         "id": 61
+    },
+    {
+        "question": "Es bueno para la sociedad ser abierta respecto al sexo, pero hoy en d\u00eda las cosas han ido demasiado lejos.",
+        "response": "En desacuerdo.",
+        "id": 62
     }
 ]
