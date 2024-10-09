@@ -295,18 +295,18 @@
         "id": 58
     },
     {
-        "question": "Lo que ocurra entre adultos que consienten, en un dormitorio privado, no es asunto del estado.",
-        "response": "Totalmente de acuerdo",
+        "question": "Was sich im Schlafzimmer zwischen zustimmenden Erwachsenen abspielt, geht den Staat nichts an.",
+        "response": "Zustimmung",
+        "id": 59
+    },
+    {
+        "question": "Niemand kann sich von Natur aus homosexuell fühlen.",
+        "response": "Deutliche Ablehnung",
         "id": 60
-      },
-      {
-        "question": "No es natural que alguien se sienta homosexual.",
-        "response": "Totalmente en desacuerdo",
+    },
+    {
+        "question": "Heutzutage geht die Offenheit über Sex zu weit.",
+        "response": "Ablehnung",
         "id": 61
-      },
-      {
-        "question": "Es bueno para la sociedad ser abierta respecto al sexo, pero hoy en día las cosas han ido demasiado lejos.",
-        "response": "De acuerdo",
-        "id": 62
-      }
+    }
 ]
