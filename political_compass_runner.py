@@ -70,7 +70,7 @@ def run_trial_script(trial_number=None, chatbot=None, language=None, political_v
         return
 
     print(f"Files found: {json_files}")
-    print()
+    print(f"Files length: {len(json_files)}\n")
 
     for json_file in json_files:
         # print(f"Running script for {json_file}...")

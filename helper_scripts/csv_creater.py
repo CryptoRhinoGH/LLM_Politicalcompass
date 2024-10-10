@@ -9,7 +9,7 @@ languages = ["English", "Spanish", "German", "French"]
 filenames = ["gpt_cookie_results.csv", "gemini_cookie_results.csv", "perplexity_cookie_results.csv"]
 
 for filename in filenames:
-    with open(filename, 'w', newline='') as file:
+    with open("csv_results/" + filename, 'w', newline='') as file:
         writer = csv.writer(file)
         writer.writerow(header)  # Write the header row
         for language in languages:
