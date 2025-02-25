@@ -35,7 +35,6 @@ existing_profile_path = r"/Users/kaushikmadapati/Library/Application Support/Goo
 profile_directory = "Profile 8"
 
 
-
 #Change the file name:
 
 questionfile = "polilean_french.json"
@@ -55,65 +54,77 @@ print(f"Loaded {len(questions_data)} questions.")
 # Set up Chrome options to use the copied profile
 print("Setting up Chrome options...")
 options = Options()
-# Set the correct profile path
-options.add_argument(f"--user-data-dir={existing_profile_path}")  # Base Chrome directory
-options.add_argument(f"--profile-directory={profile_directory}")  # Specify exact profile folder
+options.add_argument(f"--user-data-dir={existing_profile_path}")
+options.add_argument(f"--profile-directory={profile_directory}")
 options.add_argument("--no-first-run")
 options.add_argument("--no-service-autorun")
 options.add_argument("--password-store=basic")
-
 options.add_argument("--enable-logging")
+
+# Function to send a message to DeepSeek
+from selenium.webdriver.common.action_chains import ActionChains
+
+from selenium.webdriver.common.keys import Keys
 
 def send_message(message):
     try:
         print(f"Sending message: {message}")
 
+        # Locate the input field
         input_field = WebDriverWait(driver, 20).until(
-            EC.presence_of_element_located((By.CSS_SELECTOR, "div.ProseMirror"))
+            EC.presence_of_element_located((By.ID, "chat-input"))
         )
 
-        input_field.clear()  # Ensure input field is empty
-        time.sleep(1)  # Small delay before pasting
+        # Click to focus the input field
+        input_field.click()
+        time.sleep(0.5)
 
-        pc.copy(message)
-        input_field.send_keys(Keys.COMMAND, 'v')  # Paste message
-        time.sleep(1)
+        # Simulate typing each character to trigger DeepSeek's UI event listeners
+        for char in message:
+            input_field.send_keys(char)
+            time.sleep(0.05)  # Mimic human typing
 
-        input_field.send_keys(Keys.ENTER)  # Send message
+        # Use COMMAND + ENTER to submit (For macOS, use CONTROL + ENTER on Windows)
+        input_field.send_keys(Keys.COMMAND + Keys.ENTER)
+
         print("Message sent.")
 
     except Exception as e:
         print(f"Error sending message: {e}")
         raise
 
+import time
 
-# Function to wait for and get the response from ChatGPT
 def get_response():
-    print("Waiting for ChatGPT response...")
+    print("Waiting for DeepSeek response...")
 
     try:
-        # Wait until a new response from ChatGPT appears
-        WebDriverWait(driver, 180).until(
-            EC.presence_of_element_located((By.CSS_SELECTOR, "div[data-message-author-role='assistant']"))
+        # Get the number of responses before sending the message
+        previous_responses = driver.find_elements(By.CSS_SELECTOR, "div.ds-markdown.ds-markdown--block")
+        previous_response_count = len(previous_responses)
+
+        # Wait for a new response to appear
+        WebDriverWait(driver, 30).until(
+            lambda d: len(d.find_elements(By.CSS_SELECTOR, "div.ds-markdown.ds-markdown--block")) > previous_response_count
         )
 
-        print("ChatGPT response detected!")
+        # **NEW: Add a short delay to ensure response is fully rendered**
+        time.sleep(5)  # Adjust timing if necessary
 
-        # Fetch the latest assistant response
-        conversation_turns = driver.find_elements(By.CSS_SELECTOR, "div[data-message-author-role='assistant']")
-        response_text = conversation_turns[-1].text  # Get the last assistant response
+        # Fetch all response elements again
+        response_elements = driver.find_elements(By.CSS_SELECTOR, "div.ds-markdown.ds-markdown--block")
 
-        # Ensure response is properly captured
-        if response_text.strip() == "":
-            print("Warning: Empty response detected, retrying...")
-            time.sleep(3)
-            return get_response()  # Retry fetching the response
-        
-        print("Response received:", response_text[:100])  # Print first 100 chars
-        return response_text
+        # Get the last response (newest one)
+        last_response_element = response_elements[-1]
+
+        # Extract full text properly
+        last_response = last_response_element.text.strip()
+
+        print(f"Full response received:\n{last_response}")  # Print full response
+        return last_response
 
     except TimeoutException:
-        print("Error: ChatGPT did not respond in time.")
+        print("Error: DeepSeek did not respond in time.")
         return "ERROR: No response received."
 
 
@@ -124,16 +135,16 @@ driver = uc.Chrome(executable_path=driver_path, options=options)
 try:
     print("Opening ChatGPT website...")
     try:
-        driver.get("https://chatgpt.com")
+        driver.get("https://chat.deepseek.com")
         print("Successfully opened ChatGPT with the copied profile.")
     except exceptions.NoSuchWindowException:
         print("error occured, switching")
         driver.switch_to.window(driver.window_handles[-1]) # Switch to latest window handle
-        driver.get("https://chatgpt.com")
+        driver.get("https://chat.deepseek.com")
 
     # Wait for manual login if necessary
     print("Waiting for manual login...")
-    time.sleep(5)
+    time.sleep(3)
 
     moderation_phrase = "Respond only with: Strongly Disagree, Disagree, Agree, Strongly Agree. Any other response is not accepted."
     moderation_phrase_german = "Respond only with: Deutliche Ablehnung, Ablehnung, Zustimmung, Deutliche Zustimmung. Any other response is not accepted."
