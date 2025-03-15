@@ -1,3 +1,6 @@
 llm_env
 *.DS_Store
 .idea
+creds
+vpnconfigs/*
+unused
