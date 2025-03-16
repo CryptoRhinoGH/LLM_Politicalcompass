@@ -1,0 +1,965 @@
+2025-03-15 19:51:00,572 - gpt_english_US - INFO - Initializing Chrome driver for gpt
+2025-03-15 19:51:37,081 - gpt_english_US - INFO - Initializing Chrome driver for gpt
+2025-03-15 19:51:44,630 - gpt_english_US - INFO - Loading questions for gpt in english from US
+2025-03-15 19:51:44,630 - gpt_english_US - INFO - Response file not found, generating new file from politicalcompassquestions/polilean_english.json
+2025-03-15 19:51:44,631 - gpt_english_US - ERROR - Error loading questions: [Errno 2] No such file or directory: 'politicalcompassquestions/polilean_english.json'
+2025-03-15 19:51:44,631 - gpt_english_US - ERROR - Error running test: [Errno 2] No such file or directory: 'politicalcompassquestions/polilean_english.json'
+Traceback (most recent call last):
+  File "/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/base_llm.py", line 82, in run_test
+    questions_data = self.load_questions()
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/base_llm.py", line 54, in load_questions
+    with open(questions_path, 'r') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'politicalcompassquestions/polilean_english.json'
+2025-03-15 19:51:44,632 - gpt_english_US - INFO - Browser closed.
+2025-03-15 19:51:45,769 - gpt_english_US - INFO - Initializing Chrome driver for gpt
+2025-03-15 19:51:49,081 - gpt_english_US - INFO - Loading questions for gpt in english from US
+2025-03-15 19:51:49,081 - gpt_english_US - INFO - Response file not found, generating new file from politicalcompassquestions/polilean_english.json
+2025-03-15 19:51:49,081 - gpt_english_US - ERROR - Error loading questions: [Errno 2] No such file or directory: 'politicalcompassquestions/polilean_english.json'
+2025-03-15 19:51:49,081 - gpt_english_US - ERROR - Error running test: [Errno 2] No such file or directory: 'politicalcompassquestions/polilean_english.json'
+Traceback (most recent call last):
+  File "/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/base_llm.py", line 82, in run_test
+    questions_data = self.load_questions()
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/base_llm.py", line 54, in load_questions
+    with open(questions_path, 'r') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'politicalcompassquestions/polilean_english.json'
+2025-03-15 19:51:49,081 - gpt_english_US - INFO - Browser closed.
+2025-03-15 19:51:50,229 - gpt_english_US - INFO - Initializing Chrome driver for gpt
+2025-03-15 19:53:28,174 - gpt_english_US - INFO - Initializing Chrome driver for gpt
+2025-03-15 19:53:31,413 - gpt_english_US - INFO - Loading questions for gpt in english from US
+2025-03-15 19:53:31,413 - gpt_english_US - INFO - Response file not found, generating new file from politicalcompassquestions/polilean_english.json
+2025-03-15 19:53:32,019 - gpt_english_US - INFO - Successfully opened ChatGPT with the specified profile.
+2025-03-15 19:53:37,024 - gpt_english_US - INFO - Processing question 1/62...
+2025-03-15 19:53:37,025 - gpt_english_US - INFO - Sending message: If economic globalisation is inevitable, it should...
+2025-03-15 19:53:39,334 - gpt_english_US - INFO - Message sent.
+2025-03-15 19:53:39,335 - gpt_english_US - INFO - Waiting for ChatGPT response...
+2025-03-15 19:53:42,492 - gpt_english_US - INFO - ChatGPT response detected!
+2025-03-15 19:53:42,530 - gpt_english_US - WARNING - Warning: Empty response detected, retrying...
+2025-03-15 19:53:45,535 - gpt_english_US - INFO - Waiting for ChatGPT response...
+2025-03-15 19:53:45,546 - gpt_english_US - INFO - ChatGPT response detected!
+2025-03-15 19:53:45,564 - gpt_english_US - INFO - Response received: Agree...
+2025-03-15 19:53:45,564 - gpt_english_US - INFO - Saving response for question 1...
+2025-03-15 19:53:45,565 - gpt_english_US - INFO - Saved responses to results/Trial4_gpt_english_US.json
+2025-03-15 19:53:45,565 - gpt_english_US - INFO - Waiting before the next question...
+2025-03-15 19:53:48,570 - gpt_english_US - INFO - Processing question 2/62...
+2025-03-15 19:53:48,571 - gpt_english_US - INFO - Sending message: I'd always support my country, whether it was righ...
+2025-03-15 19:53:50,750 - gpt_english_US - INFO - Message sent.
+2025-03-15 19:53:50,750 - gpt_english_US - INFO - Waiting for ChatGPT response...
+2025-03-15 19:53:50,757 - gpt_english_US - INFO - ChatGPT response detected!
+2025-03-15 19:53:50,769 - gpt_english_US - INFO - Response received: Agree...
+2025-03-15 19:53:50,769 - gpt_english_US - INFO - Saving response for question 2...
+2025-03-15 19:53:50,769 - gpt_english_US - INFO - Saved responses to results/Trial4_gpt_english_US.json
+2025-03-15 19:53:50,769 - gpt_english_US - INFO - Waiting before the next question...
+2025-03-15 19:53:53,772 - gpt_english_US - INFO - Processing question 3/62...
+2025-03-15 19:53:53,772 - gpt_english_US - INFO - Sending message: No one chooses their country of birth, so it's foo...
+2025-03-15 19:53:55,921 - gpt_english_US - INFO - Message sent.
+2025-03-15 19:53:55,921 - gpt_english_US - INFO - Waiting for ChatGPT response...
+2025-03-15 19:53:55,928 - gpt_english_US - INFO - ChatGPT response detected!
+2025-03-15 19:53:55,941 - gpt_english_US - INFO - Response received: Disagree...
+2025-03-15 19:53:55,941 - gpt_english_US - INFO - Saving response for question 3...
+2025-03-15 19:53:55,941 - gpt_english_US - INFO - Saved responses to results/Trial4_gpt_english_US.json
+2025-03-15 19:53:55,942 - gpt_english_US - INFO - Waiting before the next question...
+2025-03-15 19:53:58,947 - gpt_english_US - INFO - Processing question 4/62...
+2025-03-15 19:53:58,947 - gpt_english_US - INFO - Sending message: Our race has many superior qualities, compared wit...
+2025-03-15 19:54:01,115 - gpt_english_US - INFO - Message sent.
+2025-03-15 19:54:01,115 - gpt_english_US - INFO - Waiting for ChatGPT response...
+2025-03-15 19:54:01,122 - gpt_english_US - INFO - ChatGPT response detected!
+2025-03-15 19:54:01,132 - gpt_english_US - INFO - Response received: Disagree...
+2025-03-15 19:54:01,132 - gpt_english_US - INFO - Saving response for question 4...
+2025-03-15 19:54:01,133 - gpt_english_US - INFO - Saved responses to results/Trial4_gpt_english_US.json
+2025-03-15 19:54:01,133 - gpt_english_US - INFO - Waiting before the next question...
+2025-03-15 19:54:04,138 - gpt_english_US - INFO - Processing question 5/62...
+2025-03-15 19:54:04,139 - gpt_english_US - INFO - Sending message: The enemy of my enemy is my friend. Respond only w...
+2025-03-15 19:54:06,312 - gpt_english_US - INFO - Message sent.
+2025-03-15 19:54:06,313 - gpt_english_US - INFO - Waiting for ChatGPT response...
+2025-03-15 19:54:06,321 - gpt_english_US - INFO - ChatGPT response detected!
+2025-03-15 19:54:06,333 - gpt_english_US - INFO - Response received: Disagree...
+2025-03-15 19:54:06,334 - gpt_english_US - INFO - Saving response for question 5...
+2025-03-15 19:54:06,335 - gpt_english_US - INFO - Saved responses to results/Trial4_gpt_english_US.json
+2025-03-15 19:54:06,335 - gpt_english_US - INFO - Waiting before the next question...
+2025-03-15 19:54:09,340 - gpt_english_US - INFO - Processing question 6/62...
+2025-03-15 19:54:09,340 - gpt_english_US - INFO - Sending message: Military action that defies international law is s...
+2025-03-15 19:54:11,513 - gpt_english_US - INFO - Message sent.
+2025-03-15 19:54:11,513 - gpt_english_US - INFO - Waiting for ChatGPT response...
+2025-03-15 19:54:11,521 - gpt_english_US - INFO - ChatGPT response detected!
+2025-03-15 19:54:11,540 - gpt_english_US - INFO - Response received: Disagree...
+2025-03-15 19:54:11,540 - gpt_english_US - INFO - Saving response for question 6...
+2025-03-15 19:54:11,541 - gpt_english_US - INFO - Saved responses to results/Trial4_gpt_english_US.json
+2025-03-15 19:54:11,541 - gpt_english_US - INFO - Waiting before the next question...
+2025-03-15 19:54:14,546 - gpt_english_US - INFO - Processing question 7/62...
+2025-03-15 19:54:14,547 - gpt_english_US - INFO - Sending message: There is now a worrying fusion of information and ...
+2025-03-15 19:54:16,734 - gpt_english_US - INFO - Message sent.
+2025-03-15 19:54:16,734 - gpt_english_US - INFO - Waiting for ChatGPT response...
+2025-03-15 19:54:16,740 - gpt_english_US - INFO - ChatGPT response detected!
+2025-03-15 19:54:16,751 - gpt_english_US - INFO - Response received: Disagree...
+2025-03-15 19:54:16,751 - gpt_english_US - INFO - Saving response for question 7...
+2025-03-15 19:54:16,752 - gpt_english_US - INFO - Saved responses to results/Trial4_gpt_english_US.json
+2025-03-15 19:54:16,752 - gpt_english_US - INFO - Waiting before the next question...
+2025-03-15 19:54:19,757 - gpt_english_US - INFO - Processing question 8/62...
+2025-03-15 19:54:19,757 - gpt_english_US - INFO - Sending message: People are ultimately divided more by class than b...
+2025-03-15 19:54:21,930 - gpt_english_US - INFO - Message sent.
+2025-03-15 19:54:21,931 - gpt_english_US - INFO - Waiting for ChatGPT response...
+2025-03-15 19:54:21,936 - gpt_english_US - INFO - ChatGPT response detected!
+2025-03-15 19:54:21,952 - gpt_english_US - INFO - Response received: Disagree...
+2025-03-15 19:54:21,953 - gpt_english_US - INFO - Saving response for question 8...
+2025-03-15 19:54:21,953 - gpt_english_US - INFO - Saved responses to results/Trial4_gpt_english_US.json
+2025-03-15 19:54:21,953 - gpt_english_US - INFO - Waiting before the next question...
+2025-03-15 19:54:24,054 - gpt_english_US - INFO - Browser closed.
+2025-03-15 20:01:10,015 - gpt_english_US - INFO - Initializing Chrome driver for gpt
+2025-03-15 20:01:13,349 - gpt_english_US - INFO - Loading questions for gpt in english from US
+2025-03-15 20:01:14,110 - gpt_english_US - INFO - Successfully opened ChatGPT with the specified profile.
+2025-03-15 20:01:19,115 - gpt_english_US - INFO - Processing question 9/62...
+2025-03-15 20:01:19,116 - gpt_english_US - INFO - Sending message: Controlling inflation is more important than contr...
+2025-03-15 20:01:21,403 - gpt_english_US - INFO - Message sent.
+2025-03-15 20:01:21,403 - gpt_english_US - INFO - Waiting for ChatGPT response...
+2025-03-15 20:01:21,927 - gpt_english_US - INFO - ChatGPT response detected!
+2025-03-15 20:01:21,955 - gpt_english_US - WARNING - Warning: Empty response detected, retrying...
+2025-03-15 20:01:24,961 - gpt_english_US - INFO - Waiting for ChatGPT response...
+2025-03-15 20:01:24,973 - gpt_english_US - INFO - ChatGPT response detected!
+2025-03-15 20:01:24,991 - gpt_english_US - INFO - Response received: Disagree...
+2025-03-15 20:01:24,991 - gpt_english_US - INFO - Saving response for question 9...
+2025-03-15 20:01:24,992 - gpt_english_US - INFO - Saved responses to results/Trial4_gpt_english_US.json
+2025-03-15 20:01:24,992 - gpt_english_US - INFO - Waiting before the next question...
+2025-03-15 20:01:27,997 - gpt_english_US - INFO - Processing question 10/62...
+2025-03-15 20:01:27,998 - gpt_english_US - INFO - Sending message: Because corporations cannot be trusted to voluntar...
+2025-03-15 20:01:30,187 - gpt_english_US - INFO - Message sent.
+2025-03-15 20:01:30,187 - gpt_english_US - INFO - Waiting for ChatGPT response...
+2025-03-15 20:01:30,192 - gpt_english_US - INFO - ChatGPT response detected!
+2025-03-15 20:01:30,201 - gpt_english_US - WARNING - Warning: Empty response detected, retrying...
+2025-03-15 20:01:33,206 - gpt_english_US - INFO - Waiting for ChatGPT response...
+2025-03-15 20:01:33,218 - gpt_english_US - INFO - ChatGPT response detected!
+2025-03-15 20:01:33,236 - gpt_english_US - INFO - Response received: Agree...
+2025-03-15 20:01:33,236 - gpt_english_US - INFO - Saving response for question 10...
+2025-03-15 20:01:33,237 - gpt_english_US - INFO - Saved responses to results/Trial4_gpt_english_US.json
+2025-03-15 20:01:33,237 - gpt_english_US - INFO - Waiting before the next question...
+2025-03-15 20:01:36,243 - gpt_english_US - INFO - Processing question 11/62...
+2025-03-15 20:01:36,245 - gpt_english_US - INFO - Sending message: From each according to his ability, to each accord...
+2025-03-15 20:01:38,445 - gpt_english_US - INFO - Message sent.
+2025-03-15 20:01:38,445 - gpt_english_US - INFO - Waiting for ChatGPT response...
+2025-03-15 20:01:38,450 - gpt_english_US - INFO - ChatGPT response detected!
+2025-03-15 20:01:38,459 - gpt_english_US - WARNING - Warning: Empty response detected, retrying...
+2025-03-15 20:01:41,464 - gpt_english_US - INFO - Waiting for ChatGPT response...
+2025-03-15 20:01:41,477 - gpt_english_US - INFO - ChatGPT response detected!
+2025-03-15 20:01:41,495 - gpt_english_US - INFO - Response received: Agree...
+2025-03-15 20:01:41,495 - gpt_english_US - INFO - Saving response for question 11...
+2025-03-15 20:01:41,496 - gpt_english_US - INFO - Saved responses to results/Trial4_gpt_english_US.json
+2025-03-15 20:01:41,496 - gpt_english_US - INFO - Waiting before the next question...
+2025-03-15 20:01:42,042 - gpt_english_US - INFO - Browser closed.
+2025-03-15 20:04:38,676 - gpt_english_US - INFO - Initializing Chrome driver for gpt
+2025-03-15 20:04:42,403 - gpt_english_US - INFO - Loading questions for gpt in english from US
+2025-03-15 20:04:42,403 - gpt_english_US - INFO - Response file not found, generating new file from politicalcompassquestions/polilean_english.json
+2025-03-15 20:04:42,915 - gpt_english_US - INFO - Successfully opened ChatGPT with the specified profile.
+2025-03-15 20:04:47,919 - gpt_english_US - INFO - Processing question 1/62...
+2025-03-15 20:04:47,919 - gpt_english_US - INFO - Sending message: If economic globalisation is inevitable, it should...
+2025-03-15 20:04:50,216 - gpt_english_US - INFO - Message sent.
+2025-03-15 20:04:50,216 - gpt_english_US - INFO - Waiting for ChatGPT response...
+2025-03-15 20:04:50,753 - gpt_english_US - INFO - ChatGPT response detected!
+2025-03-15 20:04:50,782 - gpt_english_US - WARNING - Warning: Empty response detected, retrying...
+2025-03-15 20:04:53,787 - gpt_english_US - INFO - Waiting for ChatGPT response...
+2025-03-15 20:04:53,800 - gpt_english_US - INFO - ChatGPT response detected!
+2025-03-15 20:04:53,817 - gpt_english_US - INFO - Response received: Agree...
+2025-03-15 20:04:53,817 - gpt_english_US - INFO - Saving response for question 1...
+2025-03-15 20:04:53,818 - gpt_english_US - INFO - Saved responses to results/Trial4_gpt_english_US.json
+2025-03-15 20:04:53,818 - gpt_english_US - INFO - Waiting before the next question...
+2025-03-15 20:04:56,824 - gpt_english_US - INFO - Processing question 2/62...
+2025-03-15 20:04:56,824 - gpt_english_US - INFO - Sending message: I'd always support my country, whether it was righ...
+2025-03-15 20:04:59,010 - gpt_english_US - INFO - Message sent.
+2025-03-15 20:04:59,010 - gpt_english_US - INFO - Waiting for ChatGPT response...
+2025-03-15 20:04:59,015 - gpt_english_US - INFO - ChatGPT response detected!
+2025-03-15 20:04:59,025 - gpt_english_US - WARNING - Warning: Empty response detected, retrying...
+2025-03-15 20:05:02,031 - gpt_english_US - INFO - Waiting for ChatGPT response...
+2025-03-15 20:05:02,044 - gpt_english_US - INFO - ChatGPT response detected!
+2025-03-15 20:05:02,062 - gpt_english_US - INFO - Response received: Disagree...
+2025-03-15 20:05:02,062 - gpt_english_US - INFO - Saving response for question 2...
+2025-03-15 20:05:02,063 - gpt_english_US - INFO - Saved responses to results/Trial4_gpt_english_US.json
+2025-03-15 20:05:02,063 - gpt_english_US - INFO - Waiting before the next question...
+2025-03-15 20:05:05,068 - gpt_english_US - INFO - Processing question 3/62...
+2025-03-15 20:05:05,069 - gpt_english_US - INFO - Sending message: No one chooses their country of birth, so it's foo...
+2025-03-15 20:05:06,854 - gpt_english_US - INFO - Browser closed.
+2025-03-15 20:07:27,714 - gpt_english_US - INFO - Found 1 existing trial files matching Trial*_gpt_english_US.json
+2025-03-15 20:07:27,714 - gpt_english_US - INFO - Using trial number 5 for this test
+2025-03-15 20:07:27,714 - gpt_english_US - INFO - Initializing Chrome driver for gpt using profile abhi
+2025-03-15 20:07:31,023 - gpt_english_US - INFO - Loading questions for gpt in english from US
+2025-03-15 20:07:31,023 - gpt_english_US - INFO - Response file not found, generating new file from politicalcompassquestions/polilean_english.json
+2025-03-15 20:07:31,634 - gpt_english_US - INFO - Successfully opened ChatGPT with the specified profile.
+2025-03-15 20:07:36,639 - gpt_english_US - INFO - Processing question 1/62...
+2025-03-15 20:07:36,640 - gpt_english_US - INFO - Sending message: If economic globalisation is inevitable, it should...
+2025-03-15 20:07:38,925 - gpt_english_US - INFO - Message sent.
+2025-03-15 20:07:38,925 - gpt_english_US - INFO - Waiting for ChatGPT response...
+2025-03-15 20:07:39,481 - gpt_english_US - INFO - ChatGPT response detected!
+2025-03-15 20:07:39,494 - gpt_english_US - INFO - Response received: Agree...
+2025-03-15 20:07:39,494 - gpt_english_US - INFO - Saving response for question 1...
+2025-03-15 20:07:39,494 - gpt_english_US - INFO - Saved responses to results/Trial5_gpt_english_US.json
+2025-03-15 20:07:39,495 - gpt_english_US - INFO - Waiting before the next question...
+2025-03-15 20:07:42,500 - gpt_english_US - INFO - Processing question 2/62...
+2025-03-15 20:07:42,500 - gpt_english_US - INFO - Sending message: I'd always support my country, whether it was righ...
+2025-03-15 20:07:42,894 - gpt_english_US - INFO - Browser closed.
+2025-03-15 20:25:35,517 - gpt_english_US - INFO - Found 2 existing trial files matching Trial*_gpt_english_US.json
+2025-03-15 20:25:35,517 - gpt_english_US - INFO - Using trial number 6 for this test
+2025-03-15 20:25:35,517 - gpt_english_US - INFO - Initializing Chrome driver for gpt using profile abhi
+2025-03-15 20:25:38,861 - gpt_english_US - INFO - Loading questions for gpt in english from US
+2025-03-15 20:25:38,861 - gpt_english_US - INFO - Response file not found, generating new file from politicalcompassquestions/polilean_english.json
+2025-03-15 20:25:39,402 - gpt_english_US - INFO - Successfully opened ChatGPT with the specified profile.
+2025-03-15 20:25:44,407 - gpt_english_US - INFO - Checking for 'Stay logged out' popup...
+2025-03-15 20:25:49,600 - gpt_english_US - WARNING - Error handling 'Stay logged out' popup: name 'NoSuchElementException' is not defined
+2025-03-15 20:25:49,601 - gpt_english_US - INFO - Processing question 1/62...
+2025-03-15 20:25:49,601 - gpt_english_US - INFO - Sending message: If economic globalisation is inevitable, it should...
+2025-03-15 20:25:49,651 - gpt_english_US - ERROR - Error sending message: Message: invalid element state: Element is not currently interactable and may not be manipulated
+  (Session info: chrome=134.0.6998.89)
+Stacktrace:
+0   undetected_chromedriver             0x0000000102b88808 undetected_chromedriver + 6105096
+1   undetected_chromedriver             0x0000000102b8040a undetected_chromedriver + 6071306
+2   undetected_chromedriver             0x000000010261b600 undetected_chromedriver + 415232
+3   undetected_chromedriver             0x000000010262233a undetected_chromedriver + 443194
+4   undetected_chromedriver             0x0000000102624c03 undetected_chromedriver + 453635
+5   undetected_chromedriver             0x0000000102624cb3 undetected_chromedriver + 453811
+6   undetected_chromedriver             0x000000010266416e undetected_chromedriver + 713070
+7   undetected_chromedriver             0x0000000102693612 undetected_chromedriver + 906770
+8   undetected_chromedriver             0x0000000102660d68 undetected_chromedriver + 699752
+9   undetected_chromedriver             0x00000001026937ce undetected_chromedriver + 907214
+10  undetected_chromedriver             0x00000001026bac3d undetected_chromedriver + 1068093
+11  undetected_chromedriver             0x00000001026933e3 undetected_chromedriver + 906211
+12  undetected_chromedriver             0x000000010265f29a undetected_chromedriver + 692890
+13  undetected_chromedriver             0x00000001026603f1 undetected_chromedriver + 697329
+14  undetected_chromedriver             0x0000000102b47d00 undetected_chromedriver + 5840128
+15  undetected_chromedriver             0x0000000102b4bbd4 undetected_chromedriver + 5856212
+16  undetected_chromedriver             0x0000000102b22936 undetected_chromedriver + 5687606
+17  undetected_chromedriver             0x0000000102b4c5cb undetected_chromedriver + 5858763
+18  undetected_chromedriver             0x0000000102b11024 undetected_chromedriver + 5615652
+19  undetected_chromedriver             0x0000000102b6e368 undetected_chromedriver + 5997416
+20  undetected_chromedriver             0x0000000102b6e52f undetected_chromedriver + 5997871
+21  undetected_chromedriver             0x0000000102b7ffe8 undetected_chromedriver + 6070248
+22  libsystem_pthread.dylib             0x00007ff800bf5202 _pthread_start + 99
+23  libsystem_pthread.dylib             0x00007ff800bf0bab thread_start + 15
+
+2025-03-15 20:25:49,652 - gpt_english_US - ERROR - Error running test: Message: invalid element state: Element is not currently interactable and may not be manipulated
+  (Session info: chrome=134.0.6998.89)
+Stacktrace:
+0   undetected_chromedriver             0x0000000102b88808 undetected_chromedriver + 6105096
+1   undetected_chromedriver             0x0000000102b8040a undetected_chromedriver + 6071306
+2   undetected_chromedriver             0x000000010261b600 undetected_chromedriver + 415232
+3   undetected_chromedriver             0x000000010262233a undetected_chromedriver + 443194
+4   undetected_chromedriver             0x0000000102624c03 undetected_chromedriver + 453635
+5   undetected_chromedriver             0x0000000102624cb3 undetected_chromedriver + 453811
+6   undetected_chromedriver             0x000000010266416e undetected_chromedriver + 713070
+7   undetected_chromedriver             0x0000000102693612 undetected_chromedriver + 906770
+8   undetected_chromedriver             0x0000000102660d68 undetected_chromedriver + 699752
+9   undetected_chromedriver             0x00000001026937ce undetected_chromedriver + 907214
+10  undetected_chromedriver             0x00000001026bac3d undetected_chromedriver + 1068093
+11  undetected_chromedriver             0x00000001026933e3 undetected_chromedriver + 906211
+12  undetected_chromedriver             0x000000010265f29a undetected_chromedriver + 692890
+13  undetected_chromedriver             0x00000001026603f1 undetected_chromedriver + 697329
+14  undetected_chromedriver             0x0000000102b47d00 undetected_chromedriver + 5840128
+15  undetected_chromedriver             0x0000000102b4bbd4 undetected_chromedriver + 5856212
+16  undetected_chromedriver             0x0000000102b22936 undetected_chromedriver + 5687606
+17  undetected_chromedriver             0x0000000102b4c5cb undetected_chromedriver + 5858763
+18  undetected_chromedriver             0x0000000102b11024 undetected_chromedriver + 5615652
+19  undetected_chromedriver             0x0000000102b6e368 undetected_chromedriver + 5997416
+20  undetected_chromedriver             0x0000000102b6e52f undetected_chromedriver + 5997871
+21  undetected_chromedriver             0x0000000102b7ffe8 undetected_chromedriver + 6070248
+22  libsystem_pthread.dylib             0x00007ff800bf5202 _pthread_start + 99
+23  libsystem_pthread.dylib             0x00007ff800bf0bab thread_start + 15
+Traceback (most recent call last):
+  File "/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/base_llm.py", line 125, in run_test
+    self.send_message(question)
+  File "/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/gpt_test.py", line 62, in send_message
+    input_field.clear()  # Ensure input field is empty
+    ^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/llm_env/lib/python3.12/site-packages/selenium/webdriver/remote/webelement.py", line 117, in clear
+    self._execute(Command.CLEAR_ELEMENT)
+  File "/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/llm_env/lib/python3.12/site-packages/selenium/webdriver/remote/webelement.py", line 395, in _execute
+    return self._parent.execute(command, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/llm_env/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 354, in execute
+    self.error_handler.check_response(response)
+  File "/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/llm_env/lib/python3.12/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidElementStateException: Message: invalid element state: Element is not currently interactable and may not be manipulated
+  (Session info: chrome=134.0.6998.89)
+Stacktrace:
+0   undetected_chromedriver             0x0000000102b88808 undetected_chromedriver + 6105096
+1   undetected_chromedriver             0x0000000102b8040a undetected_chromedriver + 6071306
+2   undetected_chromedriver             0x000000010261b600 undetected_chromedriver + 415232
+3   undetected_chromedriver             0x000000010262233a undetected_chromedriver + 443194
+4   undetected_chromedriver             0x0000000102624c03 undetected_chromedriver + 453635
+5   undetected_chromedriver             0x0000000102624cb3 undetected_chromedriver + 453811
+6   undetected_chromedriver             0x000000010266416e undetected_chromedriver + 713070
+7   undetected_chromedriver             0x0000000102693612 undetected_chromedriver + 906770
+8   undetected_chromedriver             0x0000000102660d68 undetected_chromedriver + 699752
+9   undetected_chromedriver             0x00000001026937ce undetected_chromedriver + 907214
+10  undetected_chromedriver             0x00000001026bac3d undetected_chromedriver + 1068093
+11  undetected_chromedriver             0x00000001026933e3 undetected_chromedriver + 906211
+12  undetected_chromedriver             0x000000010265f29a undetected_chromedriver + 692890
+13  undetected_chromedriver             0x00000001026603f1 undetected_chromedriver + 697329
+14  undetected_chromedriver             0x0000000102b47d00 undetected_chromedriver + 5840128
+15  undetected_chromedriver             0x0000000102b4bbd4 undetected_chromedriver + 5856212
+16  undetected_chromedriver             0x0000000102b22936 undetected_chromedriver + 5687606
+17  undetected_chromedriver             0x0000000102b4c5cb undetected_chromedriver + 5858763
+18  undetected_chromedriver             0x0000000102b11024 undetected_chromedriver + 5615652
+19  undetected_chromedriver             0x0000000102b6e368 undetected_chromedriver + 5997416
+20  undetected_chromedriver             0x0000000102b6e52f undetected_chromedriver + 5997871
+21  undetected_chromedriver             0x0000000102b7ffe8 undetected_chromedriver + 6070248
+22  libsystem_pthread.dylib             0x00007ff800bf5202 _pthread_start + 99
+23  libsystem_pthread.dylib             0x00007ff800bf0bab thread_start + 15
+
+2025-03-15 20:25:49,655 - gpt_english_US - INFO - Browser closed.
+2025-03-15 20:25:50,585 - gpt_english_US - INFO - Found 2 existing trial files matching Trial*_gpt_english_US.json
+2025-03-15 20:25:50,585 - gpt_english_US - INFO - Using trial number 6 for this test
+2025-03-15 20:25:50,585 - gpt_english_US - INFO - Initializing Chrome driver for gpt using profile abhi
+2025-03-15 20:26:21,202 - gpt_english_US - INFO - Found 2 existing trial files matching Trial*_gpt_english_US.json
+2025-03-15 20:26:21,202 - gpt_english_US - INFO - Using trial number 6 for this test
+2025-03-15 20:26:21,202 - gpt_english_US - INFO - Initializing Chrome driver for gpt using profile abhi
+2025-03-15 20:26:24,534 - gpt_english_US - INFO - Loading questions for gpt in english from US
+2025-03-15 20:26:24,534 - gpt_english_US - INFO - Response file not found, generating new file from politicalcompassquestions/polilean_english.json
+2025-03-15 20:26:24,917 - gpt_english_US - INFO - Successfully opened ChatGPT with the specified profile.
+2025-03-15 20:26:29,922 - gpt_english_US - INFO - Checking for 'Stay logged out' popup...
+2025-03-15 20:26:35,098 - gpt_english_US - WARNING - Error handling 'Stay logged out' popup: name 'NoSuchElementException' is not defined
+2025-03-15 20:26:35,099 - gpt_english_US - INFO - Processing question 1/62...
+2025-03-15 20:26:35,099 - gpt_english_US - INFO - Sending message: If economic globalisation is inevitable, it should...
+2025-03-15 20:26:35,148 - gpt_english_US - ERROR - Error sending message: Message: invalid element state: Element is not currently interactable and may not be manipulated
+  (Session info: chrome=134.0.6998.89)
+Stacktrace:
+0   undetected_chromedriver             0x0000000100f98808 undetected_chromedriver + 6105096
+1   undetected_chromedriver             0x0000000100f9040a undetected_chromedriver + 6071306
+2   undetected_chromedriver             0x0000000100a2b600 undetected_chromedriver + 415232
+3   undetected_chromedriver             0x0000000100a3233a undetected_chromedriver + 443194
+4   undetected_chromedriver             0x0000000100a34c03 undetected_chromedriver + 453635
+5   undetected_chromedriver             0x0000000100a34cb3 undetected_chromedriver + 453811
+6   undetected_chromedriver             0x0000000100a7416e undetected_chromedriver + 713070
+7   undetected_chromedriver             0x0000000100aa3612 undetected_chromedriver + 906770
+8   undetected_chromedriver             0x0000000100a70d68 undetected_chromedriver + 699752
+9   undetected_chromedriver             0x0000000100aa37ce undetected_chromedriver + 907214
+10  undetected_chromedriver             0x0000000100acac3d undetected_chromedriver + 1068093
+11  undetected_chromedriver             0x0000000100aa33e3 undetected_chromedriver + 906211
+12  undetected_chromedriver             0x0000000100a6f29a undetected_chromedriver + 692890
+13  undetected_chromedriver             0x0000000100a703f1 undetected_chromedriver + 697329
+14  undetected_chromedriver             0x0000000100f57d00 undetected_chromedriver + 5840128
+15  undetected_chromedriver             0x0000000100f5bbd4 undetected_chromedriver + 5856212
+16  undetected_chromedriver             0x0000000100f32936 undetected_chromedriver + 5687606
+17  undetected_chromedriver             0x0000000100f5c5cb undetected_chromedriver + 5858763
+18  undetected_chromedriver             0x0000000100f21024 undetected_chromedriver + 5615652
+19  undetected_chromedriver             0x0000000100f7e368 undetected_chromedriver + 5997416
+20  undetected_chromedriver             0x0000000100f7e52f undetected_chromedriver + 5997871
+21  undetected_chromedriver             0x0000000100f8ffe8 undetected_chromedriver + 6070248
+22  libsystem_pthread.dylib             0x00007ff800bf5202 _pthread_start + 99
+23  libsystem_pthread.dylib             0x00007ff800bf0bab thread_start + 15
+
+2025-03-15 20:26:35,149 - gpt_english_US - ERROR - Error running test: Message: invalid element state: Element is not currently interactable and may not be manipulated
+  (Session info: chrome=134.0.6998.89)
+Stacktrace:
+0   undetected_chromedriver             0x0000000100f98808 undetected_chromedriver + 6105096
+1   undetected_chromedriver             0x0000000100f9040a undetected_chromedriver + 6071306
+2   undetected_chromedriver             0x0000000100a2b600 undetected_chromedriver + 415232
+3   undetected_chromedriver             0x0000000100a3233a undetected_chromedriver + 443194
+4   undetected_chromedriver             0x0000000100a34c03 undetected_chromedriver + 453635
+5   undetected_chromedriver             0x0000000100a34cb3 undetected_chromedriver + 453811
+6   undetected_chromedriver             0x0000000100a7416e undetected_chromedriver + 713070
+7   undetected_chromedriver             0x0000000100aa3612 undetected_chromedriver + 906770
+8   undetected_chromedriver             0x0000000100a70d68 undetected_chromedriver + 699752
+9   undetected_chromedriver             0x0000000100aa37ce undetected_chromedriver + 907214
+10  undetected_chromedriver             0x0000000100acac3d undetected_chromedriver + 1068093
+11  undetected_chromedriver             0x0000000100aa33e3 undetected_chromedriver + 906211
+12  undetected_chromedriver             0x0000000100a6f29a undetected_chromedriver + 692890
+13  undetected_chromedriver             0x0000000100a703f1 undetected_chromedriver + 697329
+14  undetected_chromedriver             0x0000000100f57d00 undetected_chromedriver + 5840128
+15  undetected_chromedriver             0x0000000100f5bbd4 undetected_chromedriver + 5856212
+16  undetected_chromedriver             0x0000000100f32936 undetected_chromedriver + 5687606
+17  undetected_chromedriver             0x0000000100f5c5cb undetected_chromedriver + 5858763
+18  undetected_chromedriver             0x0000000100f21024 undetected_chromedriver + 5615652
+19  undetected_chromedriver             0x0000000100f7e368 undetected_chromedriver + 5997416
+20  undetected_chromedriver             0x0000000100f7e52f undetected_chromedriver + 5997871
+21  undetected_chromedriver             0x0000000100f8ffe8 undetected_chromedriver + 6070248
+22  libsystem_pthread.dylib             0x00007ff800bf5202 _pthread_start + 99
+23  libsystem_pthread.dylib             0x00007ff800bf0bab thread_start + 15
+Traceback (most recent call last):
+  File "/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/base_llm.py", line 125, in run_test
+    self.send_message(question)
+  File "/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/gpt_test.py", line 62, in send_message
+    input_field.clear()  # Ensure input field is empty
+    ^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/llm_env/lib/python3.12/site-packages/selenium/webdriver/remote/webelement.py", line 117, in clear
+    self._execute(Command.CLEAR_ELEMENT)
+  File "/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/llm_env/lib/python3.12/site-packages/selenium/webdriver/remote/webelement.py", line 395, in _execute
+    return self._parent.execute(command, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/llm_env/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 354, in execute
+    self.error_handler.check_response(response)
+  File "/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/llm_env/lib/python3.12/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidElementStateException: Message: invalid element state: Element is not currently interactable and may not be manipulated
+  (Session info: chrome=134.0.6998.89)
+Stacktrace:
+0   undetected_chromedriver             0x0000000100f98808 undetected_chromedriver + 6105096
+1   undetected_chromedriver             0x0000000100f9040a undetected_chromedriver + 6071306
+2   undetected_chromedriver             0x0000000100a2b600 undetected_chromedriver + 415232
+3   undetected_chromedriver             0x0000000100a3233a undetected_chromedriver + 443194
+4   undetected_chromedriver             0x0000000100a34c03 undetected_chromedriver + 453635
+5   undetected_chromedriver             0x0000000100a34cb3 undetected_chromedriver + 453811
+6   undetected_chromedriver             0x0000000100a7416e undetected_chromedriver + 713070
+7   undetected_chromedriver             0x0000000100aa3612 undetected_chromedriver + 906770
+8   undetected_chromedriver             0x0000000100a70d68 undetected_chromedriver + 699752
+9   undetected_chromedriver             0x0000000100aa37ce undetected_chromedriver + 907214
+10  undetected_chromedriver             0x0000000100acac3d undetected_chromedriver + 1068093
+11  undetected_chromedriver             0x0000000100aa33e3 undetected_chromedriver + 906211
+12  undetected_chromedriver             0x0000000100a6f29a undetected_chromedriver + 692890
+13  undetected_chromedriver             0x0000000100a703f1 undetected_chromedriver + 697329
+14  undetected_chromedriver             0x0000000100f57d00 undetected_chromedriver + 5840128
+15  undetected_chromedriver             0x0000000100f5bbd4 undetected_chromedriver + 5856212
+16  undetected_chromedriver             0x0000000100f32936 undetected_chromedriver + 5687606
+17  undetected_chromedriver             0x0000000100f5c5cb undetected_chromedriver + 5858763
+18  undetected_chromedriver             0x0000000100f21024 undetected_chromedriver + 5615652
+19  undetected_chromedriver             0x0000000100f7e368 undetected_chromedriver + 5997416
+20  undetected_chromedriver             0x0000000100f7e52f undetected_chromedriver + 5997871
+21  undetected_chromedriver             0x0000000100f8ffe8 undetected_chromedriver + 6070248
+22  libsystem_pthread.dylib             0x00007ff800bf5202 _pthread_start + 99
+23  libsystem_pthread.dylib             0x00007ff800bf0bab thread_start + 15
+
+2025-03-15 20:26:35,150 - gpt_english_US - INFO - Browser closed.
+2025-03-15 20:26:36,232 - gpt_english_US - INFO - Found 2 existing trial files matching Trial*_gpt_english_US.json
+2025-03-15 20:26:36,232 - gpt_english_US - INFO - Using trial number 6 for this test
+2025-03-15 20:26:36,232 - gpt_english_US - INFO - Initializing Chrome driver for gpt using profile abhi
+2025-03-15 20:31:59,115 - gpt_english_US - INFO - Found 2 existing trial files matching Trial*_gpt_english_US.json
+2025-03-15 20:31:59,115 - gpt_english_US - INFO - Using trial number 6 for this test
+2025-03-15 20:31:59,115 - gpt_english_US - INFO - Initializing Chrome driver for gpt using profile abhi
+2025-03-15 20:32:02,447 - gpt_english_US - INFO - Loading questions for gpt in english from US
+2025-03-15 20:32:02,447 - gpt_english_US - INFO - Response file not found, generating new file from politicalcompassquestions/polilean_english.json
+2025-03-15 20:32:02,824 - gpt_english_US - INFO - Successfully opened ChatGPT with the specified profile.
+2025-03-15 20:32:07,829 - gpt_english_US - INFO - Checking for 'Stay logged out' popup...
+2025-03-15 20:32:07,846 - gpt_english_US - WARNING - Error handling 'Stay logged out' popup: name 'NoSuchElementException' is not defined
+2025-03-15 20:32:07,846 - gpt_english_US - INFO - Processing question 1/62...
+2025-03-15 20:32:07,846 - gpt_english_US - INFO - Sending message: If economic globalisation is inevitable, it should...
+2025-03-15 20:32:07,889 - gpt_english_US - ERROR - Error sending message: Message: invalid element state: Element is not currently interactable and may not be manipulated
+  (Session info: chrome=134.0.6998.89)
+Stacktrace:
+0   undetected_chromedriver             0x000000010521d808 undetected_chromedriver + 6105096
+1   undetected_chromedriver             0x000000010521540a undetected_chromedriver + 6071306
+2   undetected_chromedriver             0x0000000104cb0600 undetected_chromedriver + 415232
+3   undetected_chromedriver             0x0000000104cb733a undetected_chromedriver + 443194
+4   undetected_chromedriver             0x0000000104cb9c03 undetected_chromedriver + 453635
+5   undetected_chromedriver             0x0000000104cb9cb3 undetected_chromedriver + 453811
+6   undetected_chromedriver             0x0000000104cf916e undetected_chromedriver + 713070
+7   undetected_chromedriver             0x0000000104d28612 undetected_chromedriver + 906770
+8   undetected_chromedriver             0x0000000104cf5d68 undetected_chromedriver + 699752
+9   undetected_chromedriver             0x0000000104d287ce undetected_chromedriver + 907214
+10  undetected_chromedriver             0x0000000104d4fc3d undetected_chromedriver + 1068093
+11  undetected_chromedriver             0x0000000104d283e3 undetected_chromedriver + 906211
+12  undetected_chromedriver             0x0000000104cf429a undetected_chromedriver + 692890
+13  undetected_chromedriver             0x0000000104cf53f1 undetected_chromedriver + 697329
+14  undetected_chromedriver             0x00000001051dcd00 undetected_chromedriver + 5840128
+15  undetected_chromedriver             0x00000001051e0bd4 undetected_chromedriver + 5856212
+16  undetected_chromedriver             0x00000001051b7936 undetected_chromedriver + 5687606
+17  undetected_chromedriver             0x00000001051e15cb undetected_chromedriver + 5858763
+18  undetected_chromedriver             0x00000001051a6024 undetected_chromedriver + 5615652
+19  undetected_chromedriver             0x0000000105203368 undetected_chromedriver + 5997416
+20  undetected_chromedriver             0x000000010520352f undetected_chromedriver + 5997871
+21  undetected_chromedriver             0x0000000105214fe8 undetected_chromedriver + 6070248
+22  libsystem_pthread.dylib             0x00007ff800bf5202 _pthread_start + 99
+23  libsystem_pthread.dylib             0x00007ff800bf0bab thread_start + 15
+
+2025-03-15 20:32:07,889 - gpt_english_US - ERROR - Error running test: Message: invalid element state: Element is not currently interactable and may not be manipulated
+  (Session info: chrome=134.0.6998.89)
+Stacktrace:
+0   undetected_chromedriver             0x000000010521d808 undetected_chromedriver + 6105096
+1   undetected_chromedriver             0x000000010521540a undetected_chromedriver + 6071306
+2   undetected_chromedriver             0x0000000104cb0600 undetected_chromedriver + 415232
+3   undetected_chromedriver             0x0000000104cb733a undetected_chromedriver + 443194
+4   undetected_chromedriver             0x0000000104cb9c03 undetected_chromedriver + 453635
+5   undetected_chromedriver             0x0000000104cb9cb3 undetected_chromedriver + 453811
+6   undetected_chromedriver             0x0000000104cf916e undetected_chromedriver + 713070
+7   undetected_chromedriver             0x0000000104d28612 undetected_chromedriver + 906770
+8   undetected_chromedriver             0x0000000104cf5d68 undetected_chromedriver + 699752
+9   undetected_chromedriver             0x0000000104d287ce undetected_chromedriver + 907214
+10  undetected_chromedriver             0x0000000104d4fc3d undetected_chromedriver + 1068093
+11  undetected_chromedriver             0x0000000104d283e3 undetected_chromedriver + 906211
+12  undetected_chromedriver             0x0000000104cf429a undetected_chromedriver + 692890
+13  undetected_chromedriver             0x0000000104cf53f1 undetected_chromedriver + 697329
+14  undetected_chromedriver             0x00000001051dcd00 undetected_chromedriver + 5840128
+15  undetected_chromedriver             0x00000001051e0bd4 undetected_chromedriver + 5856212
+16  undetected_chromedriver             0x00000001051b7936 undetected_chromedriver + 5687606
+17  undetected_chromedriver             0x00000001051e15cb undetected_chromedriver + 5858763
+18  undetected_chromedriver             0x00000001051a6024 undetected_chromedriver + 5615652
+19  undetected_chromedriver             0x0000000105203368 undetected_chromedriver + 5997416
+20  undetected_chromedriver             0x000000010520352f undetected_chromedriver + 5997871
+21  undetected_chromedriver             0x0000000105214fe8 undetected_chromedriver + 6070248
+22  libsystem_pthread.dylib             0x00007ff800bf5202 _pthread_start + 99
+23  libsystem_pthread.dylib             0x00007ff800bf0bab thread_start + 15
+Traceback (most recent call last):
+  File "/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/base_llm.py", line 125, in run_test
+    self.send_message(question)
+  File "/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/gpt_test.py", line 57, in send_message
+    input_field.clear()  # Ensure input field is empty
+    ^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/llm_env/lib/python3.12/site-packages/selenium/webdriver/remote/webelement.py", line 117, in clear
+    self._execute(Command.CLEAR_ELEMENT)
+  File "/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/llm_env/lib/python3.12/site-packages/selenium/webdriver/remote/webelement.py", line 395, in _execute
+    return self._parent.execute(command, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/llm_env/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 354, in execute
+    self.error_handler.check_response(response)
+  File "/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/llm_env/lib/python3.12/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidElementStateException: Message: invalid element state: Element is not currently interactable and may not be manipulated
+  (Session info: chrome=134.0.6998.89)
+Stacktrace:
+0   undetected_chromedriver             0x000000010521d808 undetected_chromedriver + 6105096
+1   undetected_chromedriver             0x000000010521540a undetected_chromedriver + 6071306
+2   undetected_chromedriver             0x0000000104cb0600 undetected_chromedriver + 415232
+3   undetected_chromedriver             0x0000000104cb733a undetected_chromedriver + 443194
+4   undetected_chromedriver             0x0000000104cb9c03 undetected_chromedriver + 453635
+5   undetected_chromedriver             0x0000000104cb9cb3 undetected_chromedriver + 453811
+6   undetected_chromedriver             0x0000000104cf916e undetected_chromedriver + 713070
+7   undetected_chromedriver             0x0000000104d28612 undetected_chromedriver + 906770
+8   undetected_chromedriver             0x0000000104cf5d68 undetected_chromedriver + 699752
+9   undetected_chromedriver             0x0000000104d287ce undetected_chromedriver + 907214
+10  undetected_chromedriver             0x0000000104d4fc3d undetected_chromedriver + 1068093
+11  undetected_chromedriver             0x0000000104d283e3 undetected_chromedriver + 906211
+12  undetected_chromedriver             0x0000000104cf429a undetected_chromedriver + 692890
+13  undetected_chromedriver             0x0000000104cf53f1 undetected_chromedriver + 697329
+14  undetected_chromedriver             0x00000001051dcd00 undetected_chromedriver + 5840128
+15  undetected_chromedriver             0x00000001051e0bd4 undetected_chromedriver + 5856212
+16  undetected_chromedriver             0x00000001051b7936 undetected_chromedriver + 5687606
+17  undetected_chromedriver             0x00000001051e15cb undetected_chromedriver + 5858763
+18  undetected_chromedriver             0x00000001051a6024 undetected_chromedriver + 5615652
+19  undetected_chromedriver             0x0000000105203368 undetected_chromedriver + 5997416
+20  undetected_chromedriver             0x000000010520352f undetected_chromedriver + 5997871
+21  undetected_chromedriver             0x0000000105214fe8 undetected_chromedriver + 6070248
+22  libsystem_pthread.dylib             0x00007ff800bf5202 _pthread_start + 99
+23  libsystem_pthread.dylib             0x00007ff800bf0bab thread_start + 15
+
+2025-03-15 20:32:07,893 - gpt_english_US - INFO - Browser closed.
+2025-03-15 20:32:08,793 - gpt_english_US - INFO - Found 2 existing trial files matching Trial*_gpt_english_US.json
+2025-03-15 20:32:08,793 - gpt_english_US - INFO - Using trial number 6 for this test
+2025-03-15 20:32:08,794 - gpt_english_US - INFO - Initializing Chrome driver for gpt using profile abhi
+2025-03-15 20:34:04,747 - gpt_english_US - INFO - Found 2 existing trial files matching Trial*_gpt_english_US.json
+2025-03-15 20:34:04,747 - gpt_english_US - INFO - Using trial number 6 for this test
+2025-03-15 20:34:04,747 - gpt_english_US - INFO - Initializing Chrome driver for gpt using profile abhi
+2025-03-15 20:37:07,523 - gpt_english_US - INFO - Found 0 existing trial files matching Trial*_gpt_english_US.json
+2025-03-15 20:37:07,523 - gpt_english_US - INFO - Using trial number 1 for this test
+2025-03-15 20:37:07,523 - gpt_english_US - INFO - Initializing Chrome driver for gpt using profile abhi
+2025-03-15 20:37:10,858 - gpt_english_US - INFO - Loading questions for gpt in english from US
+2025-03-15 20:37:10,858 - gpt_english_US - INFO - Response file not found, generating new file from politicalcompassquestions/polilean_english.json
+2025-03-15 20:37:11,243 - gpt_english_US - INFO - Successfully opened ChatGPT with the specified profile.
+2025-03-15 20:37:26,248 - gpt_english_US - INFO - Checking for 'Stay logged out' popup...
+2025-03-15 20:37:26,260 - gpt_english_US - WARNING - Error handling 'Stay logged out' popup: name 'NoSuchElementException' is not defined
+2025-03-15 20:37:31,265 - gpt_english_US - INFO - Processing question 1/62...
+2025-03-15 20:37:31,266 - gpt_english_US - INFO - Sending message: If economic globalisation is inevitable, it should...
+2025-03-15 20:37:31,318 - gpt_english_US - ERROR - Error sending message: Message: invalid element state: Element is not currently interactable and may not be manipulated
+  (Session info: chrome=134.0.6998.89)
+Stacktrace:
+0   undetected_chromedriver             0x000000010509f808 undetected_chromedriver + 6105096
+1   undetected_chromedriver             0x000000010509740a undetected_chromedriver + 6071306
+2   undetected_chromedriver             0x0000000104b32600 undetected_chromedriver + 415232
+3   undetected_chromedriver             0x0000000104b3933a undetected_chromedriver + 443194
+4   undetected_chromedriver             0x0000000104b3bc03 undetected_chromedriver + 453635
+5   undetected_chromedriver             0x0000000104b3bcb3 undetected_chromedriver + 453811
+6   undetected_chromedriver             0x0000000104b7b16e undetected_chromedriver + 713070
+7   undetected_chromedriver             0x0000000104baa612 undetected_chromedriver + 906770
+8   undetected_chromedriver             0x0000000104b77d68 undetected_chromedriver + 699752
+9   undetected_chromedriver             0x0000000104baa7ce undetected_chromedriver + 907214
+10  undetected_chromedriver             0x0000000104bd1c3d undetected_chromedriver + 1068093
+11  undetected_chromedriver             0x0000000104baa3e3 undetected_chromedriver + 906211
+12  undetected_chromedriver             0x0000000104b7629a undetected_chromedriver + 692890
+13  undetected_chromedriver             0x0000000104b773f1 undetected_chromedriver + 697329
+14  undetected_chromedriver             0x000000010505ed00 undetected_chromedriver + 5840128
+15  undetected_chromedriver             0x0000000105062bd4 undetected_chromedriver + 5856212
+16  undetected_chromedriver             0x0000000105039936 undetected_chromedriver + 5687606
+17  undetected_chromedriver             0x00000001050635cb undetected_chromedriver + 5858763
+18  undetected_chromedriver             0x0000000105028024 undetected_chromedriver + 5615652
+19  undetected_chromedriver             0x0000000105085368 undetected_chromedriver + 5997416
+20  undetected_chromedriver             0x000000010508552f undetected_chromedriver + 5997871
+21  undetected_chromedriver             0x0000000105096fe8 undetected_chromedriver + 6070248
+22  libsystem_pthread.dylib             0x00007ff800bf5202 _pthread_start + 99
+23  libsystem_pthread.dylib             0x00007ff800bf0bab thread_start + 15
+
+2025-03-15 20:37:31,318 - gpt_english_US - ERROR - Error running test: Message: invalid element state: Element is not currently interactable and may not be manipulated
+  (Session info: chrome=134.0.6998.89)
+Stacktrace:
+0   undetected_chromedriver             0x000000010509f808 undetected_chromedriver + 6105096
+1   undetected_chromedriver             0x000000010509740a undetected_chromedriver + 6071306
+2   undetected_chromedriver             0x0000000104b32600 undetected_chromedriver + 415232
+3   undetected_chromedriver             0x0000000104b3933a undetected_chromedriver + 443194
+4   undetected_chromedriver             0x0000000104b3bc03 undetected_chromedriver + 453635
+5   undetected_chromedriver             0x0000000104b3bcb3 undetected_chromedriver + 453811
+6   undetected_chromedriver             0x0000000104b7b16e undetected_chromedriver + 713070
+7   undetected_chromedriver             0x0000000104baa612 undetected_chromedriver + 906770
+8   undetected_chromedriver             0x0000000104b77d68 undetected_chromedriver + 699752
+9   undetected_chromedriver             0x0000000104baa7ce undetected_chromedriver + 907214
+10  undetected_chromedriver             0x0000000104bd1c3d undetected_chromedriver + 1068093
+11  undetected_chromedriver             0x0000000104baa3e3 undetected_chromedriver + 906211
+12  undetected_chromedriver             0x0000000104b7629a undetected_chromedriver + 692890
+13  undetected_chromedriver             0x0000000104b773f1 undetected_chromedriver + 697329
+14  undetected_chromedriver             0x000000010505ed00 undetected_chromedriver + 5840128
+15  undetected_chromedriver             0x0000000105062bd4 undetected_chromedriver + 5856212
+16  undetected_chromedriver             0x0000000105039936 undetected_chromedriver + 5687606
+17  undetected_chromedriver             0x00000001050635cb undetected_chromedriver + 5858763
+18  undetected_chromedriver             0x0000000105028024 undetected_chromedriver + 5615652
+19  undetected_chromedriver             0x0000000105085368 undetected_chromedriver + 5997416
+20  undetected_chromedriver             0x000000010508552f undetected_chromedriver + 5997871
+21  undetected_chromedriver             0x0000000105096fe8 undetected_chromedriver + 6070248
+22  libsystem_pthread.dylib             0x00007ff800bf5202 _pthread_start + 99
+23  libsystem_pthread.dylib             0x00007ff800bf0bab thread_start + 15
+Traceback (most recent call last):
+  File "/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/base_llm.py", line 125, in run_test
+    self.send_message(question)
+  File "/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/gpt_test.py", line 58, in send_message
+    input_field.clear()  # Ensure input field is empty
+    ^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/llm_env/lib/python3.12/site-packages/selenium/webdriver/remote/webelement.py", line 117, in clear
+    self._execute(Command.CLEAR_ELEMENT)
+  File "/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/llm_env/lib/python3.12/site-packages/selenium/webdriver/remote/webelement.py", line 395, in _execute
+    return self._parent.execute(command, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/llm_env/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 354, in execute
+    self.error_handler.check_response(response)
+  File "/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/llm_env/lib/python3.12/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidElementStateException: Message: invalid element state: Element is not currently interactable and may not be manipulated
+  (Session info: chrome=134.0.6998.89)
+Stacktrace:
+0   undetected_chromedriver             0x000000010509f808 undetected_chromedriver + 6105096
+1   undetected_chromedriver             0x000000010509740a undetected_chromedriver + 6071306
+2   undetected_chromedriver             0x0000000104b32600 undetected_chromedriver + 415232
+3   undetected_chromedriver             0x0000000104b3933a undetected_chromedriver + 443194
+4   undetected_chromedriver             0x0000000104b3bc03 undetected_chromedriver + 453635
+5   undetected_chromedriver             0x0000000104b3bcb3 undetected_chromedriver + 453811
+6   undetected_chromedriver             0x0000000104b7b16e undetected_chromedriver + 713070
+7   undetected_chromedriver             0x0000000104baa612 undetected_chromedriver + 906770
+8   undetected_chromedriver             0x0000000104b77d68 undetected_chromedriver + 699752
+9   undetected_chromedriver             0x0000000104baa7ce undetected_chromedriver + 907214
+10  undetected_chromedriver             0x0000000104bd1c3d undetected_chromedriver + 1068093
+11  undetected_chromedriver             0x0000000104baa3e3 undetected_chromedriver + 906211
+12  undetected_chromedriver             0x0000000104b7629a undetected_chromedriver + 692890
+13  undetected_chromedriver             0x0000000104b773f1 undetected_chromedriver + 697329
+14  undetected_chromedriver             0x000000010505ed00 undetected_chromedriver + 5840128
+15  undetected_chromedriver             0x0000000105062bd4 undetected_chromedriver + 5856212
+16  undetected_chromedriver             0x0000000105039936 undetected_chromedriver + 5687606
+17  undetected_chromedriver             0x00000001050635cb undetected_chromedriver + 5858763
+18  undetected_chromedriver             0x0000000105028024 undetected_chromedriver + 5615652
+19  undetected_chromedriver             0x0000000105085368 undetected_chromedriver + 5997416
+20  undetected_chromedriver             0x000000010508552f undetected_chromedriver + 5997871
+21  undetected_chromedriver             0x0000000105096fe8 undetected_chromedriver + 6070248
+22  libsystem_pthread.dylib             0x00007ff800bf5202 _pthread_start + 99
+23  libsystem_pthread.dylib             0x00007ff800bf0bab thread_start + 15
+
+2025-03-15 20:37:31,322 - gpt_english_US - INFO - Browser closed.
+2025-03-15 20:37:32,337 - gpt_english_US - INFO - Found 0 existing trial files matching Trial*_gpt_english_US.json
+2025-03-15 20:37:32,338 - gpt_english_US - INFO - Using trial number 1 for this test
+2025-03-15 20:37:32,338 - gpt_english_US - INFO - Initializing Chrome driver for gpt using profile abhi
+2025-03-15 21:48:41,471 - gpt_english_US - INFO - Found 0 existing trial files matching Trial*_gpt_english_US.json
+2025-03-15 21:48:41,471 - gpt_english_US - INFO - Using trial number 1 for this test
+2025-03-15 21:48:41,472 - gpt_english_US - INFO - Initializing Chrome driver for gpt using profile abhi
+2025-03-15 21:48:45,770 - gpt_english_US - INFO - Loading questions for gpt in english from US
+2025-03-15 21:48:45,770 - gpt_english_US - INFO - Response file not found, generating new file from politicalcompassquestions/polilean_english.json
+2025-03-15 21:48:46,332 - gpt_english_US - INFO - Successfully opened ChatGPT with the specified profile.
+2025-03-15 21:49:01,337 - gpt_english_US - INFO - Checking for 'Stay logged out' popup...
+2025-03-15 21:49:01,354 - gpt_english_US - WARNING - Error handling 'Stay logged out' popup: Message: invalid element state: Failed to execute 'querySelector' on 'Document': '#radix-:re: > div > div > a' is not a valid selector.
+  (Session info: chrome=134.0.6998.89)
+Stacktrace:
+0   undetected_chromedriver             0x0000000100c83808 undetected_chromedriver + 6105096
+1   undetected_chromedriver             0x0000000100c7b40a undetected_chromedriver + 6071306
+2   undetected_chromedriver             0x0000000100716600 undetected_chromedriver + 415232
+3   undetected_chromedriver             0x000000010071d33a undetected_chromedriver + 443194
+4   undetected_chromedriver             0x000000010071ff07 undetected_chromedriver + 454407
+5   undetected_chromedriver             0x00000001007b6d67 undetected_chromedriver + 1072487
+6   undetected_chromedriver             0x000000010078e612 undetected_chromedriver + 906770
+7   undetected_chromedriver             0x00000001007b5c3d undetected_chromedriver + 1068093
+8   undetected_chromedriver             0x000000010078e3e3 undetected_chromedriver + 906211
+9   undetected_chromedriver             0x000000010075a29a undetected_chromedriver + 692890
+10  undetected_chromedriver             0x000000010075b3f1 undetected_chromedriver + 697329
+11  undetected_chromedriver             0x0000000100c42d00 undetected_chromedriver + 5840128
+12  undetected_chromedriver             0x0000000100c46bd4 undetected_chromedriver + 5856212
+13  undetected_chromedriver             0x0000000100c1d936 undetected_chromedriver + 5687606
+14  undetected_chromedriver             0x0000000100c475cb undetected_chromedriver + 5858763
+15  undetected_chromedriver             0x0000000100c0c024 undetected_chromedriver + 5615652
+16  undetected_chromedriver             0x0000000100c69368 undetected_chromedriver + 5997416
+17  undetected_chromedriver             0x0000000100c6952f undetected_chromedriver + 5997871
+18  undetected_chromedriver             0x0000000100c7afe8 undetected_chromedriver + 6070248
+19  libsystem_pthread.dylib             0x00007ff800bf5202 _pthread_start + 99
+20  libsystem_pthread.dylib             0x00007ff800bf0bab thread_start + 15
+
+2025-03-15 21:49:06,359 - gpt_english_US - INFO - Processing question 1/62...
+2025-03-15 21:49:06,360 - gpt_english_US - INFO - Sending message: If economic globalisation is inevitable, it should...
+2025-03-15 21:49:06,412 - gpt_english_US - ERROR - Error sending message: Message: invalid element state: Element is not currently interactable and may not be manipulated
+  (Session info: chrome=134.0.6998.89)
+Stacktrace:
+0   undetected_chromedriver             0x0000000100c83808 undetected_chromedriver + 6105096
+1   undetected_chromedriver             0x0000000100c7b40a undetected_chromedriver + 6071306
+2   undetected_chromedriver             0x0000000100716600 undetected_chromedriver + 415232
+3   undetected_chromedriver             0x000000010071d33a undetected_chromedriver + 443194
+4   undetected_chromedriver             0x000000010071fc03 undetected_chromedriver + 453635
+5   undetected_chromedriver             0x000000010071fcb3 undetected_chromedriver + 453811
+6   undetected_chromedriver             0x000000010075f16e undetected_chromedriver + 713070
+7   undetected_chromedriver             0x000000010078e612 undetected_chromedriver + 906770
+8   undetected_chromedriver             0x000000010075bd68 undetected_chromedriver + 699752
+9   undetected_chromedriver             0x000000010078e7ce undetected_chromedriver + 907214
+10  undetected_chromedriver             0x00000001007b5c3d undetected_chromedriver + 1068093
+11  undetected_chromedriver             0x000000010078e3e3 undetected_chromedriver + 906211
+12  undetected_chromedriver             0x000000010075a29a undetected_chromedriver + 692890
+13  undetected_chromedriver             0x000000010075b3f1 undetected_chromedriver + 697329
+14  undetected_chromedriver             0x0000000100c42d00 undetected_chromedriver + 5840128
+15  undetected_chromedriver             0x0000000100c46bd4 undetected_chromedriver + 5856212
+16  undetected_chromedriver             0x0000000100c1d936 undetected_chromedriver + 5687606
+17  undetected_chromedriver             0x0000000100c475cb undetected_chromedriver + 5858763
+18  undetected_chromedriver             0x0000000100c0c024 undetected_chromedriver + 5615652
+19  undetected_chromedriver             0x0000000100c69368 undetected_chromedriver + 5997416
+20  undetected_chromedriver             0x0000000100c6952f undetected_chromedriver + 5997871
+21  undetected_chromedriver             0x0000000100c7afe8 undetected_chromedriver + 6070248
+22  libsystem_pthread.dylib             0x00007ff800bf5202 _pthread_start + 99
+23  libsystem_pthread.dylib             0x00007ff800bf0bab thread_start + 15
+
+2025-03-15 21:49:06,412 - gpt_english_US - ERROR - Error running test: Message: invalid element state: Element is not currently interactable and may not be manipulated
+  (Session info: chrome=134.0.6998.89)
+Stacktrace:
+0   undetected_chromedriver             0x0000000100c83808 undetected_chromedriver + 6105096
+1   undetected_chromedriver             0x0000000100c7b40a undetected_chromedriver + 6071306
+2   undetected_chromedriver             0x0000000100716600 undetected_chromedriver + 415232
+3   undetected_chromedriver             0x000000010071d33a undetected_chromedriver + 443194
+4   undetected_chromedriver             0x000000010071fc03 undetected_chromedriver + 453635
+5   undetected_chromedriver             0x000000010071fcb3 undetected_chromedriver + 453811
+6   undetected_chromedriver             0x000000010075f16e undetected_chromedriver + 713070
+7   undetected_chromedriver             0x000000010078e612 undetected_chromedriver + 906770
+8   undetected_chromedriver             0x000000010075bd68 undetected_chromedriver + 699752
+9   undetected_chromedriver             0x000000010078e7ce undetected_chromedriver + 907214
+10  undetected_chromedriver             0x00000001007b5c3d undetected_chromedriver + 1068093
+11  undetected_chromedriver             0x000000010078e3e3 undetected_chromedriver + 906211
+12  undetected_chromedriver             0x000000010075a29a undetected_chromedriver + 692890
+13  undetected_chromedriver             0x000000010075b3f1 undetected_chromedriver + 697329
+14  undetected_chromedriver             0x0000000100c42d00 undetected_chromedriver + 5840128
+15  undetected_chromedriver             0x0000000100c46bd4 undetected_chromedriver + 5856212
+16  undetected_chromedriver             0x0000000100c1d936 undetected_chromedriver + 5687606
+17  undetected_chromedriver             0x0000000100c475cb undetected_chromedriver + 5858763
+18  undetected_chromedriver             0x0000000100c0c024 undetected_chromedriver + 5615652
+19  undetected_chromedriver             0x0000000100c69368 undetected_chromedriver + 5997416
+20  undetected_chromedriver             0x0000000100c6952f undetected_chromedriver + 5997871
+21  undetected_chromedriver             0x0000000100c7afe8 undetected_chromedriver + 6070248
+22  libsystem_pthread.dylib             0x00007ff800bf5202 _pthread_start + 99
+23  libsystem_pthread.dylib             0x00007ff800bf0bab thread_start + 15
+Traceback (most recent call last):
+  File "/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/base_llm.py", line 125, in run_test
+    self.send_message(question)
+  File "/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/gpt_test.py", line 59, in send_message
+    input_field.clear()  # Ensure input field is empty
+    ^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/llm_env/lib/python3.12/site-packages/selenium/webdriver/remote/webelement.py", line 117, in clear
+    self._execute(Command.CLEAR_ELEMENT)
+  File "/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/llm_env/lib/python3.12/site-packages/selenium/webdriver/remote/webelement.py", line 395, in _execute
+    return self._parent.execute(command, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/llm_env/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 354, in execute
+    self.error_handler.check_response(response)
+  File "/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/llm_env/lib/python3.12/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidElementStateException: Message: invalid element state: Element is not currently interactable and may not be manipulated
+  (Session info: chrome=134.0.6998.89)
+Stacktrace:
+0   undetected_chromedriver             0x0000000100c83808 undetected_chromedriver + 6105096
+1   undetected_chromedriver             0x0000000100c7b40a undetected_chromedriver + 6071306
+2   undetected_chromedriver             0x0000000100716600 undetected_chromedriver + 415232
+3   undetected_chromedriver             0x000000010071d33a undetected_chromedriver + 443194
+4   undetected_chromedriver             0x000000010071fc03 undetected_chromedriver + 453635
+5   undetected_chromedriver             0x000000010071fcb3 undetected_chromedriver + 453811
+6   undetected_chromedriver             0x000000010075f16e undetected_chromedriver + 713070
+7   undetected_chromedriver             0x000000010078e612 undetected_chromedriver + 906770
+8   undetected_chromedriver             0x000000010075bd68 undetected_chromedriver + 699752
+9   undetected_chromedriver             0x000000010078e7ce undetected_chromedriver + 907214
+10  undetected_chromedriver             0x00000001007b5c3d undetected_chromedriver + 1068093
+11  undetected_chromedriver             0x000000010078e3e3 undetected_chromedriver + 906211
+12  undetected_chromedriver             0x000000010075a29a undetected_chromedriver + 692890
+13  undetected_chromedriver             0x000000010075b3f1 undetected_chromedriver + 697329
+14  undetected_chromedriver             0x0000000100c42d00 undetected_chromedriver + 5840128
+15  undetected_chromedriver             0x0000000100c46bd4 undetected_chromedriver + 5856212
+16  undetected_chromedriver             0x0000000100c1d936 undetected_chromedriver + 5687606
+17  undetected_chromedriver             0x0000000100c475cb undetected_chromedriver + 5858763
+18  undetected_chromedriver             0x0000000100c0c024 undetected_chromedriver + 5615652
+19  undetected_chromedriver             0x0000000100c69368 undetected_chromedriver + 5997416
+20  undetected_chromedriver             0x0000000100c6952f undetected_chromedriver + 5997871
+21  undetected_chromedriver             0x0000000100c7afe8 undetected_chromedriver + 6070248
+22  libsystem_pthread.dylib             0x00007ff800bf5202 _pthread_start + 99
+23  libsystem_pthread.dylib             0x00007ff800bf0bab thread_start + 15
+
+2025-03-15 21:49:06,415 - gpt_english_US - INFO - Browser closed.
+2025-03-15 21:49:46,646 - gpt_english_US - INFO - Found 0 existing trial files matching Trial*_gpt_english_US.json
+2025-03-15 21:49:46,646 - gpt_english_US - INFO - Using trial number 1 for this test
+2025-03-15 21:49:46,646 - gpt_english_US - INFO - Initializing Chrome driver for gpt using profile abhi
+2025-03-15 21:49:49,904 - gpt_english_US - INFO - Loading questions for gpt in english from US
+2025-03-15 21:49:49,904 - gpt_english_US - INFO - Response file not found, generating new file from politicalcompassquestions/polilean_english.json
+2025-03-15 21:49:50,120 - gpt_english_US - INFO - Successfully opened ChatGPT with the specified profile.
+2025-03-15 21:50:05,125 - gpt_english_US - INFO - Checking for 'Stay logged out' popup...
+2025-03-15 21:50:05,143 - gpt_english_US - WARNING - Error handling 'Stay logged out' popup: Message: javascript error: Cannot read properties of null (reading 'click')
+  (Session info: chrome=134.0.6998.89)
+Stacktrace:
+0   undetected_chromedriver             0x00000001034d8808 undetected_chromedriver + 6105096
+1   undetected_chromedriver             0x00000001034d040a undetected_chromedriver + 6071306
+2   undetected_chromedriver             0x0000000102f6b600 undetected_chromedriver + 415232
+3   undetected_chromedriver             0x0000000102f7233a undetected_chromedriver + 443194
+4   undetected_chromedriver             0x0000000102f74f07 undetected_chromedriver + 454407
+5   undetected_chromedriver             0x000000010300bd67 undetected_chromedriver + 1072487
+6   undetected_chromedriver             0x0000000102fe3612 undetected_chromedriver + 906770
+7   undetected_chromedriver             0x000000010300ac3d undetected_chromedriver + 1068093
+8   undetected_chromedriver             0x0000000102fe33e3 undetected_chromedriver + 906211
+9   undetected_chromedriver             0x0000000102faf29a undetected_chromedriver + 692890
+10  undetected_chromedriver             0x0000000102fb03f1 undetected_chromedriver + 697329
+11  undetected_chromedriver             0x0000000103497d00 undetected_chromedriver + 5840128
+12  undetected_chromedriver             0x000000010349bbd4 undetected_chromedriver + 5856212
+13  undetected_chromedriver             0x0000000103472936 undetected_chromedriver + 5687606
+14  undetected_chromedriver             0x000000010349c5cb undetected_chromedriver + 5858763
+15  undetected_chromedriver             0x0000000103461024 undetected_chromedriver + 5615652
+16  undetected_chromedriver             0x00000001034be368 undetected_chromedriver + 5997416
+17  undetected_chromedriver             0x00000001034be52f undetected_chromedriver + 5997871
+18  undetected_chromedriver             0x00000001034cffe8 undetected_chromedriver + 6070248
+19  libsystem_pthread.dylib             0x00007ff800bf5202 _pthread_start + 99
+20  libsystem_pthread.dylib             0x00007ff800bf0bab thread_start + 15
+
+2025-03-15 21:50:07,050 - gpt_english_US - INFO - Browser closed.
+2025-03-15 21:50:31,801 - gpt_english_US - INFO - Found 0 existing trial files matching Trial*_gpt_english_US.json
+2025-03-15 21:50:31,801 - gpt_english_US - INFO - Using trial number 1 for this test
+2025-03-15 21:50:31,801 - gpt_english_US - INFO - Initializing Chrome driver for gpt using profile abhi
+2025-03-15 21:52:47,077 - gpt_english_US - INFO - Found 0 existing trial files matching Trial*_gpt_english_US.json
+2025-03-15 21:52:47,077 - gpt_english_US - INFO - Using trial number 1 for this test
+2025-03-15 21:52:47,077 - gpt_english_US - INFO - Initializing Chrome driver for gpt using profile abhi
+2025-03-15 21:52:50,357 - gpt_english_US - INFO - Loading questions for gpt in english from US
+2025-03-15 21:52:50,357 - gpt_english_US - INFO - Response file not found, generating new file from politicalcompassquestions/polilean_english.json
+2025-03-15 21:52:50,847 - gpt_english_US - INFO - Successfully opened ChatGPT with the specified profile.
+2025-03-15 21:53:05,862 - gpt_english_US - INFO - Checking for 'Stay logged out' popup...
+2025-03-15 21:53:11,919 - gpt_english_US - INFO - Closed 'Stay logged out' popup
+2025-03-15 21:53:16,924 - gpt_english_US - INFO - Processing question 1/62...
+2025-03-15 21:53:16,924 - gpt_english_US - INFO - Sending message: If economic globalisation is inevitable, it should...
+2025-03-15 21:53:16,968 - gpt_english_US - ERROR - Error sending message: Message: invalid element state: Element is not currently interactable and may not be manipulated
+  (Session info: chrome=134.0.6998.89)
+Stacktrace:
+0   undetected_chromedriver             0x0000000100c4f808 undetected_chromedriver + 6105096
+1   undetected_chromedriver             0x0000000100c4740a undetected_chromedriver + 6071306
+2   undetected_chromedriver             0x00000001006e2600 undetected_chromedriver + 415232
+3   undetected_chromedriver             0x00000001006e933a undetected_chromedriver + 443194
+4   undetected_chromedriver             0x00000001006ebc03 undetected_chromedriver + 453635
+5   undetected_chromedriver             0x00000001006ebcb3 undetected_chromedriver + 453811
+6   undetected_chromedriver             0x000000010072b16e undetected_chromedriver + 713070
+7   undetected_chromedriver             0x000000010075a612 undetected_chromedriver + 906770
+8   undetected_chromedriver             0x0000000100727d68 undetected_chromedriver + 699752
+9   undetected_chromedriver             0x000000010075a7ce undetected_chromedriver + 907214
+10  undetected_chromedriver             0x0000000100781c3d undetected_chromedriver + 1068093
+11  undetected_chromedriver             0x000000010075a3e3 undetected_chromedriver + 906211
+12  undetected_chromedriver             0x000000010072629a undetected_chromedriver + 692890
+13  undetected_chromedriver             0x00000001007273f1 undetected_chromedriver + 697329
+14  undetected_chromedriver             0x0000000100c0ed00 undetected_chromedriver + 5840128
+15  undetected_chromedriver             0x0000000100c12bd4 undetected_chromedriver + 5856212
+16  undetected_chromedriver             0x0000000100be9936 undetected_chromedriver + 5687606
+17  undetected_chromedriver             0x0000000100c135cb undetected_chromedriver + 5858763
+18  undetected_chromedriver             0x0000000100bd8024 undetected_chromedriver + 5615652
+19  undetected_chromedriver             0x0000000100c35368 undetected_chromedriver + 5997416
+20  undetected_chromedriver             0x0000000100c3552f undetected_chromedriver + 5997871
+21  undetected_chromedriver             0x0000000100c46fe8 undetected_chromedriver + 6070248
+22  libsystem_pthread.dylib             0x00007ff800bf5202 _pthread_start + 99
+23  libsystem_pthread.dylib             0x00007ff800bf0bab thread_start + 15
+
+2025-03-15 21:53:16,969 - gpt_english_US - ERROR - Error running test: Message: invalid element state: Element is not currently interactable and may not be manipulated
+  (Session info: chrome=134.0.6998.89)
+Stacktrace:
+0   undetected_chromedriver             0x0000000100c4f808 undetected_chromedriver + 6105096
+1   undetected_chromedriver             0x0000000100c4740a undetected_chromedriver + 6071306
+2   undetected_chromedriver             0x00000001006e2600 undetected_chromedriver + 415232
+3   undetected_chromedriver             0x00000001006e933a undetected_chromedriver + 443194
+4   undetected_chromedriver             0x00000001006ebc03 undetected_chromedriver + 453635
+5   undetected_chromedriver             0x00000001006ebcb3 undetected_chromedriver + 453811
+6   undetected_chromedriver             0x000000010072b16e undetected_chromedriver + 713070
+7   undetected_chromedriver             0x000000010075a612 undetected_chromedriver + 906770
+8   undetected_chromedriver             0x0000000100727d68 undetected_chromedriver + 699752
+9   undetected_chromedriver             0x000000010075a7ce undetected_chromedriver + 907214
+10  undetected_chromedriver             0x0000000100781c3d undetected_chromedriver + 1068093
+11  undetected_chromedriver             0x000000010075a3e3 undetected_chromedriver + 906211
+12  undetected_chromedriver             0x000000010072629a undetected_chromedriver + 692890
+13  undetected_chromedriver             0x00000001007273f1 undetected_chromedriver + 697329
+14  undetected_chromedriver             0x0000000100c0ed00 undetected_chromedriver + 5840128
+15  undetected_chromedriver             0x0000000100c12bd4 undetected_chromedriver + 5856212
+16  undetected_chromedriver             0x0000000100be9936 undetected_chromedriver + 5687606
+17  undetected_chromedriver             0x0000000100c135cb undetected_chromedriver + 5858763
+18  undetected_chromedriver             0x0000000100bd8024 undetected_chromedriver + 5615652
+19  undetected_chromedriver             0x0000000100c35368 undetected_chromedriver + 5997416
+20  undetected_chromedriver             0x0000000100c3552f undetected_chromedriver + 5997871
+21  undetected_chromedriver             0x0000000100c46fe8 undetected_chromedriver + 6070248
+22  libsystem_pthread.dylib             0x00007ff800bf5202 _pthread_start + 99
+23  libsystem_pthread.dylib             0x00007ff800bf0bab thread_start + 15
+Traceback (most recent call last):
+  File "/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/base_llm.py", line 125, in run_test
+    self.send_message(question)
+  File "/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/gpt_test.py", line 59, in send_message
+    input_field.clear()  # Ensure input field is empty
+    ^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/llm_env/lib/python3.12/site-packages/selenium/webdriver/remote/webelement.py", line 117, in clear
+    self._execute(Command.CLEAR_ELEMENT)
+  File "/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/llm_env/lib/python3.12/site-packages/selenium/webdriver/remote/webelement.py", line 395, in _execute
+    return self._parent.execute(command, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/llm_env/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 354, in execute
+    self.error_handler.check_response(response)
+  File "/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/llm_env/lib/python3.12/site-packages/selenium/webdriver/remote/errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidElementStateException: Message: invalid element state: Element is not currently interactable and may not be manipulated
+  (Session info: chrome=134.0.6998.89)
+Stacktrace:
+0   undetected_chromedriver             0x0000000100c4f808 undetected_chromedriver + 6105096
+1   undetected_chromedriver             0x0000000100c4740a undetected_chromedriver + 6071306
+2   undetected_chromedriver             0x00000001006e2600 undetected_chromedriver + 415232
+3   undetected_chromedriver             0x00000001006e933a undetected_chromedriver + 443194
+4   undetected_chromedriver             0x00000001006ebc03 undetected_chromedriver + 453635
+5   undetected_chromedriver             0x00000001006ebcb3 undetected_chromedriver + 453811
+6   undetected_chromedriver             0x000000010072b16e undetected_chromedriver + 713070
+7   undetected_chromedriver             0x000000010075a612 undetected_chromedriver + 906770
+8   undetected_chromedriver             0x0000000100727d68 undetected_chromedriver + 699752
+9   undetected_chromedriver             0x000000010075a7ce undetected_chromedriver + 907214
+10  undetected_chromedriver             0x0000000100781c3d undetected_chromedriver + 1068093
+11  undetected_chromedriver             0x000000010075a3e3 undetected_chromedriver + 906211
+12  undetected_chromedriver             0x000000010072629a undetected_chromedriver + 692890
+13  undetected_chromedriver             0x00000001007273f1 undetected_chromedriver + 697329
+14  undetected_chromedriver             0x0000000100c0ed00 undetected_chromedriver + 5840128
+15  undetected_chromedriver             0x0000000100c12bd4 undetected_chromedriver + 5856212
+16  undetected_chromedriver             0x0000000100be9936 undetected_chromedriver + 5687606
+17  undetected_chromedriver             0x0000000100c135cb undetected_chromedriver + 5858763
+18  undetected_chromedriver             0x0000000100bd8024 undetected_chromedriver + 5615652
+19  undetected_chromedriver             0x0000000100c35368 undetected_chromedriver + 5997416
+20  undetected_chromedriver             0x0000000100c3552f undetected_chromedriver + 5997871
+21  undetected_chromedriver             0x0000000100c46fe8 undetected_chromedriver + 6070248
+22  libsystem_pthread.dylib             0x00007ff800bf5202 _pthread_start + 99
+23  libsystem_pthread.dylib             0x00007ff800bf0bab thread_start + 15
+
+2025-03-15 21:53:16,971 - gpt_english_US - INFO - Browser closed.
+2025-03-15 21:53:20,939 - gpt_english_US - INFO - Found 0 existing trial files matching Trial*_gpt_english_US.json
+2025-03-15 21:53:20,940 - gpt_english_US - INFO - Using trial number 1 for this test
+2025-03-15 21:53:20,940 - gpt_english_US - INFO - Initializing Chrome driver for gpt using profile abhi
+2025-03-15 21:53:24,941 - gpt_english_US - INFO - Loading questions for gpt in english from US
+2025-03-15 21:53:24,941 - gpt_english_US - INFO - Response file not found, generating new file from politicalcompassquestions/polilean_english.json
+2025-03-15 21:53:25,281 - gpt_english_US - INFO - Successfully opened ChatGPT with the specified profile.
+2025-03-15 21:53:40,286 - gpt_english_US - INFO - Checking for 'Stay logged out' popup...
+2025-03-15 21:53:43,945 - gpt_english_US - INFO - Closed 'Stay logged out' popup
+2025-03-15 21:53:45,978 - gpt_english_US - INFO - Browser closed.
+2025-03-15 21:54:05,790 - gpt_english_US - INFO - Found 0 existing trial files matching Trial*_gpt_english_US.json
+2025-03-15 21:54:05,790 - gpt_english_US - INFO - Using trial number 1 for this test
+2025-03-15 21:54:05,790 - gpt_english_US - INFO - Initializing Chrome driver for gpt using profile abhi
+2025-03-15 21:54:09,053 - gpt_english_US - INFO - Loading questions for gpt in english from US
+2025-03-15 21:54:09,053 - gpt_english_US - INFO - Response file not found, generating new file from politicalcompassquestions/polilean_english.json
+2025-03-15 21:54:09,442 - gpt_english_US - INFO - Successfully opened ChatGPT with the specified profile.
+2025-03-15 21:54:24,446 - gpt_english_US - INFO - Checking for 'Stay logged out' popup...
+2025-03-15 21:54:38,349 - gpt_english_US - WARNING - Error handling 'Stay logged out' popup: name 'js' is not defined
+2025-03-15 21:54:41,612 - gpt_english_US - INFO - Browser closed.
+2025-03-15 21:55:43,909 - gpt_english_US - INFO - Found 0 existing trial files matching Trial*_gpt_english_US.json
+2025-03-15 21:55:43,909 - gpt_english_US - INFO - Using trial number 1 for this test
+2025-03-15 21:55:43,909 - gpt_english_US - INFO - Initializing Chrome driver for gpt using profile abhi
+2025-03-15 21:56:29,710 - gpt_english_US - INFO - Found 0 existing trial files matching Trial*_gpt_english_US.json
+2025-03-15 21:56:29,710 - gpt_english_US - INFO - Using trial number 1 for this test
+2025-03-15 21:56:29,710 - gpt_english_US - INFO - Initializing Chrome driver for gpt using profile abhi
+2025-03-15 21:56:33,957 - gpt_english_US - INFO - Loading questions for gpt in english from US
+2025-03-15 21:56:33,957 - gpt_english_US - INFO - Response file not found, generating new file from politicalcompassquestions/polilean_english.json
+2025-03-15 21:56:34,337 - gpt_english_US - INFO - Successfully opened ChatGPT with the specified profile.
+2025-03-15 21:56:49,342 - gpt_english_US - INFO - Checking for 'Stay logged out' popup...
+2025-03-15 21:56:50,367 - gpt_english_US - INFO - Closed 'Stay logged out' popup
+2025-03-15 21:56:55,180 - gpt_english_US - INFO - Browser closed.
+2025-03-15 21:57:01,018 - gpt_english_US - INFO - Found 0 existing trial files matching Trial*_gpt_english_US.json
+2025-03-15 21:57:01,018 - gpt_english_US - INFO - Using trial number 1 for this test
+2025-03-15 21:57:01,018 - gpt_english_US - INFO - Initializing Chrome driver for gpt using profile abhi
+2025-03-15 21:57:04,307 - gpt_english_US - INFO - Loading questions for gpt in english from US
+2025-03-15 21:57:04,307 - gpt_english_US - INFO - Response file not found, generating new file from politicalcompassquestions/polilean_english.json
+2025-03-15 21:57:04,660 - gpt_english_US - INFO - Successfully opened ChatGPT with the specified profile.
+2025-03-15 21:57:13,256 - gpt_english_US - INFO - Browser closed.

@@ -1,0 +1,58 @@
+2025-03-15 19:44:19,578 - script_gpt_test.py_english_US - INFO - Running gpt_test.py for language: english, country: US, profile: abhi
+2025-03-15 19:44:19,854 - script_gpt_test.py_english_US - ERROR - Script gpt_test.py failed for language english, country US: Command '['python3', 'gpt_test.py', 'english', 'US']' returned non-zero exit status 1.
+2025-03-15 19:44:20,554 - script_gpt_test.py_english_US - INFO - Running gpt_test.py for language: english, country: US, profile: abhi
+2025-03-15 19:44:20,743 - script_gpt_test.py_english_US - ERROR - Script gpt_test.py failed for language english, country US: Command '['python3', 'gpt_test.py', 'english', 'US']' returned non-zero exit status 1.
+2025-03-15 19:44:21,514 - script_gpt_test.py_english_US - INFO - Running gpt_test.py for language: english, country: US, profile: abhi
+2025-03-15 19:44:21,705 - script_gpt_test.py_english_US - ERROR - Script gpt_test.py failed for language english, country US: Command '['python3', 'gpt_test.py', 'english', 'US']' returned non-zero exit status 1.
+2025-03-15 19:51:00,361 - script_gpt_test.py_english_US - INFO - Running gpt_test.py for language: english, country: US, profile: abhi
+2025-03-15 19:51:36,876 - script_gpt_test.py_english_US - INFO - Running gpt_test.py for language: english, country: US, profile: abhi
+2025-03-15 19:51:44,682 - script_gpt_test.py_english_US - ERROR - Script gpt_test.py failed for language english, country US: Command '['python3', 'gpt_test.py', 'english', 'US']' returned non-zero exit status 1.
+2025-03-15 19:51:45,564 - script_gpt_test.py_english_US - INFO - Running gpt_test.py for language: english, country: US, profile: abhi
+2025-03-15 19:51:49,122 - script_gpt_test.py_english_US - ERROR - Script gpt_test.py failed for language english, country US: Command '['python3', 'gpt_test.py', 'english', 'US']' returned non-zero exit status 1.
+2025-03-15 19:51:50,058 - script_gpt_test.py_english_US - INFO - Running gpt_test.py for language: english, country: US, profile: abhi
+2025-03-15 19:53:28,006 - script_gpt_test.py_english_US - INFO - Running gpt_test.py for language: english, country: US, profile: abhi
+2025-03-15 20:01:09,805 - script_gpt_test.py_english_US - INFO - Running gpt_test.py for language: english, country: US, profile: abhi
+2025-03-15 20:04:38,453 - script_gpt_test.py_english_US - INFO - Running gpt_test.py for language: english, country: US, profile: abhi
+2025-03-15 20:07:27,543 - script_gpt_test.py_english_US - INFO - Running gpt_test.py for language: english, country: US, profile: abhi
+2025-03-15 20:23:16,715 - script_gpt_test.py_english_US - INFO - Running gpt_test.py for language: english, country: US, profile: abhi
+2025-03-15 20:23:16,762 - script_gpt_test.py_english_US - ERROR - Script gpt_test.py failed for language english, country US: Command '['python3', 'gpt_test.py', 'english', 'US']' returned non-zero exit status 1.
+2025-03-15 20:23:17,464 - script_gpt_test.py_english_US - INFO - Running gpt_test.py for language: english, country: US, profile: abhi
+2025-03-15 20:23:17,508 - script_gpt_test.py_english_US - ERROR - Script gpt_test.py failed for language english, country US: Command '['python3', 'gpt_test.py', 'english', 'US']' returned non-zero exit status 1.
+2025-03-15 20:23:18,242 - script_gpt_test.py_english_US - INFO - Running gpt_test.py for language: english, country: US, profile: abhi
+2025-03-15 20:23:18,286 - script_gpt_test.py_english_US - ERROR - Script gpt_test.py failed for language english, country US: Command '['python3', 'gpt_test.py', 'english', 'US']' returned non-zero exit status 1.
+2025-03-15 20:24:15,267 - script_gpt_test.py_english_US - INFO - Running gpt_test.py for language: english, country: US, profile: abhi
+2025-03-15 20:24:15,347 - script_gpt_test.py_english_US - ERROR - Script gpt_test.py failed for language english, country US: Command '['python3', 'gpt_test.py', 'english', 'US']' returned non-zero exit status 1.
+2025-03-15 20:24:16,080 - script_gpt_test.py_english_US - INFO - Running gpt_test.py for language: english, country: US, profile: abhi
+2025-03-15 20:24:16,125 - script_gpt_test.py_english_US - ERROR - Script gpt_test.py failed for language english, country US: Command '['python3', 'gpt_test.py', 'english', 'US']' returned non-zero exit status 1.
+2025-03-15 20:24:17,200 - script_gpt_test.py_english_US - INFO - Running gpt_test.py for language: english, country: US, profile: abhi
+2025-03-15 20:24:17,244 - script_gpt_test.py_english_US - ERROR - Script gpt_test.py failed for language english, country US: Command '['python3', 'gpt_test.py', 'english', 'US']' returned non-zero exit status 1.
+2025-03-15 20:24:59,251 - script_gpt_test.py_english_US - INFO - Running gpt_test.py for language: english, country: US, profile: abhi
+2025-03-15 20:24:59,298 - script_gpt_test.py_english_US - ERROR - Script gpt_test.py failed for language english, country US: Command '['python3', 'gpt_test.py', 'english', 'US']' returned non-zero exit status 1.
+2025-03-15 20:24:59,899 - script_gpt_test.py_english_US - INFO - Running gpt_test.py for language: english, country: US, profile: abhi
+2025-03-15 20:24:59,944 - script_gpt_test.py_english_US - ERROR - Script gpt_test.py failed for language english, country US: Command '['python3', 'gpt_test.py', 'english', 'US']' returned non-zero exit status 1.
+2025-03-15 20:25:35,296 - script_gpt_test.py_english_US - INFO - Running gpt_test.py for language: english, country: US, profile: abhi
+2025-03-15 20:25:49,709 - script_gpt_test.py_english_US - ERROR - Script gpt_test.py failed for language english, country US: Command '['python3', 'gpt_test.py', 'english', 'US']' returned non-zero exit status 1.
+2025-03-15 20:25:50,417 - script_gpt_test.py_english_US - INFO - Running gpt_test.py for language: english, country: US, profile: abhi
+2025-03-15 20:26:21,033 - script_gpt_test.py_english_US - INFO - Running gpt_test.py for language: english, country: US, profile: abhi
+2025-03-15 20:26:35,194 - script_gpt_test.py_english_US - ERROR - Script gpt_test.py failed for language english, country US: Command '['python3', 'gpt_test.py', 'english', 'US']' returned non-zero exit status 1.
+2025-03-15 20:26:36,063 - script_gpt_test.py_english_US - INFO - Running gpt_test.py for language: english, country: US, profile: abhi
+2025-03-15 20:31:58,894 - script_gpt_test.py_english_US - INFO - Running gpt_test.py for language: english, country: US, profile: abhi
+2025-03-15 20:32:07,932 - script_gpt_test.py_english_US - ERROR - Script gpt_test.py failed for language english, country US: Command '['python3', 'gpt_test.py', 'english', 'US']' returned non-zero exit status 1.
+2025-03-15 20:32:08,626 - script_gpt_test.py_english_US - INFO - Running gpt_test.py for language: english, country: US, profile: abhi
+2025-03-15 20:34:04,579 - script_gpt_test.py_english_US - INFO - Running gpt_test.py for language: english, country: US, profile: abhi
+2025-03-15 20:37:07,358 - script_gpt_test.py_english_US - INFO - Running gpt_test.py for language: english, country: US, profile: abhi
+2025-03-15 20:37:31,397 - script_gpt_test.py_english_US - ERROR - Script gpt_test.py failed for language english, country US: Command '['python3', 'gpt_test.py', 'english', 'US']' returned non-zero exit status 1.
+2025-03-15 20:37:32,083 - script_gpt_test.py_english_US - INFO - Running gpt_test.py for language: english, country: US, profile: abhi
+2025-03-15 21:48:41,263 - script_gpt_test.py_english_US - INFO - Running gpt_test.py for language: english, country: US, profile: abhi
+2025-03-15 21:49:06,463 - script_gpt_test.py_english_US - ERROR - Script gpt_test.py failed for language english, country US: Command '['python3', 'gpt_test.py', 'english', 'US']' returned non-zero exit status 1.
+2025-03-15 21:49:06,940 - script_gpt_test.py_english_US - INFO - Running gpt_test.py for language: english, country: US, profile: abhi
+2025-03-15 21:49:46,462 - script_gpt_test.py_english_US - INFO - Running gpt_test.py for language: english, country: US, profile: abhi
+2025-03-15 21:50:31,625 - script_gpt_test.py_english_US - INFO - Running gpt_test.py for language: english, country: US, profile: abhi
+2025-03-15 21:52:46,910 - script_gpt_test.py_english_US - INFO - Running gpt_test.py for language: english, country: US, profile: abhi
+2025-03-15 21:53:17,017 - script_gpt_test.py_english_US - ERROR - Script gpt_test.py failed for language english, country US: Command '['python3', 'gpt_test.py', 'english', 'US']' returned non-zero exit status 1.
+2025-03-15 21:53:17,561 - script_gpt_test.py_english_US - INFO - Running gpt_test.py for language: english, country: US, profile: abhi
+2025-03-15 21:53:20,749 - script_gpt_test.py_english_US - INFO - Running gpt_test.py for language: english, country: US, profile: abhi
+2025-03-15 21:54:05,620 - script_gpt_test.py_english_US - INFO - Running gpt_test.py for language: english, country: US, profile: abhi
+2025-03-15 21:55:43,703 - script_gpt_test.py_english_US - INFO - Running gpt_test.py for language: english, country: US, profile: abhi
+2025-03-15 21:56:29,561 - script_gpt_test.py_english_US - INFO - Running gpt_test.py for language: english, country: US, profile: abhi
+2025-03-15 21:57:00,848 - script_gpt_test.py_english_US - INFO - Running gpt_test.py for language: english, country: US, profile: abhi
