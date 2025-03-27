@@ -10,17 +10,22 @@ from base_llm import BaseLLM
 import config
 
 class GPTTest(BaseLLM):
-    def __init__(self, language, country, profile_name=None):
-        super().__init__("gpt", language, country, profile_name)
+    def __init__(self, language, country, profile_name=None, trial_number = None):
+        super().__init__("gpt", language, country, profile_name, trial_number)
         
     def navigate_to_chat(self):
         """Navigate to the ChatGPT interface."""
         try:
             self.driver.get("https://chatgpt.com")
             self.logger.info("Successfully opened ChatGPT with the specified profile.")
-            time.sleep(15)  # Wait for page to load
-            self.close_stay_logged_out_popup()
             time.sleep(5)  # Wait for page to load
+            self.close_stay_logged_out_popup()
+            self.driver.execute_script("""document.querySelector('button[aria-label="Search"]').click()""")
+            self.send_message("Where am I?")
+            time.sleep(2)
+            self.driver.execute_script("""document.querySelector('button[aria-label="Search"]').click()""")
+            self.get_response()
+            time.sleep(2)
         except Exception as e:
             self.logger.error(f"Error navigating to ChatGPT: {e}")
             raise
@@ -35,8 +40,19 @@ class GPTTest(BaseLLM):
             # Use the specific selector provided
             try:
                 # jsquery = input("Enter JS querySelector")
-                self.driver.execute_script('document.querySelector("#radix-\\\\:r13\\\\: > div > div > a")')
-                time.sleep(1)  # Wait for the popup to close
+                self.driver.execute_script("""
+                const allLinks = document.querySelectorAll('a');
+            
+                // Look for the "Stay logged out" link
+                for (const link of allLinks) {
+                    if (link.textContent.trim() === 'Stay logged out') {
+                        console.log('Found "Stay logged out" link:', link);
+                        link.click();
+                        return true;
+                    }
+                }
+
+                    """)
                 self.logger.info("Closed 'Stay logged out' popup")
                 return True
             except (TimeoutException, NoSuchElementException):
@@ -46,6 +62,8 @@ class GPTTest(BaseLLM):
         except Exception as e:
             self.logger.warning(f"Error handling 'Stay logged out' popup: {e}")
             return False
+        finally:
+            time.sleep(1)  # Wait for the popup to close
 
     def send_message(self, message):
         """Send a message to ChatGPT."""
@@ -65,7 +83,8 @@ class GPTTest(BaseLLM):
             
             input_field.send_keys(Keys.COMMAND + Keys.ENTER)  # Send message
             self.logger.info("Message sent.")
-            
+            self.last_message = message
+
         except Exception as e:
             self.logger.error(f"Error sending message: {e}")
             raise
@@ -84,6 +103,7 @@ class GPTTest(BaseLLM):
             
             # Fetch the latest assistant response
             conversation_turns = self.driver.find_elements(By.CSS_SELECTOR, "div[data-message-author-role='assistant']")
+            print("")
             response_text = conversation_turns[-1].text  # Get the last assistant response
             
             # Ensure response is properly captured
@@ -97,7 +117,7 @@ class GPTTest(BaseLLM):
             
         except TimeoutException:
             self.logger.error("Error: ChatGPT did not respond in time.")
-            return "ERROR: No response received."
+            return ""
 
 if __name__ == "__main__":
     import sys
@@ -106,15 +126,17 @@ if __name__ == "__main__":
     
     # Set up argument parser
     parser = argparse.ArgumentParser(description='Run GPT test for Political Compass')
-    parser.add_argument('language', nargs='?', default=os.environ.get("LANGUAGE", "english"),
+    parser.add_argument('--language', '-l', nargs='?', default=os.environ.get("LANGUAGE", "english"),
                         help='Language for the test (default: english)')
-    parser.add_argument('country', nargs='?', default=os.environ.get("COUNTRY", "US"),
+    parser.add_argument('--country', nargs='?', default=os.environ.get("COUNTRY", "US"),
                         help='Country for the test (default: US)')
     parser.add_argument('--profile', '-p', dest='profile',
                         help=f'Chrome profile to use (default: {config.CURRENT_PROFILE})')
+    parser.add_argument('--trial_num', '-t', dest='trial_num',
+                            help=f'Trial number', default=None)
     
     args = parser.parse_args()
     
     # Create and run the test
-    gpt_test = GPTTest(args.language, args.country, args.profile)
+    gpt_test = GPTTest(args.language, args.country, args.profile, args.trial_num)
     gpt_test.run_test()

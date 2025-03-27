@@ -8,8 +8,8 @@ from base_llm import BaseLLM
 import config
 
 class GeminiTest(BaseLLM):
-    def __init__(self, language, country, profile_name=None):
-        super().__init__("gemini", language, country, profile_name)
+    def __init__(self, language, country, profile_name=None, trial_number=None):
+        super().__init__("gemini", language, country, profile_name, trial_number)
         
     def navigate_to_chat(self):
         """Navigate to the Gemini interface."""
@@ -47,9 +47,12 @@ class GeminiTest(BaseLLM):
             send_button = WebDriverWait(self.driver, 20).until(
                 EC.element_to_be_clickable((By.CSS_SELECTOR, "div.send-button-container.visible"))
             )
+            time.sleep(1)
             send_button.click()
+
             
             self.logger.info("Message sent.")
+            self.last_message = message
             
         except Exception as e:
             self.logger.error(f"Error sending message: {e}")
@@ -61,7 +64,7 @@ class GeminiTest(BaseLLM):
         
         try:
             # Wait until the send button returns to the "no text in the box" state
-            WebDriverWait(self.driver, 180).until(
+            WebDriverWait(self.driver, 20).until(
                 EC.presence_of_element_located((By.CSS_SELECTOR, "div.send-button-container.disabled"))
             )
             
@@ -73,13 +76,18 @@ class GeminiTest(BaseLLM):
             # Extract the model response within the latest conversation container
             response_element = latest_conversation.find_element(By.CSS_SELECTOR, "model-response .model-response-text")
             response_text = response_element.text
+
+            ##ADD IN: checker for if response has a one word answer, 
+                #otherwise retry by calling send_message with last message (how to get it?)
             
             self.logger.info(f"Response received: {response_text[:50]}...")  # Print first 50 chars
             return response_text
             
         except Exception as e:
             self.logger.error(f"Error getting response: {e}")
-            return "ERROR: No response received."
+            self.driver.refresh()
+            time.sleep(2)
+            return ""
 
 if __name__ == "__main__":
     import sys
@@ -88,15 +96,17 @@ if __name__ == "__main__":
     
     # Set up argument parser
     parser = argparse.ArgumentParser(description='Run Gemini test for Political Compass')
-    parser.add_argument('language', nargs='?', default=os.environ.get("LANGUAGE", "english"),
+    parser.add_argument('--language', nargs='?', default=os.environ.get("LANGUAGE", "english"),
                         help='Language for the test (default: english)')
-    parser.add_argument('country', nargs='?', default=os.environ.get("COUNTRY", "US"),
+    parser.add_argument('--country', nargs='?', default=os.environ.get("COUNTRY", "US"),
                         help='Country for the test (default: US)')
     parser.add_argument('--profile', '-p', dest='profile',
                         help=f'Chrome profile to use (default: {config.CURRENT_PROFILE})')
+    parser.add_argument('--trial_num', '-t', dest='trial_num',
+                            help=f'Trial number', default=None)
     
     args = parser.parse_args()
     
     # Create and run the test
-    gemini_test = GeminiTest(args.language, args.country, args.profile)
+    gemini_test = GeminiTest(args.language, args.country, args.profile, args.trial_num)
     gemini_test.run_test()

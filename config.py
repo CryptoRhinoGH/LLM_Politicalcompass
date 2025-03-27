@@ -2,54 +2,149 @@ import os
 import logging
 from logging.handlers import RotatingFileHandler
 
+
+# US 
+# Canada
+# Belize 
+# Guatemala
+# Colombia
+# Brazil
+# Nigeria
+# Kenya 
+# Europe
+# Switzerland
+# Netherlands
+# Serbia
+# Saudi Arabia
+# UAE
+# Taiwan
+# Singapore
+# India
+# Vietnam
+# New Zealand
+# Papua New Guinea
+VPN_CONFIG_PATH="/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/vpnconfigs/"
+CREDS="/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/creds"
 # VPN configurations
+# https://configs.ipvanish.com/openvpn/
 VPN_CONFIGS = {
     "US": [
-        "/path/to/vpnconfigs/ipvanish-US-Cincinnati-cvg-b09.ovpn",
-        "/path/to/vpnconfigs/ipvanish-US-New-York-nyc-c32.ovpn"
+        "ipvanish-US-Ashburn-iad-b01.ovpn",
+        "ipvanish-US-Ashburn-iad-b02.ovpn"
     ],
-    # Add more countries and their configurations as needed
+    "CA": [
+        "ipvanish-CA-Montreal-yul-c01.ovpn",
+        "ipvanish-CA-Montreal-yul-c02.ovpn"
+    ],
+    "BZ": [
+        "ipvanish-BZ-Belize-City---Virtual-bze-c01.ovpn",
+        "ipvanish-BZ-Belize-City---Virtual-bze-c02.ovpn"
+    ],
+    "GT": [
+        "ipvanish-GT-Guatemala-City---Virtual-gua-c01.ovpn",
+        "ipvanish-GT-Guatemala-City---Virtual-gua-c02.ovpn"
+    ],
+    "CO": [
+        "ipvanish-CO-Bogota-bog-c06.ovpn",
+        "ipvanish-CO-Bogota-bog-c07.ovpn"
+    ],
+    "BR": [
+        "ipvanish-BR-Sao-Paulo-gru-c01.ovpn",
+        "ipvanish-BR-Sao-Paulo-gru-c02.ovpn"
+    ],
+    "NG": [
+        "ipvanish-NG-Lagos-los-c01.ovpn",
+        "ipvanish-NG-Lagos-los-c02.ovpn"
+    ],
+    "KE": [
+        "ipvanish-KE-Nairobi---Virtual-nbo-c01.ovpn",
+        "ipvanish-KE-Nairobi---Virtual-nbo-c02.ovpn"
+    ],
+    "CH": [
+        "ipvanish-CH-Zurich-zrh-c01.ovpn",
+        "ipvanish-CH-Zurich-zrh-c02.ovpn"
+    ],
+    "NL": [
+        "ipvanish-NL-Amsterdam-ams-a01.ovpn",
+        "ipvanish-NL-Amsterdam-ams-a02.ovpn"
+    ],
+    "RS": [
+        "ipvanish-RS-Belgrade-beg-c01.ovpn",
+        "ipvanish-RS-Belgrade-beg-c02.ovpn"
+    ],
+    "SA": [
+        "ipvanish-SA-Jeddah---Virtual-jed-c01.ovpn",
+        "ipvanish-SA-Jeddah---Virtual-jed-c02.ovpn"
+    ],
+    "AE": [
+        "ipvanish-AE-Dubai-dxb-c01.ovpn",
+        "ipvanish-AE-Dubai-dxb-c02.ovpn"
+    ],
+    "TW": [
+        "ipvanish-TW-Taipei-tpe-c01.ovpn",
+        "ipvanish-TW-Taipei-tpe-c02.ovpn"
+    ],
+    "SG": [
+        "ipvanish-SG-Singapore-sin-a01.ovpn",
+        "ipvanish-SG-Singapore-sin-a02.ovpn"
+    ],
+    "IN": [
+        "ipvanish-IN-Virtual-pnq-c01.ovpn",
+        "ipvanish-IN-Virtual-pnq-c02.ovpn"
+    ],
+    "VN": [
+        "ipvanish-VN-Ho-Chi-Minh-City---Virtual-sgn-c01.ovpn",
+        "ipvanish-VN-Ho-Chi-Minh-City---Virtual-sgn-c02.ovpn"
+    ],
+    "NZ": [
+        "ipvanish-NZ-Auckland-akl-c01.ovpn",
+        "ipvanish-NZ-Auckland-akl-c02.ovpn"
+    ],
+    "PG": [
+        "ipvanish-PG-Port-Moresby---Virtual-pom-c01.ovpn"
+    ]
 }
 
 # List of countries to iterate through
 COUNTRIES = ["US"]
 
-# Scripts to run and languages per script
-# SCRIPTS = [
-#     {
-#         "script": "gpt_test.py",
-#         "languages": ["english", "german", "french", "spanish"]
-#     },
-#     {
-#         "script": "gemini_test.py",
-#         "languages": ["english", "german", "french", "spanish"]
-#     },
-#     {
-#         "script": "deepseek_test.py",
-#         "languages": ["english", "german", "french", "spanish"]
-#     },
-#     {
-#         "script": "perplexity_test.py",
-#         "languages": ["english", "german", "french", "spanish"]
-#     }
-# ]
+#All Scripts and languages(minimize this):
+    # Scripts to run and languages per script
+    # SCRIPTS = [
+    #     {
+    #         "script": "gpt_test.py",
+    #         "languages": ["english", "german", "french", "spanish"]
+    #     },
+    #     {
+    #         "script": "gemini_test.py",
+    #         "languages": ["english", "german", "french", "spanish"]
+    #     },
+    #     {
+    #         "script": "deepseek_test.py",
+    #         "languages": ["english", "german", "french", "spanish"]
+    #     },
+    #     {
+    #         "script": "perplexity_test.py",
+    #         "languages": ["english", "german", "french", "spanish"]
+    #     }
+    # ]
 
 SCRIPTS = [
     {
         "script": "gpt_test.py",
-        "languages": ["english"]
+        "languages": ["german", "spanish"]
     },
     {
         "script": "gemini_test.py",
-        "languages": ["english"]
+        "languages": ["german", "spanish"]
     },
-    {
-        "script": "deepseek_test.py",
-        "languages": ["english"]
-    },
+    # {
+    #     "script": "deepseek_test.py",
+    #     "languages": ["english"]
+    # },
     {
         "script": "perplexity_test.py",
-        "languages": ["english"]
+        "languages": ["german", "spanish"]
     }
 ]
 
@@ -62,13 +157,13 @@ os.makedirs(LOG_DIR, exist_ok=True)
 os.makedirs(RESULTS_DIR, exist_ok=True)
 
 # Telegram notification settings
-TELEGRAM_ENABLED = True
-# TELEGRAM_BOT_TOKEN = "1490935675:AAGvRH0xrMurN5Sb5UJpP2ZCHZ6KwVgMf_Y" ## TE Notifier
-TELEGRAM_BOT_TOKEN = "1428479715:AAExp9C7Jk1drQm8MdUju84nLmmAHsNqsa8"  ## movement_sensor.py
-TELEGRAM_CHAT_ID = "1426503248"
+TELEGRAM_ENABLED = False
+
+TELEGRAM_BOT_TOKEN = ""
+TELEGRAM_CHAT_ID = ""
 
 # Timing and retry settings
-VPN_CONNECT_DELAY = 10        # seconds to wait after connecting VPN
+VPN_CONNECT_DELAY = 10        # seconds to wait after connecting VPN 
 VPN_DISCONNECT_DELAY = 5      # seconds to wait after disconnecting VPN
 SCRIPT_RETRY_COUNT = 3        # number of retries per script execution
 

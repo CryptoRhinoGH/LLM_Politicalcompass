@@ -11,7 +11,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import config
 
 class BaseLLM:
-    def __init__(self, model_name, language, country, profile_name=None):
+    def __init__(self, model_name, language, country, profile_name=None, trial_number=None):
         self.model_name = model_name
         self.language = language
         self.country = country
@@ -27,9 +27,12 @@ class BaseLLM:
         )
         
         # Determine the next trial number and set the response file name
-        self.trial_number = self.get_next_trial_number()
+        self.trial_number = self.get_next_trial_number() if trial_number is None else trial_number
         self.response_file = f"Trial{self.trial_number}_{model_name.lower()}_{language.lower()}_{country}.json"
         self.logger.info(f"Using trial number {self.trial_number} for this test")
+
+        #store last message for recall in get trial error
+        self.last_message = None
         
         self.setup_driver()
         

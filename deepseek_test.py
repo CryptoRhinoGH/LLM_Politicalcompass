@@ -8,8 +8,8 @@ from base_llm import BaseLLM
 import config
 
 class DeepSeekTest(BaseLLM):
-    def __init__(self, language, country, profile_name=None):
-        super().__init__("deepseek", language, country, profile_name)
+    def __init__(self, language, country, profile_name=None, trial_number=None):
+        super().__init__("deepseek", language, country, profile_name, trial_number)
         
     def navigate_to_chat(self):
         """Navigate to the DeepSeek interface."""
@@ -44,6 +44,7 @@ class DeepSeekTest(BaseLLM):
             input_field.send_keys(Keys.COMMAND + Keys.ENTER)
             
             self.logger.info("Message sent.")
+            self.last_message = message
             
         except Exception as e:
             self.logger.error(f"Error sending message: {e}")
@@ -80,7 +81,7 @@ class DeepSeekTest(BaseLLM):
             
         except TimeoutException:
             self.logger.error("Error: DeepSeek did not respond in time.")
-            return "ERROR: No response received."
+            return ""
 
 if __name__ == "__main__":
     import sys
@@ -89,15 +90,17 @@ if __name__ == "__main__":
     
     # Set up argument parser
     parser = argparse.ArgumentParser(description='Run DeepSeek test for Political Compass')
-    parser.add_argument('language', nargs='?', default=os.environ.get("LANGUAGE", "english"),
+    parser.add_argument('--language', nargs='?', default=os.environ.get("LANGUAGE", "english"),
                         help='Language for the test (default: english)')
-    parser.add_argument('country', nargs='?', default=os.environ.get("COUNTRY", "US"),
+    parser.add_argument('--country', nargs='?', default=os.environ.get("COUNTRY", "US"),
                         help='Country for the test (default: US)')
     parser.add_argument('--profile', '-p', dest='profile',
                         help=f'Chrome profile to use (default: {config.CURRENT_PROFILE})')
+    parser.add_argument('--trial_num', '-t', dest='trial_num',
+                            help=f'Trial number', default=None)
     
     args = parser.parse_args()
     
     # Create and run the test
-    deepseek_test = DeepSeekTest(args.language, args.country, args.profile)
+    deepseek_test = DeepSeekTest(args.language, args.country, args.profile, args.trial_num)
     deepseek_test.run_test()

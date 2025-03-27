@@ -9,8 +9,8 @@ from base_llm import BaseLLM
 import config
 
 class PerplexityTest(BaseLLM):
-    def __init__(self, language, country, profile_name=None):
-        super().__init__("perplexity", language, country, profile_name)
+    def __init__(self, language, country, profile_name=None, trial_number=None):
+        super().__init__("perplexity", language, country, profile_name, trial_number)
         self.first_message_sent = False
         
     def navigate_to_chat(self):
@@ -90,10 +90,12 @@ class PerplexityTest(BaseLLM):
             input_field.send_keys(Keys.COMMAND + Keys.ENTER)
             
             self.logger.info("Message sent.")
+            self.last_message = message
             
         except Exception as e:
             self.logger.error(f"Error sending message: {e}")
-            raise
+            self.driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.ESCAPE)
+            return self.send_message(message)
             
     def get_response(self):
         """Get the response from Perplexity."""
@@ -109,14 +111,16 @@ class PerplexityTest(BaseLLM):
             input_field.click()
             input_field.send_keys("a")
             
+
+            # "button[aria-label='Stop generating response']"
             # Wait for the submit button to be clickable
             submit_button = WebDriverWait(self.driver, 40).until(
-                EC.element_to_be_clickable((By.CSS_SELECTOR, "button[aria-label='Submit']"))
+                EC.presence_of_all_elements_located((By.CSS_SELECTOR, "button[aria-label='Submit']"))
             )
             
             # Wait until all divs with the class 'mb-md' are present in the DOM
             all_response_divs = WebDriverWait(self.driver, 180).until(
-                EC.presence_of_all_elements_located((By.CSS_SELECTOR, "div.mb-md"))
+                EC.presence_of_all_elements_located((By.CSS_SELECTOR, "[id^=\"markdown-content\"]"))
             )
             
             # Get the last div with class 'mb-md'
@@ -128,13 +132,16 @@ class PerplexityTest(BaseLLM):
             
             # Extract the text from the last 'div.mb-md'
             response_text = response_div.text
-            
+            if response_text.strip() in ["", None]:
+                return self.get_response()
+
             self.logger.info(f"Response received: {response_text[:50]}...")  # Print first 50 chars
             return response_text
             
         except Exception as e:
             self.logger.error(f"Error getting response: {e}")
-            return "ERROR: No response received."
+            self.driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.ESCAPE)
+            return self.get_response()
 
 if __name__ == "__main__":
     import sys
@@ -143,15 +150,17 @@ if __name__ == "__main__":
     
     # Set up argument parser
     parser = argparse.ArgumentParser(description='Run Perplexity test for Political Compass')
-    parser.add_argument('language', nargs='?', default=os.environ.get("LANGUAGE", "english"),
+    parser.add_argument('--language', nargs='?', default=os.environ.get("LANGUAGE", "english"),
                         help='Language for the test (default: english)')
-    parser.add_argument('country', nargs='?', default=os.environ.get("COUNTRY", "US"),
+    parser.add_argument('--country', nargs='?', default=os.environ.get("COUNTRY", "US"),
                         help='Country for the test (default: US)')
     parser.add_argument('--profile', '-p', dest='profile',
                         help=f'Chrome profile to use (default: {config.CURRENT_PROFILE})')
+    parser.add_argument('--trial_num', '-t', dest='trial_num',
+                            help=f'Trial number', default=None)
     
     args = parser.parse_args()
     
     # Create and run the test
-    perplexity_test = PerplexityTest(args.language, args.country, args.profile)
+    perplexity_test = PerplexityTest(args.language, args.country, args.profile, args.trial_num)
     perplexity_test.run_test()

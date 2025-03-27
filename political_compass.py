@@ -131,7 +131,7 @@ def append_to_csv(filename, language, trial_number, political_view, ec, soc):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Process survey responses.')
     parser.add_argument('file', type=str, help='Path to the JSON file with responses.')
-    parser.add_argument('--sandbox', action=argparse.BooleanOptionalAction, help="Enable sandbox mode")
+    parser.add_argument('--dry-run', action=argparse.BooleanOptionalAction, help="Dry run to check if file will be runnable")
 
     args = parser.parse_args()
 
