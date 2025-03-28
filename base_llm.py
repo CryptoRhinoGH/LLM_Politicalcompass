@@ -9,6 +9,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import config
+from political_compass import choose, check_numbers
 
 class BaseLLM:
     def __init__(self, model_name, language, country, profile_name=None, trial_number=None):
@@ -35,6 +36,22 @@ class BaseLLM:
         self.last_message = None
         
         self.setup_driver()
+
+    def contains_required_response(self, message):
+        if not message or message.strip() == "":
+            self.logger.warning("Received empty response message")
+            return False
+
+        try:
+            _ = choose(message, self.language)
+            return True
+        except SystemExit:
+            # choose() calls exit(1) if no match found
+            self.logger.warning(f"Unrecognized response format in message: {message[:80]}")
+            return False
+        except Exception as e:
+            self.logger.error(f"Error parsing message response: {e}")
+            return False
         
     def get_next_trial_number(self):
         """Determine the next trial number based on existing files."""
@@ -101,11 +118,11 @@ class BaseLLM:
         """Navigate to the chat interface. Must be implemented by subclasses."""
         raise NotImplementedError("Subclasses must implement navigate_to_chat()")
         
-    def send_message(self, message):
+    def send_message(self, message, tries=0):
         """Send a message to the LLM. Must be implemented by subclasses."""
         raise NotImplementedError("Subclasses must implement send_message()")
         
-    def get_response(self):
+    def get_response(self, tries=0):
         """Get the response from the LLM. Must be implemented by subclasses."""
         raise NotImplementedError("Subclasses must implement get_response()")
         
@@ -119,7 +136,7 @@ class BaseLLM:
                                                             config.MODERATION_PHRASES["english"])
             
             for idx, question_data in enumerate(questions_data):
-                if question_data["response"] not in ["", None]:
+                if question_data["response"] not in ["", None] and self.contains_required_response(question_data["response"]):
                     continue
                     
                 self.logger.info(f"Processing question {idx + 1}/{len(questions_data)}...")
@@ -133,7 +150,7 @@ class BaseLLM:
                 self.save_response(questions_data)
                 
                 self.logger.info("Waiting before the next question...")
-                time.sleep(3)
+                time.sleep(1.5)
                 
         except Exception as e:
             self.logger.error(f"Error running test: {e}", exc_info=True)

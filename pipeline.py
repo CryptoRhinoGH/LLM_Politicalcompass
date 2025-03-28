@@ -209,17 +209,42 @@ def main(profile=None, trial_number=None):
         
         # for language in languages:
         print("starting script")
+
+        unique_languages = set()
         for script_info in config.SCRIPTS:
-            script_name = script_info["script"]
-            languages = script_info["languages"]
-            print(f"{script_name}, {languages}")
-            
-            for language in languages:
+            unique_languages.update(script_info["languages"])
+
+        for language in unique_languages:
+            for script_info in config.SCRIPTS:
+                if language not in script_info["languages"]:
+                    continue
+
+                script_name = script_info["script"]
+                print(f"{script_name}, {language}")
+                base_script_name = script_name.replace("_test.py", "")
+                
                 retries = config.SCRIPT_RETRY_COUNT
                 success = False
+
+                result_filename = f"results/Trial{trial_number}_{base_script_name}_{language}_{country}.json"
+                if os.path.exists(result_filename):
+                    print(f"Checking dry-run for {result_filename}...")
+                    dry_run_result = subprocess.run(
+                        ["python3", "political_compass.py", result_filename, "--dry-run"],
+                        stdout=subprocess.PIPE,
+                        stderr=subprocess.PIPE
+                    )
+
+                    if dry_run_result.returncode == 0:
+                        print(f"{result_filename} already processed successfully. Skipping...")
+                        continue  # Skip this run since dry-run succeeded
+                    else:
+                        print(f"Dry-run failed or empty for {result_filename}. Proceeding with script execution...")
+
                 
                 while retries > 0 and not success:
                     try:
+                        ## Check if results/Trial{trial_num}_{script_name(but remove _test.py from the end since script_name is like gpt_test.py)}_{country}.json exists, if so, then run the political compass in dry run and see if file is runnable
                         success = run_script(script_name, language, country, profile, trial_number)
                         if success:
                             break

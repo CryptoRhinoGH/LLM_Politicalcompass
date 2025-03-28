@@ -132,11 +132,11 @@ COUNTRIES = ["US"]
 SCRIPTS = [
     {
         "script": "gpt_test.py",
-        "languages": ["german", "spanish"]
+        "languages": ["german", "spanish", "english", "french"]
     },
     {
         "script": "gemini_test.py",
-        "languages": ["german", "spanish"]
+        "languages": ["german", "spanish", "english", "french"]
     },
     # {
     #     "script": "deepseek_test.py",
@@ -144,7 +144,7 @@ SCRIPTS = [
     # },
     {
         "script": "perplexity_test.py",
-        "languages": ["german", "spanish"]
+        "languages": ["german", "spanish", "english", "french"]
     }
 ]
 

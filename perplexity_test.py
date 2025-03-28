@@ -53,13 +53,13 @@ class PerplexityTest(BaseLLM):
             self.first_message_sent = True
             
             # Wait for response
-            self.get_response()
+            self.get_response(check=False)
             
         except Exception as e:
             self.logger.error(f"Error sending first message: {e}")
             raise
             
-    def send_message(self, message):
+    def send_message(self, message, tries=0):
         """Send a message to Perplexity."""
         try:
             if not self.first_message_sent:
@@ -91,13 +91,13 @@ class PerplexityTest(BaseLLM):
             
             self.logger.info("Message sent.")
             self.last_message = message
-            
+
         except Exception as e:
             self.logger.error(f"Error sending message: {e}")
             self.driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.ESCAPE)
             return self.send_message(message)
             
-    def get_response(self):
+    def get_response(self, tries=0, check=False):
         """Get the response from Perplexity."""
         self.logger.info("Waiting for Perplexity response...")
         
@@ -133,7 +133,16 @@ class PerplexityTest(BaseLLM):
             # Extract the text from the last 'div.mb-md'
             response_text = response_div.text
             if response_text.strip() in ["", None]:
-                return self.get_response()
+                return self.get_response(check=check)
+
+            if not self.contains_required_response(response_text) and check:
+                self.logger.warning("Response did not match required pattern. Retrying...")
+                time.sleep(3)
+                if tries < 3:
+                    if self.last_message:
+                        self.send_message(self.last_message, tries=tries + 1)
+                    return self.get_response(tries + 1, check=check)
+                return ""
 
             self.logger.info(f"Response received: {response_text[:50]}...")  # Print first 50 chars
             return response_text
@@ -141,7 +150,7 @@ class PerplexityTest(BaseLLM):
         except Exception as e:
             self.logger.error(f"Error getting response: {e}")
             self.driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.ESCAPE)
-            return self.get_response()
+            return self.get_response(check=check)
 
 if __name__ == "__main__":
     import sys

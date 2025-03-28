@@ -16,12 +16,12 @@ class GeminiTest(BaseLLM):
         try:
             self.driver.get("https://gemini.google.com/app")
             self.logger.info("Successfully opened Gemini with the specified profile.")
-            time.sleep(20)  # Wait for page to load and potential login
+            time.sleep(2)  # Wait for page to load and potential login
         except Exception as e:
             self.logger.error(f"Error navigating to Gemini: {e}")
             raise
             
-    def send_message(self, message):
+    def send_message(self, message, tries=0):
         """Send a message to Gemini."""
         try:
             self.logger.info(f"Sending message: {message[:50]}...")  # Log first 50 chars
@@ -53,15 +53,15 @@ class GeminiTest(BaseLLM):
             
             self.logger.info("Message sent.")
             self.last_message = message
-            
         except Exception as e:
             self.logger.error(f"Error sending message: {e}")
+            if tries <2:
+                return self.send_message(message, tries+1)
             raise
             
-    def get_response(self):
+    def get_response(self, tries=0):
         """Get the response from Gemini."""
         self.logger.info("Waiting for Gemini response...")
-        
         try:
             # Wait until the send button returns to the "no text in the box" state
             WebDriverWait(self.driver, 20).until(
@@ -77,9 +77,11 @@ class GeminiTest(BaseLLM):
             response_element = latest_conversation.find_element(By.CSS_SELECTOR, "model-response .model-response-text")
             response_text = response_element.text
 
-            ##ADD IN: checker for if response has a one word answer, 
-                #otherwise retry by calling send_message with last message (how to get it?)
-            
+            if not self.contains_required_response(response_text):
+                self.logger.warning("Response did not match required pattern. Retrying...")
+                raise ValueError("Invalid response content")
+
+
             self.logger.info(f"Response received: {response_text[:50]}...")  # Print first 50 chars
             return response_text
             
@@ -87,6 +89,9 @@ class GeminiTest(BaseLLM):
             self.logger.error(f"Error getting response: {e}")
             self.driver.refresh()
             time.sleep(2)
+            if tries < 3:
+                self.send_message(self.last_message, tries+1)
+                return self.get_response(tries+1)
             return ""
 
 if __name__ == "__main__":

@@ -168,7 +168,7 @@ if __name__ == "__main__":
         print(f"Potential problem in {args.file}")
         pass
 
-    if args.sandbox:
+    if args.dry_run:
         print(f"File {args.file} should be runnable")
         print("\n")
         exit(0)
@@ -230,7 +230,8 @@ if __name__ == "__main__":
                 filename_mapping = {
                     'gpt': 'csv_results/gpt_cookie_results.csv',
                     'gemini': 'csv_results/gemini_cookie_results.csv',
-                    'perplexity': 'csv_results/perplexity_cookie_results.csv'
+                    'perplexity': 'csv_results/perplexity_cookie_results.csv',
+                    'deepseek': 'csv_results/deepseek_cookie_results.csv'
                 }
                 
                 # Extract the base filename without path and extension
