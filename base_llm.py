@@ -150,7 +150,7 @@ class BaseLLM:
                 self.save_response(questions_data)
                 
                 self.logger.info("Waiting before the next question...")
-                time.sleep(1.5)
+                time.sleep(1)
                 
         except Exception as e:
             self.logger.error(f"Error running test: {e}", exc_info=True)

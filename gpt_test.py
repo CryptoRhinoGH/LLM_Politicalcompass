@@ -104,7 +104,7 @@ class GPTTest(BaseLLM):
                 EC.presence_of_element_located((By.CSS_SELECTOR, "div[data-message-author-role='assistant']"))
             )
             
-            self.logger.info("ChatGPT response detected!")
+            # self.logger.info("ChatGPT response detected!")
             
             # Fetch the latest assistant response
             conversation_turns = self.driver.find_elements(By.CSS_SELECTOR, "div[data-message-author-role='assistant']")
@@ -112,12 +112,10 @@ class GPTTest(BaseLLM):
             
             if response_text.strip() == "":
                 self.logger.warning("Warning: Empty response detected, retrying...")
-                time.sleep(3)
+                time.sleep(0.5)
                 return self.get_response(tries=tries, check=check)  # Retry fetching the response
             # Ensure response is properly captured
             if not self.contains_required_response(response_text) and check:
-                self.logger.warning("Warning: Empty response detected, retrying...")
-                time.sleep(3)
                 if tries < 3:
                     if self.last_message:
                         self.send_message(self.last_message, tries=tries + 1)

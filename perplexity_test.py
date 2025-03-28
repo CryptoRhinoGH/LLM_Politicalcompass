@@ -80,7 +80,7 @@ class PerplexityTest(BaseLLM):
             input_field.send_keys(Keys.DELETE)        # Delete the selected text
             
             # Type the message into the text area
-            time.sleep(0.7)
+            time.sleep(0.5)
             pc.copy(message)
             input_field.send_keys(Keys.COMMAND, 'v')
             
@@ -133,11 +133,12 @@ class PerplexityTest(BaseLLM):
             # Extract the text from the last 'div.mb-md'
             response_text = response_div.text
             if response_text.strip() in ["", None]:
+                time.sleep(0.5)
                 return self.get_response(check=check)
 
             if not self.contains_required_response(response_text) and check:
                 self.logger.warning("Response did not match required pattern. Retrying...")
-                time.sleep(3)
+                time.sleep(1)
                 if tries < 3:
                     if self.last_message:
                         self.send_message(self.last_message, tries=tries + 1)

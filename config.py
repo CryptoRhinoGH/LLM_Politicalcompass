@@ -106,7 +106,7 @@ VPN_CONFIGS = {
 }
 
 # List of countries to iterate through
-COUNTRIES = ["US"]
+COUNTRIES = ["CA"]
 
 #All Scripts and languages(minimize this):
     # Scripts to run and languages per script
