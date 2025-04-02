@@ -4,3 +4,4 @@ llm_env
 creds
 vpnconfigs/*
 unused
+__pycache__
