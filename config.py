@@ -23,90 +23,110 @@ from logging.handlers import RotatingFileHandler
 # Vietnam
 # New Zealand
 # Papua New Guinea
-VPN_CONFIG_PATH="/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/vpnconfigs/"
-CREDS="/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/creds"
+VPN_CONFIG_PATH="/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/vpnconfigs/nord/ovpn_udp/"
+CREDS="/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/nordvpncreds"
 # VPN configurations
 # https://configs.ipvanish.com/openvpn/
 VPN_CONFIGS = {
-    "US": [
-        "ipvanish-US-Ashburn-iad-b01.ovpn",
-        "ipvanish-US-Ashburn-iad-b02.ovpn"
-    ],
     "CA": [
-        "ipvanish-CA-Montreal-yul-c01.ovpn",
-        "ipvanish-CA-Montreal-yul-c02.ovpn"
+        "vpnconfigs/nord/ovpn_udp/ca-us100.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/ca-us101.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/ca-us102.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/ca-us103.nordvpn.com.udp.ovpn"
     ],
     "BZ": [
-        "ipvanish-BZ-Belize-City---Virtual-bze-c01.ovpn",
-        "ipvanish-BZ-Belize-City---Virtual-bze-c02.ovpn"
+        "vpnconfigs/nord/ovpn_udp/bz1.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/bz2.nordvpn.com.udp.ovpn"
     ],
     "GT": [
-        "ipvanish-GT-Guatemala-City---Virtual-gua-c01.ovpn",
-        "ipvanish-GT-Guatemala-City---Virtual-gua-c02.ovpn"
+        "vpnconfigs/nord/ovpn_udp/gt1.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/gt2.nordvpn.com.udp.ovpn"
     ],
     "CO": [
-        "ipvanish-CO-Bogota-bog-c06.ovpn",
-        "ipvanish-CO-Bogota-bog-c07.ovpn"
+        "vpnconfigs/nord/ovpn_udp/co1.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/co10.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/co2.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/co3.nordvpn.com.udp.ovpn"
     ],
     "BR": [
-        "ipvanish-BR-Sao-Paulo-gru-c01.ovpn",
-        "ipvanish-BR-Sao-Paulo-gru-c02.ovpn"
+        "vpnconfigs/nord/ovpn_udp/br101.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/br102.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/br103.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/br104.nordvpn.com.udp.ovpn"
     ],
     "NG": [
-        "ipvanish-NG-Lagos-los-c01.ovpn",
-        "ipvanish-NG-Lagos-los-c02.ovpn"
+        "vpnconfigs/nord/ovpn_udp/ng3.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/ng4.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/ng5.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/ng6.nordvpn.com.udp.ovpn"
     ],
     "KE": [
-        "ipvanish-KE-Nairobi---Virtual-nbo-c01.ovpn",
-        "ipvanish-KE-Nairobi---Virtual-nbo-c02.ovpn"
+        "vpnconfigs/nord/ovpn_udp/ke1.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/ke2.nordvpn.com.udp.ovpn"
     ],
     "CH": [
-        "ipvanish-CH-Zurich-zrh-c01.ovpn",
-        "ipvanish-CH-Zurich-zrh-c02.ovpn"
+        "vpnconfigs/nord/ovpn_udp/ch-fr1.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/ch-fr2.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/ch-fr3.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/ch-nl17.nordvpn.com.udp.ovpn"
     ],
     "NL": [
-        "ipvanish-NL-Amsterdam-ams-a01.ovpn",
-        "ipvanish-NL-Amsterdam-ams-a02.ovpn"
+        "vpnconfigs/nord/ovpn_udp/nl-ch17.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/nl-ch18.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/nl-ch19.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/nl-ch20.nordvpn.com.udp.ovpn"
     ],
     "RS": [
-        "ipvanish-RS-Belgrade-beg-c01.ovpn",
-        "ipvanish-RS-Belgrade-beg-c02.ovpn"
-    ],
-    "SA": [
-        "ipvanish-SA-Jeddah---Virtual-jed-c01.ovpn",
-        "ipvanish-SA-Jeddah---Virtual-jed-c02.ovpn"
+        "vpnconfigs/nord/ovpn_udp/rs48.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/rs49.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/rs50.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/rs51.nordvpn.com.udp.ovpn"
     ],
     "AE": [
-        "ipvanish-AE-Dubai-dxb-c01.ovpn",
-        "ipvanish-AE-Dubai-dxb-c02.ovpn"
+        "vpnconfigs/nord/ovpn_udp/ae54.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/ae55.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/ae56.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/ae57.nordvpn.com.udp.ovpn"
     ],
     "TW": [
-        "ipvanish-TW-Taipei-tpe-c01.ovpn",
-        "ipvanish-TW-Taipei-tpe-c02.ovpn"
+        "vpnconfigs/nord/ovpn_udp/tw-hk7.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/tw164.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/tw165.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/tw166.nordvpn.com.udp.ovpn"
     ],
     "SG": [
-        "ipvanish-SG-Singapore-sin-a01.ovpn",
-        "ipvanish-SG-Singapore-sin-a02.ovpn"
+        "vpnconfigs/nord/ovpn_udp/sg455.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/sg456.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/sg457.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/sg458.nordvpn.com.udp.ovpn"
     ],
     "IN": [
-        "ipvanish-IN-Virtual-pnq-c01.ovpn",
-        "ipvanish-IN-Virtual-pnq-c02.ovpn"
+        "vpnconfigs/nord/ovpn_udp/in150.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/in151.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/in152.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/in153.nordvpn.com.udp.ovpn"
     ],
     "VN": [
-        "ipvanish-VN-Ho-Chi-Minh-City---Virtual-sgn-c01.ovpn",
-        "ipvanish-VN-Ho-Chi-Minh-City---Virtual-sgn-c02.ovpn"
+        "vpnconfigs/nord/ovpn_udp/vn42.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/vn43.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/vn44.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/vn45.nordvpn.com.udp.ovpn"
     ],
     "NZ": [
-        "ipvanish-NZ-Auckland-akl-c01.ovpn",
-        "ipvanish-NZ-Auckland-akl-c02.ovpn"
+        "vpnconfigs/nord/ovpn_udp/nz100.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/nz101.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/nz102.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/nz103.nordvpn.com.udp.ovpn"
     ],
     "PG": [
-        "ipvanish-PG-Port-Moresby---Virtual-pom-c01.ovpn"
+        "vpnconfigs/nord/ovpn_udp/pg1.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/pg2.nordvpn.com.udp.ovpn"
     ]
 }
 
+
 # List of countries to iterate through
-COUNTRIES = ["CA"]
+COUNTRIES = ["CO", "BR", "NG", "CH"]
 
 #All Scripts and languages(minimize this):
     # Scripts to run and languages per script
@@ -163,7 +183,7 @@ TELEGRAM_BOT_TOKEN = ""
 TELEGRAM_CHAT_ID = ""
 
 # Timing and retry settings
-VPN_CONNECT_DELAY = 10        # seconds to wait after connecting VPN 
+VPN_CONNECT_DELAY = 5        # seconds to wait after connecting VPN 
 VPN_DISCONNECT_DELAY = 5      # seconds to wait after disconnecting VPN
 SCRIPT_RETRY_COUNT = 3        # number of retries per script execution
 

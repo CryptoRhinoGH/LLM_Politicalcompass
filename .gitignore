@@ -1,7 +1,7 @@
 llm_env
 *.DS_Store
 .idea
-creds
+*creds*
 vpnconfigs/*
 unused
 __pycache__

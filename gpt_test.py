@@ -8,6 +8,7 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import TimeoutException
 from base_llm import BaseLLM
 import config
+import sys
 
 class GPTTest(BaseLLM):
     def __init__(self, language, country, profile_name=None, trial_number = None):
@@ -115,6 +116,10 @@ class GPTTest(BaseLLM):
                 time.sleep(0.5)
                 return self.get_response(tries=tries, check=check)  # Retry fetching the response
             # Ensure response is properly captured
+
+            if "You've reached our limit of messages per hour. Please try again later." in response_text:
+                sys.exit(42)  # exit with code 42 indicating a VPN change
+
             if not self.contains_required_response(response_text) and check:
                 if tries < 3:
                     if self.last_message:

@@ -5,129 +5,97 @@ import requests
 import argparse
 from threading import Lock
 import config
+import json
+import time
 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 import undetected_chromedriver as uc
-import time
 
 # Get the main logger
 logger = config.main_logger
 
 script_lock = Lock()
 
-# class VPNController:
-#     def __init__(self, country):
-#         self.country = country
-#         self.configs = config.VPN_CONFIGS.get(country, [])
-#         self.logger = config.setup_logger(f'vpn_{country}', f'vpn_{country}.log')
-
-#     def connect(self):
-#         for config_file in self.configs:
-#             try:
-#                 self.logger.info(f"Connecting to VPN using {config_file}")
-#                 subprocess.run(["sudo", "openvpn", "--config", config.VPN_CONFIG_PATH + config_file, "--auth-user-pass", config.CREDS], check=True)
-#                 self.logger.info(f"Connected to VPN using {config_file}")
-#                 self.send_notification(f"VPN connected using {config_file}")
-#                 return True
-#             except subprocess.CalledProcessError as e:
-#                 self.logger.error(f"Failed to connect using {config_file}: {e}")
-#                 self.send_notification(f"VPN connection failed using {config_file}")
-#         return False
-
-#     def disconnect(self):
-#         try:
-#             subprocess.run(["sudo", "killall", "openvpn"], check=True)
-#             self.logger.info("VPN disconnected.")
-#             self.send_notification("VPN disconnected")
-#         except subprocess.CalledProcessError as e:
-#             self.logger.error(f"Failed to disconnect VPN: {e}")
-            
-#     def send_notification(self, message):
-#         if config.TELEGRAM_ENABLED:
-#             try:
-#                 requests.get(
-#                     f"https://api.telegram.org/bot{config.TELEGRAM_BOT_TOKEN}/sendMessage",
-#                     params={"chat_id": config.TELEGRAM_CHAT_ID, "text": message}
-#                 )
-#                 self.logger.info("Telegram notification sent.")
-#             except Exception as e:
-#                 self.logger.error(f"Failed to send Telegram message: {e}")
-
-
 class VPNController:
     def __init__(self, country):
         self.country = country
         self.configs = config.VPN_CONFIGS.get(country, [])
         self.logger = config.setup_logger(f'vpn_{country}', f'vpn_{country}.log')
-        self.process = None
+        self.current_index = 0  # Keep track of the last used config
 
     def connect(self):
-        for config_file in self.configs:
+        attempts = 0
+        total_configs = len(self.configs)
+
+        while attempts < total_configs:
+            config_file = self.configs[self.current_index]
+            full_config_path = os.path.join(config.VPN_CONFIG_PATH, os.path.basename(config_file))
+            self.logger.info(f"Trying to connect using: {full_config_path}")
+
             try:
-                self.logger.info(f"Attempting VPN connection with config: {config_file}")
-                
-                self.process = subprocess.Popen(
-                    ["sudo", "openvpn", "--daemon", "--config", config.VPN_CONFIG_PATH + config_file, "--auth-user-pass", config.CREDS],
-                    stdout=subprocess.DEVNULL,
-                    stderr=subprocess.DEVNULL
+                result = subprocess.run(
+                    ["zsh", "nordvpn.sh", config.CREDS, full_config_path],
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.PIPE
                 )
-                self.logger.info("OpenVPN process started in background. Verifying connection...")
-                time.sleep(5)
-                # if self.wait_for_connection():
-                #     self.logger.info(f"Successfully connected to VPN using {config_file}")
-                #     self.send_notification(f"VPN connected using {config_file}")
-                #     return True
-                # else:
-                #     self.logger.warning(f"VPN verification failed for {config_file}")
-                #     self.send_notification(f"VPN connection failed to verify using {config_file}")
-                #     self.process.terminate()
-                #     time.sleep(3)
+                time.sleep(config.VPN_CONNECT_DELAY)
+                if result.returncode == 0:
+                    self.logger.info("Connected. Verifying public IP...")
+                    ip_info = self._check_ip()
+
+                    if ip_info and ip_info.get("ip"):
+                        ip = ip_info.get("ip")
+                        country_code = ip_info.get("country")
+                        self.logger.info(f"Verified IP: {ip}, Country: {country_code}")
+                        self.send_notification(f"VPN connected: {ip} ({country_code}) via {os.path.basename(config_file)}")
+                        return True
+                    else:
+                        self.logger.warning("VPN IP check failed — moving to next config.")
+                else:
+                    self.logger.warning(f"VPN script failed:\n{result.stderr.decode()}")
 
             except Exception as e:
-                self.logger.error(f"Error connecting with {config_file}: {e}")
-                self.send_notification(f"Exception during VPN connection: {e}")
+                self.logger.error(f"Error connecting VPN: {e}")
+                self.send_notification(f"VPN exception: {e}")
 
+            self.current_index = (self.current_index + 1) % total_configs
+            attempts += 1
+            time.sleep(3)
+
+        self.logger.error("All VPN configs exhausted without success.")
         return False
 
-    def wait_for_connection(self, timeout=30, interval=3):
-        start_time = time.time()
-        while time.time() - start_time < timeout:
-            try:
-                ip = self.get_public_ip()
-                if ip:
-                    self.logger.info(ip)
-                    return True
-            except Exception:
-                pass
-            time.sleep(interval)
-        return False
+    def rotate_and_connect(self):
+        self.disconnect()
+        time.sleep(3)
+        self.current_index = (self.current_index + 1) % len(self.configs)
+        return self.connect()
 
-    def get_public_ip():
+    def _check_ip(self):
         try:
-            options = Options()
-            # options.headless = True  # Headless so it doesn't open a visible window
-
-            driver = uc.Chrome(options=options)
-            driver.get("https://icanhazip.com")
-            
-            time.sleep(3)  # Wait for page to load
-
-            ip_text = driver.find_element(By.TAG_NAME, "body").text.strip()
-            driver.quit()
-            return ip_text
-
+            result = subprocess.run(
+                ["zsh", "nordvpn.sh", "check_ip"],
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE
+            )
+            if result.returncode == 0:
+                return json.loads(result.stdout.decode())
+            else:
+                self.logger.warning(f"check_ip failed:\n{result.stderr.decode()}")
         except Exception as e:
-            print(f"UC browser IP fetch failed: {e}")
-            return None
+            self.logger.warning(f"check_ip exception: {e}")
+        return None
 
     def disconnect(self):
+        self.logger.info("Disconnecting VPN...")
         try:
-            subprocess.run(["sudo", "killall", "openvpn"], check=True)
+            subprocess.run(["zsh", "nordvpn.sh", "disconnect"], check=True)
             self.logger.info("VPN disconnected.")
             self.send_notification("VPN disconnected.")
         except subprocess.CalledProcessError as e:
-            self.logger.error(f"Failed to disconnect VPN: {e}")
+            self.logger.error(f"VPN disconnection failed: {e}")
+            self.send_notification("VPN disconnection failed.")
 
     def send_notification(self, message):
         if config.TELEGRAM_ENABLED:
@@ -139,6 +107,7 @@ class VPNController:
                 self.logger.info("Telegram notification sent.")
             except Exception as e:
                 self.logger.error(f"Failed to send Telegram message: {e}")
+
 
 
 def run_script(script_name, language, country, profile=None, trial_number=None):
@@ -164,6 +133,9 @@ def run_script(script_name, language, country, profile=None, trial_number=None):
             script_logger.info(f"Successfully completed {script_name} for {language}, {country}")
             return True
         except subprocess.CalledProcessError as e:
+            if e.returncode == 42:
+                script_logger.warning("Script requested VPN rotation.")
+                return "vpn_switch"
             script_logger.error(f"Script {script_name} failed for language {language}, country {country}: {e}")
             send_notification(f"Script {script_name} failed for language {language}, country {country}")
             return False
@@ -198,14 +170,12 @@ def main(profile=None, trial_number=None):
             send_notification(f"No VPN configs available for country: {country}")
             continue
         
-        # connected = vpn.connect()
-        connected = True
+        connected = vpn.connect()
+        # connected = True
         
         if not connected:
             logger.error(f"Failed to connect to VPN for country: {country}")
             continue
-        
-        # time.sleep(config.VPN_CONNECT_DELAY)
         
         # for language in languages:
         print("starting script")
@@ -245,8 +215,13 @@ def main(profile=None, trial_number=None):
                 while retries > 0 and not success:
                     try:
                         ## Check if results/Trial{trial_num}_{script_name(but remove _test.py from the end since script_name is like gpt_test.py)}_{country}.json exists, if so, then run the political compass in dry run and see if file is runnable
-                        success = run_script(script_name, language, country, profile, trial_number)
-                        if success:
+                        result = run_script(script_name, language, country, profile, trial_number)
+                        if result == "vpn_switch":
+                            logger.info(f"{script_name} requested VPN rotation for {language}, {country}")
+                            vpn.rotate_and_connect()
+                            continue
+                        elif result is True:
+                            success = True
                             break
                     except Exception as e:
                         retries -= 1
@@ -280,6 +255,7 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         logger.info("Script interrupted by user.")
         send_notification("Script execution interrupted by user.")
+        vpn.disconnect()
     except Exception as e:
         logger.error(f"Unexpected error in pipeline: {e}", exc_info=True)
         send_notification(f"Pipeline failed with error: {e}")
