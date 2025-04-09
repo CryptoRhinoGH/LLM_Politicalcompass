@@ -31,7 +31,7 @@ function restore_dns {
         if [[ "$servers" == "There aren't any DNS Servers set on $INTERFACE." ]]; then
             sudo networksetup -setdnsservers "$INTERFACE" empty
         else
-            sudo networksetup -setdnsservers "$INTERFACE" $servers
+            sudo networksetup -setdnsservers "$INTERFACE" $=servers
         fi
         rm "$DNS_BACKUP_FILE"
     else

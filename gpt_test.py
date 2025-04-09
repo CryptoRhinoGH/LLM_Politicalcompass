@@ -4,7 +4,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import NoSuchElementException, StaleElementReferenceException
 from selenium.common.exceptions import TimeoutException
 from base_llm import BaseLLM
 import config
@@ -64,7 +64,7 @@ class GPTTest(BaseLLM):
             self.logger.warning(f"Error handling 'Stay logged out' popup: {e}")
             return False
         finally:
-            time.sleep(1)  # Wait for the popup to close
+            time.sleep(0.6)  # Wait for the popup to close
 
     def send_message(self, message, tries=0):
         """Send a message to ChatGPT."""
@@ -78,11 +78,11 @@ class GPTTest(BaseLLM):
             )
             
             input_field.clear()  # Ensure input field is empty
-            time.sleep(1)  # Small delay before pasting
+            time.sleep(0.5)  # Small delay before pasting
             
             pc.copy(message)
             input_field.send_keys(Keys.COMMAND, 'v')  # Paste message
-            time.sleep(1)
+            time.sleep(0.5)
             
             input_field.send_keys(Keys.COMMAND + Keys.ENTER)  # Send message
             self.logger.info("Message sent.")
@@ -91,7 +91,7 @@ class GPTTest(BaseLLM):
         except Exception as e:
             self.logger.error(f"Error sending message: {e}")
             if tries < 2:
-                time.sleep(2)  # Optional backoff delay
+                time.sleep(0.8)  # Optional backoff delay
                 return self.send_message(message, tries + 1)
             raise
             
@@ -114,7 +114,7 @@ class GPTTest(BaseLLM):
             if response_text.strip() == "":
                 self.logger.warning("Warning: Empty response detected, retrying...")
                 time.sleep(0.5)
-                return self.get_response(tries=tries, check=check)  # Retry fetching the response
+                return self.get_response(tries=tries+1, check=check)  # Retry fetching the response
             # Ensure response is properly captured
 
             if "You've reached our limit of messages per hour. Please try again later." in response_text:
@@ -129,7 +129,8 @@ class GPTTest(BaseLLM):
             
             self.logger.info(f"Response received: {response_text[:50]}...")  # Print first 50 chars
             return response_text
-            
+        except StaleElementReferenceException:
+            return self.get_response(tries=tries + 1, check=check)
         except TimeoutException:
             self.logger.error("Error: ChatGPT did not respond in time.")
             return ""

@@ -4,7 +4,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException
+from selenium.common.exceptions import TimeoutException, StaleElementReferenceException
 from base_llm import BaseLLM
 import config
 
@@ -91,11 +91,13 @@ class PerplexityTest(BaseLLM):
             
             self.logger.info("Message sent.")
             self.last_message = message
-
+        except StaleElementReferenceException:
+            self.driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.ESCAPE)
+            return self.send_message(message, tries=tries)
         except Exception as e:
             self.logger.error(f"Error sending message: {e}")
             self.driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.ESCAPE)
-            return self.send_message(message)
+            return self.send_message(message, tries=tries+1)
             
     def get_response(self, tries=0, check=False):
         """Get the response from Perplexity."""
@@ -122,6 +124,7 @@ class PerplexityTest(BaseLLM):
             all_response_divs = WebDriverWait(self.driver, 180).until(
                 EC.presence_of_all_elements_located((By.CSS_SELECTOR, "[id^=\"markdown-content\"]"))
             )
+            time.sleep(0.6)
             
             # Get the last div with class 'mb-md'
             response_div = all_response_divs[-1]

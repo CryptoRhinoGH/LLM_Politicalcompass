@@ -140,6 +140,56 @@ def run_script(script_name, language, country, profile=None, trial_number=None):
             send_notification(f"Script {script_name} failed for language {language}, country {country}")
             return False
 
+def is_test_done(result_filename):
+    """Return True if the test result exists and the dry-run passes."""
+    if os.path.exists(result_filename):
+        dry_run_result = subprocess.run(
+            ["python3", "political_compass.py", result_filename, "--dry-run"],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE
+        )
+        return dry_run_result.returncode == 0
+    return False
+
+def gather_tests(country, trial_number):
+    """Return a list of tasks (script_name, language, result_filename) for tests that are not yet complete."""
+    tasks = []
+    unique_languages = set()
+    for script_info in config.SCRIPTS:
+        unique_languages.update(script_info["languages"])
+        
+    for language in unique_languages:
+        for script_info in config.SCRIPTS:
+            if language not in script_info["languages"]:
+                continue
+            script_name = script_info["script"]
+            base_script_name = script_name.replace("_test.py", "")
+            result_filename = f"results/Trial{trial_number}_{base_script_name}_{language}_{country}.json"
+            if not is_test_done(result_filename):
+                tasks.append((script_name, language, result_filename))
+    return tasks
+
+def all_tests_completed(trial_number):
+    """
+    Returns True if for every expected (country, script, language) combination,
+    the corresponding result file exists and passes the dry-run test.
+    """
+    for country in config.COUNTRIES:
+        for script_info in config.SCRIPTS:
+            for language in script_info["languages"]:
+                base_script_name = script_info["script"].replace("_test.py", "")
+                result_filename = f"results/Trial{trial_number}_{base_script_name}_{language}_{country}.json"
+                # If the result file doesn't exist or the dry-run doesn't pass, tests are incomplete.
+                if not os.path.exists(result_filename):
+                    return False
+                dry_run_result = subprocess.run(
+                    ["python3", "political_compass.py", result_filename, "--dry-run"],
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.PIPE
+                )
+                if dry_run_result.returncode != 0:
+                    return False
+    return True
 
 def send_notification(message):
     if config.TELEGRAM_ENABLED:
@@ -154,90 +204,108 @@ def send_notification(message):
 
 
 def main(profile=None, trial_number=None):
-    # Ensure results directory exists
-    os.makedirs(config.RESULTS_DIR, exist_ok=True)
-    
-    # Log start of pipeline
-    logger.info(f"Starting Political Compass LLM testing pipeline with profile: {profile or config.CURRENT_PROFILE}")
-    send_notification(f"Starting Political Compass LLM testing pipeline with profile: {profile or config.CURRENT_PROFILE}")
-    
-    for country in config.COUNTRIES:
-        vpn = VPNController(country)
-        logger.info(f"Processing country: {country}")
+    try:
+        # Ensure results directory exists
+        os.makedirs(config.RESULTS_DIR, exist_ok=True)
         
-        if not vpn.configs:
-            logger.warning(f"No VPN configs available for country: {country}")
-            send_notification(f"No VPN configs available for country: {country}")
-            continue
+        # Log start of pipeline
+        logger.info(f"Starting Political Compass LLM testing pipeline with profile: {profile or config.CURRENT_PROFILE}")
+        send_notification(f"Starting Political Compass LLM testing pipeline with profile: {profile or config.CURRENT_PROFILE}")
         
-        connected = vpn.connect()
-        # connected = True
-        
-        if not connected:
-            logger.error(f"Failed to connect to VPN for country: {country}")
-            continue
-        
-        # for language in languages:
-        print("starting script")
+        for country in config.COUNTRIES:
+            vpn = VPNController(country)
+            logger.info(f"Processing country: {country}")
+            
+            if not vpn.configs:
+                logger.warning(f"No VPN configs available for country: {country}")
+                send_notification(f"No VPN configs available for country: {country}")
+                continue
+            
+            tasks = gather_tests(country, trial_number)
+            if not tasks:
+                logger.info(f"No pending tests for {country}. Skipping VPN connection.")
+                continue
 
-        unique_languages = set()
-        for script_info in config.SCRIPTS:
-            unique_languages.update(script_info["languages"])
 
-        for language in unique_languages:
+            connected = vpn.connect()
+            # connected = True
+            
+            if not connected:
+                logger.error(f"Failed to connect to VPN for country: {country}")
+                continue
+            
+            # for language in languages:
+            print("starting script")
+
+            unique_languages = set()
             for script_info in config.SCRIPTS:
-                if language not in script_info["languages"]:
-                    continue
+                unique_languages.update(script_info["languages"])
 
-                script_name = script_info["script"]
-                print(f"{script_name}, {language}")
-                base_script_name = script_name.replace("_test.py", "")
-                
-                retries = config.SCRIPT_RETRY_COUNT
-                success = False
+            for language in unique_languages:
+                for script_info in config.SCRIPTS:
+                    if language not in script_info["languages"]:
+                        continue
 
-                result_filename = f"results/Trial{trial_number}_{base_script_name}_{language}_{country}.json"
-                if os.path.exists(result_filename):
-                    print(f"Checking dry-run for {result_filename}...")
-                    dry_run_result = subprocess.run(
-                        ["python3", "political_compass.py", result_filename, "--dry-run"],
-                        stdout=subprocess.PIPE,
-                        stderr=subprocess.PIPE
-                    )
+                    script_name = script_info["script"]
+                    print(f"{script_name}, {language}")
+                    base_script_name = script_name.replace("_test.py", "")
+                    
+                    retries = config.SCRIPT_RETRY_COUNT
+                    success = False
 
-                    if dry_run_result.returncode == 0:
-                        print(f"{result_filename} already processed successfully. Skipping...")
-                        continue  # Skip this run since dry-run succeeded
-                    else:
-                        print(f"Dry-run failed or empty for {result_filename}. Proceeding with script execution...")
+                    result_filename = f"results/Trial{trial_number}_{base_script_name}_{language}_{country}.json"
+                    if os.path.exists(result_filename):
+                        print(f"Checking dry-run for {result_filename}...")
+                        dry_run_result = subprocess.run(
+                            ["python3", "political_compass.py", result_filename, "--dry-run"],
+                            stdout=subprocess.PIPE,
+                            stderr=subprocess.PIPE
+                        )
 
-                
-                while retries > 0 and not success:
-                    try:
-                        ## Check if results/Trial{trial_num}_{script_name(but remove _test.py from the end since script_name is like gpt_test.py)}_{country}.json exists, if so, then run the political compass in dry run and see if file is runnable
-                        result = run_script(script_name, language, country, profile, trial_number)
-                        if result == "vpn_switch":
-                            logger.info(f"{script_name} requested VPN rotation for {language}, {country}")
-                            vpn.rotate_and_connect()
-                            continue
-                        elif result is True:
-                            success = True
-                            break
-                    except Exception as e:
-                        retries -= 1
-                        logger.error(f"Error running {script_name} for {language}, {country}, ERROR:{e}. Retries left: {retries}")
-                        time.sleep(5)  # Wait before retrying
-                
-                if not success:
-                    send_notification(f"Failed to run {script_name} for {language}, {country} after all retries")
+                        if dry_run_result.returncode == 0:
+                            print(f"{result_filename} already processed successfully. Skipping...")
+                            continue  # Skip this run since dry-run succeeded
+                        else:
+                            print(f"Dry-run failed or empty for {result_filename}. Proceeding with script execution...")
+
+                    
+                    while retries >= 0 and not success:
+                        try:
+                            ## Check if results/Trial{trial_num}_{script_name(but remove _test.py from the end since script_name is like gpt_test.py)}_{country}.json exists, if so, then run the political compass in dry run and see if file is runnable
+                            result = run_script(script_name, language, country, profile, trial_number)
+                            if result == "vpn_switch":
+                                logger.info(f"{script_name} requested VPN rotation for {language}, {country}")
+                                retries -= 1
+                                vpn.rotate_and_connect()
+                                continue
+                            elif result is True:
+                                success = True
+                                break
+                        except Exception as e:
+                            retries -= 1
+                            logger.error(f"Error running {script_name} for {language}, {country}, ERROR:{e}. Retries left: {retries}")
+                            time.sleep(5)  # Wait before retrying
+                    
+                    if not success:
+                        send_notification(f"Failed to run {script_name} for {language}, {country} after all retries")
+            
+            # Disconnect VPN after all tests for this country are complete
+            vpn.disconnect()
+            time.sleep(config.VPN_DISCONNECT_DELAY)
         
-        # Disconnect VPN after all tests for this country are complete
-        vpn.disconnect()
-        time.sleep(config.VPN_DISCONNECT_DELAY)
-    
-    # Log completion of pipeline
-    logger.info("Political Compass LLM testing pipeline completed")
-    send_notification("Political Compass LLM testing pipeline completed")
+        # Log completion of pipeline
+        logger.info("Political Compass LLM testing pipeline completed")
+        send_notification("Political Compass LLM testing pipeline completed")
+    except KeyboardInterrupt:
+        logger.warning("Pipeline interrupted by user.")
+        send_notification("Pipeline interrupted by user.")
+        try:
+            vpn.disconnect()
+        except Exception:
+            pass
+    except Exception as e:
+        logger.error(f"Unexpected error in pipeline: {e}", exc_info=True)
+        send_notification(f"Pipeline failed with error: {e}")
 
 
 if __name__ == "__main__":
@@ -252,10 +320,23 @@ if __name__ == "__main__":
         args = parser.parse_args()
         
         main(args.profile, args.trial_num)
+
+        max_iterations = 10
+        iteration = 0
+        while not all_tests_completed(args.trial_num) and iteration < max_iterations:
+            main(args.profile, args.trial_num)
+            iteration += 1
+            logger.info(f"Pipeline iteration {iteration} completed. Checking test completion...")
+            time.sleep(5)
+        if all_tests_completed(args.trial_num):
+            logger.info("All tests are complete!")
+        else:
+            logger.warning("Maximum iterations reached, but some tests are still incomplete.")
+
+
     except KeyboardInterrupt:
         logger.info("Script interrupted by user.")
         send_notification("Script execution interrupted by user.")
-        vpn.disconnect()
     except Exception as e:
         logger.error(f"Unexpected error in pipeline: {e}", exc_info=True)
         send_notification(f"Pipeline failed with error: {e}")

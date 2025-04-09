@@ -3,6 +3,16 @@ import logging
 from logging.handlers import RotatingFileHandler
 
 
+## TODO:
+# Add in profile loops
+# 
+# set up with kaushik
+#
+# 
+#
+#
+#
+
 # US 
 # Canada
 # Belize 
@@ -28,6 +38,12 @@ CREDS="/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/nordvpncreds
 # VPN configurations
 # https://configs.ipvanish.com/openvpn/
 VPN_CONFIGS = {
+    "US": [
+        "vpnconfigs/nord/ovpn_udp/us-ca100.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/us-ca101.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/us-ca102.nordvpn.com.udp.ovpn",
+        "vpnconfigs/nord/ovpn_udp/us-ca103.nordvpn.com.udp.ovpn"
+    ],
     "CA": [
         "vpnconfigs/nord/ovpn_udp/ca-us100.nordvpn.com.udp.ovpn",
         "vpnconfigs/nord/ovpn_udp/ca-us101.nordvpn.com.udp.ovpn",
@@ -126,7 +142,8 @@ VPN_CONFIGS = {
 
 
 # List of countries to iterate through
-COUNTRIES = ["CO", "BR", "NG", "CH"]
+# COUNTRIES = ["BZ", "GT", "KE", "AE", "TW", "SG", "IN", "VN", "NZ", "PG"]
+COUNTRIES = ["US" ,"CA" ,"BZ" ,"GT" ,"CO" ,"BR" ,"NG" ,"KE" ,"CH" ,"NL" ,"RS" ,"AE" ,"SG", "IN", "VN", "NZ", "PG"]
 
 #All Scripts and languages(minimize this):
     # Scripts to run and languages per script
@@ -185,7 +202,7 @@ TELEGRAM_CHAT_ID = ""
 # Timing and retry settings
 VPN_CONNECT_DELAY = 5        # seconds to wait after connecting VPN 
 VPN_DISCONNECT_DELAY = 5      # seconds to wait after disconnecting VPN
-SCRIPT_RETRY_COUNT = 3        # number of retries per script execution
+SCRIPT_RETRY_COUNT = 4        # number of retries per script execution
 
 # Default Chrome profile to use for all tests
 CURRENT_PROFILE = "abhi"
