@@ -21,13 +21,10 @@ from logging.handlers import RotatingFileHandler
 # Brazil
 # Nigeria
 # Kenya 
-# Europe
 # Switzerland
 # Netherlands
 # Serbia
-# Saudi Arabia
 # UAE
-# Taiwan
 # Singapore
 # India
 # Vietnam
