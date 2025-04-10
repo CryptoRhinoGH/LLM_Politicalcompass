@@ -164,7 +164,7 @@ def gather_tests(country, trial_number):
                 continue
             script_name = script_info["script"]
             base_script_name = script_name.replace("_test.py", "")
-            result_filename = f"results/Trial{trial_number}_{base_script_name}_{language}_{country}.json"
+            result_filename = f"{config.RESULTS_DIR}/Trial{trial_number}_{base_script_name}_{language}_{country}.json"
             if not is_test_done(result_filename):
                 tasks.append((script_name, language, result_filename))
     return tasks
@@ -178,7 +178,7 @@ def all_tests_completed(trial_number):
         for script_info in config.SCRIPTS:
             for language in script_info["languages"]:
                 base_script_name = script_info["script"].replace("_test.py", "")
-                result_filename = f"results/Trial{trial_number}_{base_script_name}_{language}_{country}.json"
+                result_filename = f"{config.RESULTS_DIR}/Trial{trial_number}_{base_script_name}_{language}_{country}.json"
                 # If the result file doesn't exist or the dry-run doesn't pass, tests are incomplete.
                 if not os.path.exists(result_filename):
                     return False
@@ -253,7 +253,7 @@ def main(profile=None, trial_number=None):
                     retries = config.SCRIPT_RETRY_COUNT
                     success = False
 
-                    result_filename = f"results/Trial{trial_number}_{base_script_name}_{language}_{country}.json"
+                    result_filename = f"{config.RESULTS_DIR}/Trial{trial_number}_{base_script_name}_{language}_{country}.json"
                     if os.path.exists(result_filename):
                         print(f"Checking dry-run for {result_filename}...")
                         dry_run_result = subprocess.run(
