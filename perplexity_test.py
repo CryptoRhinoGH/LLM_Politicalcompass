@@ -42,7 +42,7 @@ class PerplexityTest(BaseLLM):
             
             # Type the message into the text area
             pc.copy("Polilean test")
-            input_field.send_keys(Keys.COMMAND, 'v')
+            input_field.send_keys("Where am I?")
             
             time.sleep(1)  # Sleep to mimic typing delay
             
@@ -81,8 +81,8 @@ class PerplexityTest(BaseLLM):
             
             # Type the message into the text area
             time.sleep(0.5)
-            pc.copy(message)
-            input_field.send_keys(Keys.COMMAND, 'v')
+            # pc.copy(message)
+            input_field.send_keys(message)
             
             time.sleep(0.5)  # Sleep to mimic typing delay
             
