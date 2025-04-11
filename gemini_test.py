@@ -41,7 +41,7 @@ class GeminiTest(BaseLLM):
             # Send the message by typing it
             input_field.send_keys(message)
             
-            time.sleep(0.5)  # Sleep to mimic typing delay
+            # time.sleep(0.5)  # Sleep to mimic typing delay
             
             # Find and click the send button
             send_button = WebDriverWait(self.driver, 20).until(

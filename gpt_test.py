@@ -29,7 +29,7 @@ class GPTTest(BaseLLM):
             time.sleep(2)
         except Exception as e:
             self.logger.error(f"Error navigating to ChatGPT: {e}")
-            raise
+            sys.exit(42)  # exit with code 42 indicating a VPN change
             
 
     def close_stay_logged_out_popup(self):
