@@ -12,10 +12,11 @@ import config
 from political_compass import choose, check_numbers
 
 class BaseLLM:
-    def __init__(self, model_name, language, country, profile_name=None, trial_number=None):
+    def __init__(self, model_name, language, country, profile_name=None, trial_number=None, proxy_index=None):
         self.model_name = model_name
         self.language = language
         self.country = country
+        self.proxy_index = proxy_index
         # Use the provided profile_name or fall back to the config default
         self.profile_name = profile_name if profile_name else config.CURRENT_PROFILE
         self.driver = None
@@ -86,6 +87,12 @@ class BaseLLM:
         options.add_argument("--no-service-autorun")
         options.add_argument("--password-store=basic")
         options.add_argument("--enable-logging")
+        if self.proxy_index >= 0:
+            proxy_list = config.VPN_CONFIGS.get(self.country, [])
+            if self.proxy_index < len(proxy_list):
+                proxy = proxy_list[self.proxy_index].replace("socks5://", "")
+                options.add_argument(f"--proxy-server=socks5://{proxy}")
+                self.logger.info(f"Injected SOCKS5 proxy into Chrome: {proxy}")
         
         self.logger.info(f"Initializing Chrome driver for {self.model_name} using profile {self.profile_name}")
         self.driver = uc.Chrome(options=options)

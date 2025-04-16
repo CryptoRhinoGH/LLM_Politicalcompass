@@ -98,6 +98,9 @@ if __name__ == "__main__":
                         help=f'Chrome profile to use (default: {config.CURRENT_PROFILE})')
     parser.add_argument('--trial_num', '-t', dest='trial_num',
                             help=f'Trial number', default=None)
+    parser.add_argument("--proxy_index", type=int, 
+                            help="Index of SOCKS5 proxy to use")
+
     
     args = parser.parse_args()
     

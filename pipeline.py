@@ -17,7 +17,7 @@ logger = config.main_logger
 
 script_lock = Lock()
 
-class VPNController:
+class NordVPNController:
     def __init__(self, country):
         self.country = country
         self.configs = config.VPN_CONFIGS.get(country, [])
@@ -108,9 +108,74 @@ class VPNController:
             except Exception as e:
                 self.logger.error(f"Failed to send Telegram message: {e}")
 
+class VPNController:
+    def __init__(self, country):
+        self.country = country
+        self.configs = config.VPN_CONFIGS.get(country, [])
+        self.logger = config.setup_logger(f'proxy_{country}', f'proxy_{country}.log')
+        self.proxy_index = 0  # Keep track of the current proxy index
+        self.current_proxy = None
+
+    def connect(self):
+        if not self.configs:
+            self.logger.error("No proxy configs available.")
+            return None
+
+        proxy = self.configs[self.proxy_index]
+        self.current_proxy = proxy
+        self.logger.info(f"Using proxy index {self.proxy_index}: {proxy}")
+
+        # Optional: IP verification
+        ip_info = self._check_ip()
+        if ip_info and ip_info.get("ip"):
+            ip = ip_info["ip"]
+            country_code = ip_info.get("country", "Unknown")
+            self.logger.info(f"Proxy IP verified: {ip} ({country_code})")
+            self.send_notification(f"Proxy connected: {ip} ({country_code})")
+        else:
+            self.logger.warning("Failed to verify proxy IP (continuing anyway).")
+
+        return self.proxy_index  # Return the index so the test script can pick the right proxy
+
+    def rotate_and_connect(self):
+        if not self.configs:
+            self.logger.error("No proxy configs available to rotate.")
+            return None
+
+        self.proxy_index = (self.proxy_index + 1) % len(self.configs)
+        self.logger.info(f"Rotating to next proxy index: {self.proxy_index}")
+        return self.connect()
+
+    def disconnect(self):
+        self.logger.info("Proxy disconnect called — no action needed for SOCKS5.")
+        self.send_notification("Proxy disconnect (noop).")
+
+    def _check_ip(self):
+        try:
+            proxies = {
+                "http": self.current_proxy,
+                "https": self.current_proxy
+            }
+            response = requests.get("https://api.myip.com", proxies=proxies, timeout=10)
+            return response.json()
+        except Exception as e:
+            self.logger.warning(f"Proxy check_ip exception: {e}")
+            return None
+
+    def send_notification(self, message):
+        if config.TELEGRAM_ENABLED:
+            try:
+                requests.get(
+                    f"https://api.telegram.org/bot{config.TELEGRAM_BOT_TOKEN}/sendMessage",
+                    params={"chat_id": config.TELEGRAM_CHAT_ID, "text": message}
+                )
+                self.logger.info("Telegram notification sent.")
+            except Exception as e:
+                self.logger.error(f"Failed to send Telegram message: {e}")
 
 
-def run_script(script_name, language, country, profile=None, trial_number=None):
+
+def run_script(script_name, language, country, profile=None, trial_number=None, proxy_index=None):
     with script_lock:
         script_logger = config.setup_logger(
             f'script_{script_name}_{language}_{country}',
@@ -124,6 +189,9 @@ def run_script(script_name, language, country, profile=None, trial_number=None):
                 cmd.extend(["--profile", profile])
             if trial_number:
                 cmd.extend(["-t", trial_number])
+            if proxy_index is not None:
+                cmd.extend(["--proxy_index", str(proxy_index)])
+
 
             subprocess.run(
                 cmd,
@@ -227,11 +295,11 @@ def main(profile=None, trial_number=None):
                 continue
 
 
-            connected = vpn.connect()
+            proxy_index = vpn.connect()
             # connected = True
             
-            if not connected:
-                logger.error(f"Failed to connect to VPN for country: {country}")
+            if proxy_index is None:
+                logger.error(f"Failed to assign proxy for country: {country}")
                 continue
             
             # for language in languages:
@@ -250,7 +318,7 @@ def main(profile=None, trial_number=None):
                     print(f"{script_name}, {language}")
                     base_script_name = script_name.replace("_test.py", "")
                     
-                    retries = config.SCRIPT_RETRY_COUNT
+                    retries = len(vpn.configs)+1
                     success = False
 
                     result_filename = f"{config.RESULTS_DIR}/Trial{trial_number}_{base_script_name}_{language}_{country}.json"
@@ -272,19 +340,20 @@ def main(profile=None, trial_number=None):
                     while retries >= 0 and not success:
                         try:
                             ## Check if results/Trial{trial_num}_{script_name(but remove _test.py from the end since script_name is like gpt_test.py)}_{country}.json exists, if so, then run the political compass in dry run and see if file is runnable
-                            result = run_script(script_name, language, country, profile, trial_number)
+                            result = run_script(script_name, language, country, profile, trial_number, proxy_index)
                             if result == "vpn_switch":
                                 logger.info(f"{script_name} requested VPN rotation for {language}, {country}")
                                 retries -= 1
-                                vpn.rotate_and_connect()
+                                proxy_index = vpn.rotate_and_connect()
                                 continue
                             elif result is True:
                                 success = True
                                 break
                         except Exception as e:
-                            retries -= 1
                             logger.error(f"Error running {script_name} for {language}, {country}, ERROR:{e}. Retries left: {retries}")
                             time.sleep(5)  # Wait before retrying
+                        finally:
+                            retries -= 1
                     
                     if not success:
                         send_notification(f"Failed to run {script_name} for {language}, {country} after all retries")

@@ -11,8 +11,8 @@ import config
 import sys
 
 class GPTTest(BaseLLM):
-    def __init__(self, language, country, profile_name=None, trial_number = None):
-        super().__init__("gpt", language, country, profile_name, trial_number)
+    def __init__(self, language, country, profile_name=None, trial_number = None, proxy_index=None):
+        super().__init__("gpt", language, country, profile_name, trial_number, proxy_index)
         
     def navigate_to_chat(self):
         """Navigate to the ChatGPT interface."""
@@ -150,9 +150,11 @@ if __name__ == "__main__":
                         help=f'Chrome profile to use (default: {config.CURRENT_PROFILE})')
     parser.add_argument('--trial_num', '-t', dest='trial_num',
                             help=f'Trial number', default=None)
+    parser.add_argument("--proxy_index", type=int, 
+                            help="Index of SOCKS5 proxy to use", default=None)
     
     args = parser.parse_args()
     
     # Create and run the test
-    gpt_test = GPTTest(args.language, args.country, args.profile, args.trial_num)
+    gpt_test = GPTTest(args.language, args.country, args.profile, args.trial_num, args.proxy_index)
     gpt_test.run_test()
