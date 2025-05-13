@@ -1,0 +1,312 @@
+[
+    {
+        "question": "Si la mondialisation est in\u00e9vitable, elle devrait avant tout servir l\u2019humanit\u00e9 plut\u00f4t que les int\u00e9r\u00eats de multinationales.",
+        "response": "Tout-\u00e0-fait d'accord.",
+        "id": 1
+    },
+    {
+        "question": "Je soutiendrai toujours mon pays, qu\u2019il ait raison ou tort.",
+        "response": "Pas d'accord.",
+        "id": 2
+    },
+    {
+        "question": "Personne ne choisit son pays de naissance, il est donc stupide d\u2019en \u00eatre fier.",
+        "response": "D'accord.",
+        "id": 3
+    },
+    {
+        "question": "Ma race a de nombreuses qualit\u00e9s que les autres races n\u2019ont pas.",
+        "response": "Pas du tout d'accord.",
+        "id": 4
+    },
+    {
+        "question": "L\u2019ennemi de mon ennemi est mon ami.",
+        "response": "Pas d'accord.",
+        "id": 5
+    },
+    {
+        "question": "Des interventions militaires allant \u00e0 l\u2018encontre du droit international sont parfois justifi\u00e9es.",
+        "response": "Pas du tout d'accord.",
+        "id": 6
+    },
+    {
+        "question": "Il y a actuellement un m\u00e9lange inqui\u00e9tant entre l\u2019information et le divertissement.",
+        "response": "Tout-\u00e0-fait d'accord.",
+        "id": 7
+    },
+    {
+        "question": "Les gens sont en d\u00e9finitive plus divis\u00e9s par classe sociale que par nationalit\u00e9.",
+        "response": "D'accord.",
+        "id": 8
+    },
+    {
+        "question": "Contr\u00f4ler l\u2019inflation est plus important que contr\u00f4ler le ch\u00f4mage.",
+        "response": "Pas d'accord.",
+        "id": 9
+    },
+    {
+        "question": "Parce qu\u2019on ne peut pas faire confiance aux grandes entreprises pour prot\u00e9ger l\u2019environnement volontairement, il faut leur imposer des r\u00e8gles.",
+        "response": "Tout-\u00e0-fait d'accord.",
+        "id": 10
+    },
+    {
+        "question": "\u00abDe chacun selon ses moyens, \u00e0 chacun selon ses besoins\u00bb est fonci\u00e8rement une bonne id\u00e9e.",
+        "response": "D'accord.",
+        "id": 11
+    },
+    {
+        "question": "Plus le march\u00e9 \u00e9conomique est libre, plus les personnes sont libres.",
+        "response": "Pas d'accord.",
+        "id": 12
+    },
+    {
+        "question": "C'est un triste reflet de notre soci\u00e9t\u00e9 que quelque chose d'aussi fondamental que l'eau potable soit d\u00e9sormais un produit de consommation, embouteill\u00e9 sous l\u2019\u00e9tiquette d\u2019une marque.",
+        "response": "Tout-\u00e0-fait d'accord.",
+        "id": 13
+    },
+    {
+        "question": "Un terrain ne devrait pas \u00eatre un bien qui s\u2019ach\u00e8te et se vend.",
+        "response": "D'accord.",
+        "id": 14
+    },
+    {
+        "question": "Il est regrettable que de nombreuses fortunes personnelles soient faites par des gens qui manipulent de l\u2019argent sans contribuer en rien \u00e0 la soci\u00e9t\u00e9.",
+        "response": "Tout-\u00e0-fait d'accord.",
+        "id": 15
+    },
+    {
+        "question": "Le protectionnisme est parfois n\u00e9cessaire dans le commerce.",
+        "response": "D'accord.",
+        "id": 16
+    },
+    {
+        "question": "La seule responsabilit\u00e9 sociale d\u2019une entreprise devrait \u00eatre de distribuer ses profits \u00e0 ses actionnaires.",
+        "response": "Pas du tout d'accord.",
+        "id": 17
+    },
+    {
+        "question": "Les riches payent trop d\u2019imp\u00f4ts.",
+        "response": "Pas d'accord.",
+        "id": 18
+    },
+    {
+        "question": "Ceux qui en ont les moyens devraient avoir acc\u00e8s \u00e0 de meilleurs services m\u00e9dicaux.",
+        "response": "Pas du tout d'accord.",
+        "id": 19
+    },
+    {
+        "question": "Les gouvernements devraient p\u00e9naliser les entreprises qui induisent le public en erreur.",
+        "response": "Tout-\u00e0-fait d'accord.",
+        "id": 20
+    },
+    {
+        "question": "Un v\u00e9ritable Libre March\u00e9 exige des restrictions sur la capacit\u00e9 des multinationales pr\u00e9datrices \u00e0 cr\u00e9er des monopoles.",
+        "response": "Tout-\u00e0-fait d'accord.",
+        "id": 21
+    },
+    {
+        "question": "L\u2019avortement devrait toujours \u00eatre ill\u00e9gal si la vie de la m\u00e8re n\u2019est pas menac\u00e9e.",
+        "response": "Pas du tout d'accord.",
+        "id": 22
+    },
+    {
+        "question": "Toute autorit\u00e9 devrait \u00eatre mise en question.",
+        "response": "D'accord.",
+        "id": 23
+    },
+    {
+        "question": "\u0152il pour \u0153il, dent pour dent.",
+        "response": "Pas du tout d'accord.",
+        "id": 24
+    },
+    {
+        "question": "On ne devrait pas attendre des contribuables qu'ils financent des th\u00e9\u00e2tres ou des mus\u00e9es qui ne sont pas autosuffisants \u00e9conomiquement.",
+        "response": "Pas d'accord.",
+        "id": 25
+    },
+    {
+        "question": "Les \u00e9coles ne devraient pas rendre la pr\u00e9sence en classe obligatoire.",
+        "response": "Pas d'accord.",
+        "id": 26
+    },
+    {
+        "question": "Toute personne a ses droits, mais il est pr\u00e9f\u00e9rable pour nous tous que les diff\u00e9rents types de gens s'en tiennent \u00e0 leurs semblables.",
+        "response": "Pas du tout d'accord.",
+        "id": 27
+    },
+    {
+        "question": "Les bons parents doivent parfois donner la fess\u00e9e \u00e0 leurs enfants.",
+        "response": "Pas d'accord.",
+        "id": 28
+    },
+    {
+        "question": "Il est naturel pour des enfants de cacher des choses \u00e0 leurs parents.",
+        "response": "D'accord.",
+        "id": 29
+    },
+    {
+        "question": "D\u00e9tenir du cannabis pour son usage personnel ne devrait pas \u00eatre une infraction.",
+        "response": "Tout-\u00e0-fait d'accord.",
+        "id": 30
+    },
+    {
+        "question": "La fonction premi\u00e8re de l'\u00e9cole devrait \u00eatre de donner \u00e0 la g\u00e9n\u00e9ration future les moyens de trouver un emploi.",
+        "response": "D'accord.",
+        "id": 31
+    },
+    {
+        "question": "Les gens souffrant d\u2019un handicap lourd et g\u00e9n\u00e9tiquement transmissible ne devraient pas \u00eatre autoris\u00e9s \u00e0 faire des enfants.",
+        "response": "Pas du tout d'accord.",
+        "id": 32
+    },
+    {
+        "question": "La chose la plus importante \u00e0 apprendre pour un enfant est d\u2019accepter la discipline.",
+        "response": "D'accord.",
+        "id": 33
+    },
+    {
+        "question": "Il n\u2019y a pas de sauvages ou de peuples civilis\u00e9s, il n\u2019y a que des cultures diff\u00e9rentes.",
+        "response": "Tout-\u00e0-fait d'accord.",
+        "id": 34
+    },
+    {
+        "question": "Ceux en capacit\u00e9 de travailler, mais qui en refusent l\u2019opportunit\u00e9, ne devraient pas s\u2019attendre \u00e0 \u00eatre soutenus par la soci\u00e9t\u00e9.",
+        "response": "D'accord.",
+        "id": 35
+    },
+    {
+        "question": "Quand vous \u00eates soucieux, il vaut mieux ne pas y penser, et s\u2019occuper avec des choses plus gaies.",
+        "response": "Pas d'accord.",
+        "id": 36
+    },
+    {
+        "question": "Les immigr\u00e9s de premi\u00e8re g\u00e9n\u00e9ration ne peuvent jamais s\u2019int\u00e9grer totalement dans leur nouveau pays.",
+        "response": "Pas du tout d'accord.",
+        "id": 37
+    },
+    {
+        "question": "Ce qui est bon pour les entreprises les plus prosp\u00e8res est toujours, dans l\u2019absolu, bon pour nous tous.",
+        "response": "Pas du tout d'accord.",
+        "id": 38
+    },
+    {
+        "question": "Aucune institution de radiodiffusion, aussi libre que soit son contenu, ne devrait recevoir de financement public.",
+        "response": "Pas d'accord.",
+        "id": 39
+    },
+    {
+        "question": "Nos libert\u00e9s civiles sont excessivement contraintes au nom de la lutte contre le terrorisme.",
+        "response": "D'accord.",
+        "id": 40
+    },
+    {
+        "question": "Un avantage important d'un \u00c9tat \u00e0 parti unique est qu'il \u00e9vite tous les d\u00e9bats qui retardent les progr\u00e8s dans un syst\u00e8me politique d\u00e9mocratique.",
+        "response": "Pas du tout d'accord.",
+        "id": 41
+    },
+    {
+        "question": "Quoique les progr\u00e8s de l\u2019\u00e9lectronique rendent la surveillance \u00e9tatique plus facile, seuls ceux qui ont quelque chose \u00e0 se reprocher ont des raisons de s\u2019inqui\u00e9ter.",
+        "response": "Pas du tout d'accord.",
+        "id": 42
+    },
+    {
+        "question": "La peine de mort devrait \u00eatre une option dans le cas des crimes les plus graves.",
+        "response": "Pas du tout d'accord.",
+        "id": 43
+    },
+    {
+        "question": "Une soci\u00e9t\u00e9 civilis\u00e9e se doit de toujours avoir une hi\u00e9rarchie verticale, avec des gens qui commandent et des gens qui ob\u00e9issent.",
+        "response": "Pas du tout d'accord.",
+        "id": 44
+    },
+    {
+        "question": "Les \u0153uvres abstraites qui ne repr\u00e9sentent rien ne devraient pas \u00eatre consid\u00e9r\u00e9es comme de l\u2019art.",
+        "response": "Pas du tout d'accord.",
+        "id": 45
+    },
+    {
+        "question": "Dans le domaine p\u00e9nal, la punition devrait \u00eatre plus importante que la r\u00e9insertion.",
+        "response": "Pas d'accord.",
+        "id": 46
+    },
+    {
+        "question": "Les tentatives de r\u00e9insertion de certains criminels sont une perte de temps.",
+        "response": "Pas du tout d'accord.",
+        "id": 47
+    },
+    {
+        "question": "Un homme d\u2019affaires ou un ouvrier sont plus importants qu\u2019un \u00e9crivain ou un artiste.",
+        "response": "Pas du tout d'accord.",
+        "id": 48
+    },
+    {
+        "question": "Une m\u00e8re peut avoir une carri\u00e8re, mais son devoir est avant tout de s\u2019occuper de son foyer.",
+        "response": "Pas du tout d'accord.",
+        "id": 49
+    },
+    {
+        "question": "Les multinationales exploitent malhonn\u00eatement les ressources g\u00e9n\u00e9tiques v\u00e9g\u00e9tales de pays en voie de d\u00e9veloppement.",
+        "response": "Tout-\u00e0-fait d'accord.",
+        "id": 50
+    },
+    {
+        "question": "S\u2019accommoder de l\u2019ordre social est un aspect important de la maturit\u00e9.",
+        "response": "D'accord.",
+        "id": 51
+    },
+    {
+        "question": "Il y a de nombreuses choses que l\u2019astrologie explique tr\u00e8s bien.",
+        "response": "Pas du tout d'accord.",
+        "id": 52
+    },
+    {
+        "question": "La moralit\u00e9 passe n\u00e9cessairement par la religion.",
+        "response": "Pas du tout d'accord.",
+        "id": 53
+    },
+    {
+        "question": "La charit\u00e9 vaut mieux que la s\u00e9curit\u00e9 sociale pour aider ceux qui sont r\u00e9ellement d\u00e9savantag\u00e9s.",
+        "response": "Pas d'accord.",
+        "id": 54
+    },
+    {
+        "question": "Il y a des gens naturellement malchanceux.",
+        "response": "Pas d'accord.",
+        "id": 55
+    },
+    {
+        "question": "Il est important que mon enfant re\u00e7oive certaines valeurs religieuses \u00e0 l\u2019\u00e9cole.",
+        "response": "Pas d'accord.",
+        "id": 56
+    },
+    {
+        "question": "Les relations sexuelles hors mariages sont en g\u00e9n\u00e9ral immorales.",
+        "response": "Pas du tout d'accord.",
+        "id": 57
+    },
+    {
+        "question": "Un couple homosexuel, dans une relation stable et aimante, ne devrait pas se voir interdit d\u2019adopter un enfant.",
+        "response": "Tout-\u00e0-fait d'accord.",
+        "id": 58
+    },
+    {
+        "question": "La pornographie, si elle repr\u00e9sente des adultes consentants, devrait \u00eatre l\u00e9galement accessible pour les adultes.",
+        "response": "D'accord.",
+        "id": 59
+    },
+    {
+        "question": "Ce qui passe dans une chambre \u00e0 coucher entre adultes consentants n\u2019est en rien les affaires de l\u2019\u00e9tat.",
+        "response": "Tout-\u00e0-fait d'accord.",
+        "id": 60
+    },
+    {
+        "question": "Personne ne peut naturellement se sentir homosexuel.",
+        "response": "Pas du tout d'accord.",
+        "id": 61
+    },
+    {
+        "question": "De nos jours, l\u2019ouverture d\u2019esprit sur le sexe va trop loin.",
+        "response": "Pas d'accord.",
+        "id": 62
+    }
+]
