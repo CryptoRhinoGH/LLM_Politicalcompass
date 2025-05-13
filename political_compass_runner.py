@@ -5,6 +5,7 @@ import os
 import subprocess
 import glob
 import csv
+from pathlib import Path
 
 # Define global constants for row and column indices
 LANGUAGE_START_ROW = {
@@ -22,11 +23,13 @@ COLUMN_INDEX = {
     'right': 4
 }
 
-def check_csv_for_value(filename, language, trial_number, political_view):
+def check_csv_for_value(filename, language, trial_number, country):
     """Checks if the ec and soc values are already in the CSV file."""
+    if not Path(filename).exists():
+        return False
     language_row = LANGUAGE_START_ROW[language.lower()]  # Starting row for the language
     target_row = language_row + trial_number - 1  # Calculate the target row
-    response_column = COLUMN_INDEX[political_view] - 1  # Get the column index for the response type
+    response_column = COLUMN_INDEX[country] - 1  # Get the column index for the response type
 
     with open(filename, 'r', newline='') as file:
         reader = csv.reader(file)
@@ -38,7 +41,7 @@ def check_csv_for_value(filename, language, trial_number, political_view):
 
     return False  # Value does not exist
 
-def run_trial_script(trial_number=None, chatbot=None, language=None, political_view = None, sandbox = False):
+def run_trial_script(trial_number=None, chatbot=None, language=None, country = None, dry_run = False):
     """Runs the trial processing script with the specified parameters."""
     json_pattern = "results/"
 
@@ -57,8 +60,8 @@ def run_trial_script(trial_number=None, chatbot=None, language=None, political_v
     else:
         json_pattern += "*"
 
-    if political_view:
-        json_pattern += f"{political_view}"
+    if country:
+        json_pattern += f"{country}"
 
     json_pattern += "*.json"  # Complete the pattern with the .json extension
 
@@ -83,7 +86,7 @@ def run_trial_script(trial_number=None, chatbot=None, language=None, political_v
         trial_number = int(parts[0].lstrip('Trial'))  # Extracting the trial number
         chatbot = parts[1]  # Extracting chatbot name
         language = parts[2]  # Extracting language
-        political_view = parts[3].rstrip('.json')  # Extracting political view
+        country = parts[3].rstrip('.json')  # Extracting political view
 
         # Determine the corresponding CSV filename based on chatbot
         filename_mapping = {
@@ -94,15 +97,15 @@ def run_trial_script(trial_number=None, chatbot=None, language=None, political_v
         
         filename = filename_mapping.get(chatbot, None)
         if filename:
-            if check_csv_for_value(filename, language, trial_number, political_view):
+            if check_csv_for_value(filename, language, trial_number, country):
                 # print(f"Values already exist in {filename} for Trial {trial_number}, Chatbot {chatbot}, Language {language}. Skipping.")
                 continue  # Skip to the next file if the value already exists
                 pass
 
             try:
                 # Construct the command to run the processing script
-                if sandbox:
-                    command = ["python3", "political_compass.py", json_file, "--sandbox"]
+                if dry_run:
+                    command = ["python3", "political_compass.py", json_file, "--dry-run"]
                 else:
                     command = ["python3", "political_compass.py", json_file]
                 subprocess.run(command, check=True)
@@ -113,16 +116,17 @@ def run_trial_script(trial_number=None, chatbot=None, language=None, political_v
                 continue  # Skip to the next file in case of an error
 
 if __name__ == "__main__":
+    from config import COUNTRIES
     parser = argparse.ArgumentParser(description='Runner for survey processing trials.')
     parser.add_argument('--trial-number', type=int, help='The trial number to process (optional).')
     parser.add_argument('--chatbot', type=str, help='The chatbot type to process (optional).')
     parser.add_argument('--language', type=str, choices=['english', 'german', 'spanish', 'french'],
                         help='The language of the responses (optional).')
-    parser.add_argument('--pol', type=str, choices=['farleft', 'farright', 'middle'],
-                        help='The political view of the responses (optional).')
-    parser.add_argument('--sandbox', action=argparse.BooleanOptionalAction, help="Enable sandbox mode")
+    parser.add_argument('--country', type=str, choices=COUNTRIES,
+                        help='The country of the test (optional).')
+    parser.add_argument('--dry-run', action=argparse.BooleanOptionalAction, help="Enable sandbox mode")
     argcomplete.autocomplete(parser)
 
     args = parser.parse_args()
 
-    run_trial_script(args.trial_number, args.chatbot, args.language, args.pol, args.sandbox)
+    run_trial_script(args.trial_number, args.chatbot, args.language, args.country, args.dry_run)

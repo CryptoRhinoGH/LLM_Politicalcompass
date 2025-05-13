@@ -131,7 +131,7 @@ def append_to_csv(filename, language, trial_number, political_view, ec, soc):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Process survey responses.')
     parser.add_argument('file', type=str, help='Path to the JSON file with responses.')
-    parser.add_argument('--sandbox', action=argparse.BooleanOptionalAction, help="Enable sandbox mode")
+    parser.add_argument('--dry-run', action=argparse.BooleanOptionalAction, help="Dry run to check if file will be runnable")
 
     args = parser.parse_args()
 
@@ -168,7 +168,7 @@ if __name__ == "__main__":
         print(f"Potential problem in {args.file}")
         pass
 
-    if args.sandbox:
+    if args.dry_run:
         print(f"File {args.file} should be runnable")
         print("\n")
         exit(0)
@@ -230,7 +230,8 @@ if __name__ == "__main__":
                 filename_mapping = {
                     'gpt': 'csv_results/gpt_cookie_results.csv',
                     'gemini': 'csv_results/gemini_cookie_results.csv',
-                    'perplexity': 'csv_results/perplexity_cookie_results.csv'
+                    'perplexity': 'csv_results/perplexity_cookie_results.csv',
+                    'deepseek': 'csv_results/deepseek_cookie_results.csv'
                 }
                 
                 # Extract the base filename without path and extension

@@ -52,6 +52,9 @@ Install requirements
 ```
 
 Edit file to indicate `questionfile` and `responsefile`
+Make changes to config file:
+Get vpn configurations for whatever countries and add to config file. 
+Update the `config.py` to reflect the VPN configs, and their paths etc.
 Run file
 ```bash
 % python gpt.py
