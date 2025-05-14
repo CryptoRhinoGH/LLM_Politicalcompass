@@ -184,7 +184,7 @@ SCRIPTS = [
 
 # File paths
 QUESTION_DIR = "politicalcompassquestions"
-RESULTS_DIR = "results"
+RESULTS_DIR = "resultsfarleft"
 LOG_DIR = "logs"
 
 os.makedirs(LOG_DIR, exist_ok=True)
@@ -202,13 +202,17 @@ VPN_DISCONNECT_DELAY = 5      # seconds to wait after disconnecting VPN
 SCRIPT_RETRY_COUNT = 4        # number of retries per script execution
 
 # Default Chrome profile to use for all tests
-CURRENT_PROFILE = "abhi"
+CURRENT_PROFILE = "farleft"
 
 # Chrome profiles DO NOT REMOVE DEFAULT
 CHROME_PROFILES = {
     "default": {
         "path": "",
         "profile": "Default"
+    },
+    "farleft": {
+        "path": "/Users/abhisareen/Documents/PSU/temp/mitproject/chrome_profiles/Profile 4/",
+        "profile": "Profile 4"
     },
     "abhi": {
         "path": "/Users/abhisareen/Library/Application Support/Google/Chrome/",
