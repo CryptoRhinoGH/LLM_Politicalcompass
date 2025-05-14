@@ -87,12 +87,12 @@ class BaseLLM:
         options.add_argument("--no-service-autorun")
         options.add_argument("--password-store=basic")
         options.add_argument("--enable-logging")
-        if self.proxy_index >= 0:
-            proxy_list = config.VPN_CONFIGS.get(self.country, [])
-            if self.proxy_index < len(proxy_list):
-                proxy = proxy_list[self.proxy_index].replace("socks5://", "")
-                options.add_argument(f"--proxy-server=socks5://{proxy}")
-                self.logger.info(f"Injected SOCKS5 proxy into Chrome: {proxy}")
+        # if self.proxy_index >= 0:
+        #     proxy_list = config.VPN_CONFIGS.get(self.country, [])
+        #     if self.proxy_index < len(proxy_list):
+        #         proxy = proxy_list[self.proxy_index].replace("socks5://", "")
+        #         options.add_argument(f"--proxy-server=socks5://{proxy}")
+        #         self.logger.info(f"Injected SOCKS5 proxy into Chrome: {proxy}")
         
         self.logger.info(f"Initializing Chrome driver for {self.model_name} using profile {self.profile_name}")
         self.driver = uc.Chrome(options=options)

@@ -1,4 +1,3 @@
-#!/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/llm_env/bin/python
 import re
 import os
 import csv
@@ -7,28 +6,21 @@ import json
 import logging
 import argparse
 import selenium
+import pandas as pd
 import undetected_chromedriver as uc
-from selenium import webdriver
+# from selenium import webdriver
 from selenium.common import exceptions
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 
-# Define global constants for row and column indices
-LANGUAGE_START_ROW = {
-    'english': 2,
-    'spanish': 8,
-    'german': 14,
-    'french': 20
-}
+import undetected_chromedriver as uc
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
-COLUMN_INDEX = {
-    'left': 2,
-    'farleft': 2,
-    'middle': 3,
-    'farright': 4,
-    'right': 4
-}
+SUMMARY_CSV = "csv_results/summary.csv"
 
 # Define response patterns for each language
 response_patterns = {
@@ -102,31 +94,42 @@ def extract_ec_soc(url):
         return match.groups()  # Return a tuple (ec, soc)
     return None
 
-def append_to_csv(filename, language, trial_number, political_view, ec, soc):
-    """Appends the extracted values to the corresponding CSV file."""
-    language_row = int(LANGUAGE_START_ROW[language.lower()])  # Starting row for the language
-    target_row = language_row + trial_number - 1 # Calculate the target row
-    # print(f"target row {target_row}")
+def append_summary_row(trial, pol_leaning, chatbot, language, country, ec, soc, filename):
+    os.makedirs(os.path.dirname(SUMMARY_CSV), exist_ok=True)
 
-    # Determine the response type from the filename
-    response_column = COLUMN_INDEX.get(political_view) - 1 # Get the column index for the response type
-    # print(f"column {response_column}")
+    # Define columns in order
+    cols = ["trial","pol_leaning","chatbot","language","country",
+            "results_x","results_y","filename","results_xy"]
 
-    # Open the CSV file and append the values in the correct row and column
-    with open(filename, 'r', newline='') as file:
-        reader = list(csv.reader(file))
-        
-    # Ensure the CSV has enough rows
-    while len(reader) < target_row + 1:
-        reader.append([""] * 5)  # Add empty rows if necessary
+    # Build the new row as a DataFrame
+    new_row = pd.DataFrame([{
+        "trial":       trial,
+        "pol_leaning": pol_leaning,
+        "chatbot":     chatbot,
+        "language":    language,
+        "country":     country,
+        "results_x":   ec,
+        "results_y":   soc,
+        "filename":    filename,
+        "results_xy":  f"{ec}&{soc}"
+    }], columns=cols)
 
-    # Place ec and soc values in the correct position
-    reader[target_row][response_column] = f"ec={ec}, soc={soc}"  # Append values in the correct cell
+    # Load existing data if the file exists
+    if os.path.exists(SUMMARY_CSV):
+        df = pd.read_csv(SUMMARY_CSV)
 
-    # Write back to the CSV file
-    with open(filename, 'w', newline='') as file:
-        writer = csv.writer(file)
-        writer.writerows(reader)
+        # Check if this filename is already present
+        if filename in df["filename"].values:
+            print(f"⚠️  Warning: Overwriting existing entry for {filename}")
+
+        # Drop any rows with the same filename
+        df = df[df["filename"] != filename]
+    else:
+        df = pd.DataFrame(columns=cols)
+
+    # Concatenate the new row and write back to the CSV
+    df = pd.concat([df, new_row], ignore_index=True)
+    df.to_csv(SUMMARY_CSV, index=False)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Process survey responses.')
@@ -135,14 +138,13 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    #Split filename to get parameters
-    base_filename = os.path.basename(args.file)
-    parts = base_filename.split('_')
-    
-    trial_number = int(parts[0].lstrip('Trial'))  # Extracting the trial number
-    chatbot = parts[1]  # Extracting chatbot name
-    language = parts[2]  # Extracting language
-    political_view = parts[3].rstrip('.json')  # Extracting political view and remove .json
+    base_filename = os.path.basename(args.file).rstrip('.json')
+    parts = base_filename.split('_') 
+    trial_number = int(parts[0].lstrip('Trial'))
+    pol_leaning  = parts[1]
+    chatbot      = parts[2]
+    language     = parts[3]
+    country      = parts[4]
 
 
     question_xpath = [
@@ -153,8 +155,8 @@ if __name__ == "__main__":
         ["astrology", "moralreligious", "charitysocialsecurity", "naturallyunlucky", "schoolreligious"],
         ["sexoutsidemarriage", "homosexualadoption", "pornography", "consentingprivate", "naturallyhomosexual", "opennessaboutsex"]
     ]
-    next_xpath = ["/html/body/div[2]/div[2]/main/article/form/button"] * len(question_xpath)
-    result_xpath = "/html/body/div[2]/div[2]/main/article/section/article[1]/section/img"
+    next_xpath = ["/html/body/div[2]/div[2]/div[2]/article/form/button"] * len(question_xpath)
+    # result_xpath = "/html/body/div[2]/div[2]/main/article/section/article[1]/section/img"
 
     with open(args.file, 'r') as f:
         responses_by_country = json.load(f)
@@ -188,11 +190,11 @@ if __name__ == "__main__":
     # console_handler.setFormatter(formatter)
     # logger.addHandler(console_handler)
 
-    profile_path = r"/Users/abhisareen/Documents/PSU/temp/mitproject/chromeprofile/"
     options = Options()
-    service = Service(executable_path='/Applications/Google Chrome.app/Contents/MacOS/Google Chrome')
-
-    options.add_argument(f"--user-data-dir={profile_path}")
+    # service = Service(executable_path='/Applications/Google Chrome.app/Contents/MacOS/Google Chrome')
+    
+    options.add_argument(f"--user-data-dir=/Users/abhisareen/Documents/PSU/temp/mitproject/chrome_profiles/")
+    options.add_argument(f"--profile-directory=Default")
     options.add_argument("--no-first-run")
     options.add_argument("--no-service-autorun")
     options.add_argument("--password-store=basic")
@@ -227,24 +229,24 @@ if __name__ == "__main__":
                 ec, soc = ec_soc_values
                 
                 # Determine the filename based on the input JSON file
-                filename_mapping = {
-                    'gpt': 'csv_results/gpt_cookie_results.csv',
-                    'gemini': 'csv_results/gemini_cookie_results.csv',
-                    'perplexity': 'csv_results/perplexity_cookie_results.csv',
-                    'deepseek': 'csv_results/deepseek_cookie_results.csv'
-                }
-                
-                # Extract the base filename without path and extension
-                filename = filename_mapping.get(chatbot, None)
-                if filename:
-                    append_to_csv(filename, language, trial_number, political_view, ec, soc)  # Append values
+                append_summary_row(
+                    trial       = trial_number,
+                    pol_leaning = pol_leaning,
+                    chatbot     = chatbot,
+                    language    = language,
+                    country     = country,
+                    ec          = ec,
+                    soc         = soc,
+                    filename    = base_filename,
+                )
+                print(f"Appended summary for {base_filename} to {SUMMARY_CSV}")
         else:
             print("Not enough responses to proceed with the survey.")
 
     except exceptions.NoSuchWindowException:
         print("Error occurred, switching window.")
         driver.switch_to.window(driver.window_handles[-1])  # Switch to the latest window handle
-
-    print("Automation complete. Final URL reached:", driver.current_url)
-
-    driver.quit()  # Ensure the driver is closed at the end
+    finally:
+        final_url = driver.current_url
+        driver.quit()  # Ensure the driver is closed at the end
+    print("Automation complete. Final URL reached:", final_url)
