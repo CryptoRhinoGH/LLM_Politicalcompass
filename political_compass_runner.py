@@ -6,6 +6,7 @@ Runs political_compass.py on every JSON in a given directory,
 skipping any whose `filename` is already recorded in summary.csv.
 Supports a dry-run mode that invokes the processing script with its --dry-run flag.
 """
+import time
 import os
 import sys
 import csv
@@ -62,7 +63,7 @@ def main():
     for fname in sorted(json_files):
         base = os.path.splitext(fname)[0]
         if base in done:
-            print(f"Skipping {fname}  (already in summary.csv)")
+            # print(f"Skipping {fname}  (already in summary.csv)")
             continue
 
         fullpath = os.path.join(args.directory, fname)
@@ -71,12 +72,16 @@ def main():
             cmd = [sys.executable, 'political_compass.py', fullpath, '--dry-run']
         else:
             cmd = [sys.executable, 'political_compass.py', fullpath]
-
         print(f"Running: {' '.join(cmd)}")
+        start_time = time.time()
         try:
             subprocess.run(cmd, check=True)
         except subprocess.CalledProcessError as e:
             print(f"Error processing {fname}: {e}", file=sys.stderr)
+        finally:
+            end_time = time.time()
+            elapsed = end_time - start_time
+            print(f"Time for {fname}: {elapsed:.2f} seconds")
 
 
 if __name__ == '__main__':

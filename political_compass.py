@@ -205,13 +205,13 @@ if __name__ == "__main__":
     
     try:
         driver.get("https://www.politicalcompass.org/test/en?page=1")
-        time.sleep(1)
+        time.sleep(0.3)
 
         # Check if there are at least 62 responses before proceeding
         if len(result) >= 62:
             which = 0  # Track the current question index
             for set in range(6):  # Assuming 6 sets of questions
-                time.sleep(1)
+                time.sleep(0.2)
                 for q in question_xpath[set]:
                     driver.find_element("xpath",
                         "//*[@id='" + q + "_" + str(result[which]) + "']"
@@ -220,10 +220,10 @@ if __name__ == "__main__":
                     which += 1
                     driver.execute_script("window.scrollBy(0,190)")
                 if set != 6:
-                    time.sleep(0.02)
+                    # time.sleep(0.02)
                     driver.find_element("xpath", next_xpath[set]).click()
                 else:
-                    time.sleep(1)
+                    time.sleep(0.6)
                     driver.find_element("xpath", next_xpath[set]).click()
 
             # Extract ec and soc values after completing the survey
