@@ -205,7 +205,7 @@ if __name__ == "__main__":
     
     try:
         driver.get("https://www.politicalcompass.org/test/en?page=1")
-        time.sleep(2)
+        time.sleep(1)
 
         # Check if there are at least 62 responses before proceeding
         if len(result) >= 62:
@@ -216,13 +216,21 @@ if __name__ == "__main__":
                     driver.find_element("xpath",
                         "//*[@id='" + q + "_" + str(result[which]) + "']"
                     ).click()
-                    time.sleep(0.2)
+                    time.sleep(0.05)
                     which += 1
-                    driver.execute_script("window.scrollBy(0,250)")
-                driver.find_element("xpath", next_xpath[set]).click()
+                    driver.execute_script("window.scrollBy(0,190)")
+                if set != 6:
+                    time.sleep(0.02)
+                    driver.find_element("xpath", next_xpath[set]).click()
+                else:
+                    time.sleep(1)
+                    driver.find_element("xpath", next_xpath[set]).click()
 
             # Extract ec and soc values after completing the survey
             current_url = driver.current_url
+            if "https://www.politicalcompass.org/test/en" in current_url:
+                time.sleep(1)
+                current_url = driver.current_url
             ec_soc_values = extract_ec_soc(current_url)
             # print(ec_soc_values)
             if ec_soc_values:
@@ -248,5 +256,8 @@ if __name__ == "__main__":
         driver.switch_to.window(driver.window_handles[-1])  # Switch to the latest window handle
     finally:
         final_url = driver.current_url
-        driver.quit()  # Ensure the driver is closed at the end
+        try:
+            driver.quit()  # Ensure the driver is closed at the end
+        except:
+            pass
     print("Automation complete. Final URL reached:", final_url)
