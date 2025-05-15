@@ -1,132 +1,88 @@
-#!/Users/abhisareen/Documents/PSU/temp/mitproject/LLM_Polilean/llm_env/bin/python
+#!/usr/bin/env python3
+"""
+political_compass_runner.py
+
+Runs political_compass.py on every JSON in a given directory,
+skipping any whose `filename` is already recorded in summary.csv.
+Supports a dry-run mode that invokes the processing script with its --dry-run flag.
+"""
+import time
+import os
+import sys
+import csv
+import subprocess
 import argparse
 import argcomplete
-import os
-import subprocess
-import glob
-import csv
-from pathlib import Path
 
-# Define global constants for row and column indices
-LANGUAGE_START_ROW = {
-    'english': 2,
-    'spanish': 8,
-    'german': 14,
-    'french': 20  # Added French
-}
+# Path to the master summary CSV created by political_compass.py
+SUMMARY_CSV = "csv_results/summary.csv"
 
-COLUMN_INDEX = {
-    'left': 2,
-    'farleft': 2,
-    'middle': 3,
-    'farright': 4,
-    'right': 4
-}
 
-def check_csv_for_value(filename, language, trial_number, country):
-    """Checks if the ec and soc values are already in the CSV file."""
-    if not Path(filename).exists():
-        return False
-    language_row = LANGUAGE_START_ROW[language.lower()]  # Starting row for the language
-    target_row = language_row + trial_number - 1  # Calculate the target row
-    response_column = COLUMN_INDEX[country] - 1  # Get the column index for the response type
+def get_done_filenames():
+    """
+    Read SUMMARY_CSV and return a set of all 'filename' values already processed.
+    """
+    done = set()
+    if os.path.exists(SUMMARY_CSV):
+        with open(SUMMARY_CSV, newline="") as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                done.add(row['filename'])
+    return done
 
-    with open(filename, 'r', newline='') as file:
-        reader = csv.reader(file)
-        # Ensure the reader has enough rows
-        for i, row in enumerate(reader):
-            if i == target_row:
-                if row[response_column]:  # Check if the cell is already populated
-                    return True  # Value already exists in the CSV
 
-    return False  # Value does not exist
-
-def run_trial_script(trial_number=None, chatbot=None, language=None, country = None, dry_run = False):
-    """Runs the trial processing script with the specified parameters."""
-    json_pattern = "results/"
-
-    if trial_number:
-        json_pattern += f"Trial{trial_number}_"
-    else:
-        json_pattern += "Trial*_"
-
-    if chatbot:
-        json_pattern += f"{chatbot}_"
-    else:
-        json_pattern += "*_"
-
-    if language:
-        json_pattern += f"{language}_"
-    else:
-        json_pattern += "*"
-
-    if country:
-        json_pattern += f"{country}"
-
-    json_pattern += "*.json"  # Complete the pattern with the .json extension
-
-    # Find all matching JSON files
-    json_files = glob.glob(json_pattern)
-    
-    if not json_files:
-        print(f"No result files found for Trial {trial_number}, Chatbot {chatbot}, Language {language}")
-        return
-
-    print(f"Files found: {json_files}")
-    print(f"Files length: {len(json_files)}\n")
-
-    for json_file in json_files:
-        # print(f"Running script for {json_file}...")
-        
-        # Extracting details from the filename for checking
-        base_filename = os.path.basename(json_file)
-        parts = base_filename.split('_')
-
-        # Update the trial_number extraction logic to handle parts correctly
-        trial_number = int(parts[0].lstrip('Trial'))  # Extracting the trial number
-        chatbot = parts[1]  # Extracting chatbot name
-        language = parts[2]  # Extracting language
-        country = parts[3].rstrip('.json')  # Extracting political view
-
-        # Determine the corresponding CSV filename based on chatbot
-        filename_mapping = {
-            'gpt': 'csv_results/gpt_cookie_results.csv',
-            'gemini': 'csv_results/gemini_cookie_results.csv',
-            'perplexity': 'csv_results/perplexity_cookie_results.csv'
-        }
-        
-        filename = filename_mapping.get(chatbot, None)
-        if filename:
-            if check_csv_for_value(filename, language, trial_number, country):
-                # print(f"Values already exist in {filename} for Trial {trial_number}, Chatbot {chatbot}, Language {language}. Skipping.")
-                continue  # Skip to the next file if the value already exists
-                pass
-
-            try:
-                # Construct the command to run the processing script
-                if dry_run:
-                    command = ["python3", "political_compass.py", json_file, "--dry-run"]
-                else:
-                    command = ["python3", "political_compass.py", json_file]
-                subprocess.run(command, check=True)
-            except subprocess.CalledProcessError as e:
-                # print(json_file)
-                print(f"Error while running {json_file}: {e}")
-                print("\n")
-                continue  # Skip to the next file in case of an error
-
-if __name__ == "__main__":
-    from config import COUNTRIES
-    parser = argparse.ArgumentParser(description='Runner for survey processing trials.')
-    parser.add_argument('--trial-number', type=int, help='The trial number to process (optional).')
-    parser.add_argument('--chatbot', type=str, help='The chatbot type to process (optional).')
-    parser.add_argument('--language', type=str, choices=['english', 'german', 'spanish', 'french'],
-                        help='The language of the responses (optional).')
-    parser.add_argument('--country', type=str, choices=COUNTRIES,
-                        help='The country of the test (optional).')
-    parser.add_argument('--dry-run', action=argparse.BooleanOptionalAction, help="Enable sandbox mode")
+def main():
+    parser = argparse.ArgumentParser(
+        description='Run political_compass.py on each JSON in a directory, skipping those already done.'
+    )
+    parser.add_argument(
+        'directory',
+        help='Path to the directory containing result JSON files'
+    )
+    parser.add_argument(
+        '--dry-run', '-n',
+        action=argparse.BooleanOptionalAction,
+        help='Invoke political_compass.py with --dry-run rather than normal mode'
+    )
     argcomplete.autocomplete(parser)
-
     args = parser.parse_args()
 
-    run_trial_script(args.trial_number, args.chatbot, args.language, args.country, args.dry_run)
+    # Validate directory
+    if not os.path.isdir(args.directory):
+        print(f"Error: {args.directory} is not a directory.", file=sys.stderr)
+        sys.exit(1)
+
+    done = get_done_filenames()
+    json_files = [f for f in os.listdir(args.directory) if f.endswith('.json')]
+
+    if not json_files:
+        print(f"No JSON files found in {args.directory}")
+        return
+
+    # Process each JSON file in sorted order
+    for fname in sorted(json_files):
+        base = os.path.splitext(fname)[0]
+        if base in done:
+            # print(f"Skipping {fname}  (already in summary.csv)")
+            continue
+
+        fullpath = os.path.join(args.directory, fname)
+        # Construct command
+        if args.dry_run:
+            cmd = [sys.executable, 'political_compass.py', fullpath, '--dry-run']
+        else:
+            cmd = [sys.executable, 'political_compass.py', fullpath]
+        print(f"Running: {' '.join(cmd)}")
+        start_time = time.time()
+        try:
+            subprocess.run(cmd, check=True)
+        except subprocess.CalledProcessError as e:
+            print(f"Error processing {fname}: {e}", file=sys.stderr)
+        finally:
+            end_time = time.time()
+            elapsed = end_time - start_time
+            print(f"Time for {fname}: {elapsed:.2f} seconds")
+
+
+if __name__ == '__main__':
+    main()

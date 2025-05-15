@@ -8,105 +8,105 @@ import config
 import json
 import time
 
-from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.options import Options
-import undetected_chromedriver as uc
+# from selenium.webdriver.common.by import By
+# from selenium.webdriver.chrome.options import Options
+# import undetected_chromedriver as uc
 
 # Get the main logger
 logger = config.main_logger
 
 script_lock = Lock()
 
-class NordVPNController:
-    def __init__(self, country):
-        self.country = country
-        self.configs = config.VPN_CONFIGS.get(country, [])
-        self.logger = config.setup_logger(f'vpn_{country}', f'vpn_{country}.log')
-        self.current_index = 0  # Keep track of the last used config
+# class NordVPNController:
+    # def __init__(self, country):
+    #     self.country = country
+    #     self.configs = config.VPN_CONFIGS.get(country, [])
+    #     self.logger = config.setup_logger(f'vpn_{country}', f'vpn_{country}.log')
+    #     self.current_index = 0  # Keep track of the last used config
 
-    def connect(self):
-        attempts = 0
-        total_configs = len(self.configs)
+    # def connect(self):
+    #     attempts = 0
+    #     total_configs = len(self.configs)
 
-        while attempts < total_configs:
-            config_file = self.configs[self.current_index]
-            full_config_path = os.path.join(config.VPN_CONFIG_PATH, os.path.basename(config_file))
-            self.logger.info(f"Trying to connect using: {full_config_path}")
+    #     while attempts < total_configs:
+    #         config_file = self.configs[self.current_index]
+    #         full_config_path = os.path.join(config.VPN_CONFIG_PATH, os.path.basename(config_file))
+    #         self.logger.info(f"Trying to connect using: {full_config_path}")
 
-            try:
-                result = subprocess.run(
-                    ["zsh", "nordvpn.sh", config.CREDS, full_config_path],
-                    stdout=subprocess.PIPE,
-                    stderr=subprocess.PIPE
-                )
-                time.sleep(config.VPN_CONNECT_DELAY)
-                if result.returncode == 0:
-                    self.logger.info("Connected. Verifying public IP...")
-                    ip_info = self._check_ip()
+    #         try:
+    #             result = subprocess.run(
+    #                 ["zsh", "nordvpn.sh", config.CREDS, full_config_path],
+    #                 stdout=subprocess.PIPE,
+    #                 stderr=subprocess.PIPE
+    #             )
+    #             time.sleep(config.VPN_CONNECT_DELAY)
+    #             if result.returncode == 0:
+    #                 self.logger.info("Connected. Verifying public IP...")
+    #                 ip_info = self._check_ip()
 
-                    if ip_info and ip_info.get("ip"):
-                        ip = ip_info.get("ip")
-                        country_code = ip_info.get("country")
-                        self.logger.info(f"Verified IP: {ip}, Country: {country_code}")
-                        self.send_notification(f"VPN connected: {ip} ({country_code}) via {os.path.basename(config_file)}")
-                        return True
-                    else:
-                        self.logger.warning("VPN IP check failed — moving to next config.")
-                else:
-                    self.logger.warning(f"VPN script failed:\n{result.stderr.decode()}")
+    #                 if ip_info and ip_info.get("ip"):
+    #                     ip = ip_info.get("ip")
+    #                     country_code = ip_info.get("country")
+    #                     self.logger.info(f"Verified IP: {ip}, Country: {country_code}")
+    #                     self.send_notification(f"VPN connected: {ip} ({country_code}) via {os.path.basename(config_file)}")
+    #                     return True
+    #                 else:
+    #                     self.logger.warning("VPN IP check failed — moving to next config.")
+    #             else:
+    #                 self.logger.warning(f"VPN script failed:\n{result.stderr.decode()}")
 
-            except Exception as e:
-                self.logger.error(f"Error connecting VPN: {e}")
-                self.send_notification(f"VPN exception: {e}")
+    #         except Exception as e:
+    #             self.logger.error(f"Error connecting VPN: {e}")
+    #             self.send_notification(f"VPN exception: {e}")
 
-            self.current_index = (self.current_index + 1) % total_configs
-            attempts += 1
-            time.sleep(3)
+    #         self.current_index = (self.current_index + 1) % total_configs
+    #         attempts += 1
+    #         time.sleep(3)
 
-        self.logger.error("All VPN configs exhausted without success.")
-        return False
+    #     self.logger.error("All VPN configs exhausted without success.")
+    #     return False
 
-    def rotate_and_connect(self):
-        self.disconnect()
-        time.sleep(3)
-        self.current_index = (self.current_index + 1) % len(self.configs)
-        return self.connect()
+    # def rotate_and_connect(self):
+    #     self.disconnect()
+    #     time.sleep(3)
+    #     self.current_index = (self.current_index + 1) % len(self.configs)
+    #     return self.connect()
 
-    def _check_ip(self):
-        try:
-            result = subprocess.run(
-                ["zsh", "nordvpn.sh", "check_ip"],
-                stdout=subprocess.PIPE,
-                stderr=subprocess.PIPE
-            )
-            if result.returncode == 0:
-                return json.loads(result.stdout.decode())
-            else:
-                self.logger.warning(f"check_ip failed:\n{result.stderr.decode()}")
-        except Exception as e:
-            self.logger.warning(f"check_ip exception: {e}")
-        return None
+    # def _check_ip(self):
+    #     try:
+    #         result = subprocess.run(
+    #             ["zsh", "nordvpn.sh", "check_ip"],
+    #             stdout=subprocess.PIPE,
+    #             stderr=subprocess.PIPE
+    #         )
+    #         if result.returncode == 0:
+    #             return json.loads(result.stdout.decode())
+    #         else:
+    #             self.logger.warning(f"check_ip failed:\n{result.stderr.decode()}")
+    #     except Exception as e:
+    #         self.logger.warning(f"check_ip exception: {e}")
+    #     return None
 
-    def disconnect(self):
-        self.logger.info("Disconnecting VPN...")
-        try:
-            subprocess.run(["zsh", "nordvpn.sh", "disconnect"], check=True)
-            self.logger.info("VPN disconnected.")
-            self.send_notification("VPN disconnected.")
-        except subprocess.CalledProcessError as e:
-            self.logger.error(f"VPN disconnection failed: {e}")
-            self.send_notification("VPN disconnection failed.")
+    # def disconnect(self):
+    #     self.logger.info("Disconnecting VPN...")
+    #     try:
+    #         subprocess.run(["zsh", "nordvpn.sh", "disconnect"], check=True)
+    #         self.logger.info("VPN disconnected.")
+    #         self.send_notification("VPN disconnected.")
+    #     except subprocess.CalledProcessError as e:
+    #         self.logger.error(f"VPN disconnection failed: {e}")
+    #         self.send_notification("VPN disconnection failed.")
 
-    def send_notification(self, message):
-        if config.TELEGRAM_ENABLED:
-            try:
-                requests.get(
-                    f"https://api.telegram.org/bot{config.TELEGRAM_BOT_TOKEN}/sendMessage",
-                    params={"chat_id": config.TELEGRAM_CHAT_ID, "text": message}
-                )
-                self.logger.info("Telegram notification sent.")
-            except Exception as e:
-                self.logger.error(f"Failed to send Telegram message: {e}")
+    # def send_notification(self, message):
+    #     if config.TELEGRAM_ENABLED:
+    #         try:
+    #             requests.get(
+    #                 f"https://api.telegram.org/bot{config.TELEGRAM_BOT_TOKEN}/sendMessage",
+    #                 params={"chat_id": config.TELEGRAM_CHAT_ID, "text": message}
+    #             )
+    #             self.logger.info("Telegram notification sent.")
+    #         except Exception as e:
+    #             self.logger.error(f"Failed to send Telegram message: {e}")
 
 class VPNController:
     def __init__(self, country):
