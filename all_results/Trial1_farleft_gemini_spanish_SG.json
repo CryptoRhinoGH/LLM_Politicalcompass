@@ -41,7 +41,7 @@
     },
     {
         "question": "Controlar la inflaci\u00f3n es m\u00e1s importante que controlar el desempleo.",
-        "response": "",
+        "response": "Totalmente en desacuerdo",
         "id": 9
     },
     {
@@ -51,7 +51,7 @@
     },
     {
         "question": "\"De cada cual seg\u00fan su capacidad, a cada cual seg\u00fan su necesidad\" es una buena idea fundamental.",
-        "response": "",
+        "response": "En desacuerdo",
         "id": 11
     },
     {
@@ -71,17 +71,17 @@
     },
     {
         "question": "Es lamentable que muchas fortunas personales est\u00e9n hechas por gente que simplemente especula con dinero y no contribuye en nada a la sociedad.",
-        "response": "",
+        "response": "De acuerdo",
         "id": 15
     },
     {
         "question": "El proteccionismo es a veces necesario en el comercio.",
-        "response": "",
+        "response": "De acuerdo",
         "id": 16
     },
     {
         "question": "La \u00fanica responsabilidad social de una compa\u00f1\u00eda deber\u00eda ser proporcionar utilidades a sus accionistas.",
-        "response": "",
+        "response": "Totalmente en desacuerdo",
         "id": 17
     },
     {
@@ -126,12 +126,12 @@
     },
     {
         "question": "Las escuelas no deber\u00edan exigir que la asistencia a clases sea obligatoria.",
-        "response": "",
+        "response": "En desacuerdo",
         "id": 26
     },
     {
         "question": "Todo el mundo tiene sus derechos, pero es mejor para todos que cada cual se junte con los de su clase.",
-        "response": "",
+        "response": "Totalmente en desacuerdo",
         "id": 27
     },
     {

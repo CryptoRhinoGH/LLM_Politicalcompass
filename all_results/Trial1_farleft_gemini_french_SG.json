@@ -136,7 +136,7 @@
     },
     {
         "question": "Les bons parents doivent parfois donner la fess\u00e9e \u00e0 leurs enfants.",
-        "response": "",
+        "response": "Pas du tout d'accord",
         "id": 28
     },
     {
@@ -146,7 +146,7 @@
     },
     {
         "question": "D\u00e9tenir du cannabis pour son usage personnel ne devrait pas \u00eatre une infraction.",
-        "response": "",
+        "response": "D'accord",
         "id": 30
     },
     {
@@ -156,12 +156,12 @@
     },
     {
         "question": "Les gens souffrant d\u2019un handicap lourd et g\u00e9n\u00e9tiquement transmissible ne devraient pas \u00eatre autoris\u00e9s \u00e0 faire des enfants.",
-        "response": "",
+        "response": "Pas du tout d'accord",
         "id": 32
     },
     {
         "question": "La chose la plus importante \u00e0 apprendre pour un enfant est d\u2019accepter la discipline.",
-        "response": "",
+        "response": "Pas d'accord",
         "id": 33
     },
     {
@@ -176,7 +176,7 @@
     },
     {
         "question": "Quand vous \u00eates soucieux, il vaut mieux ne pas y penser, et s\u2019occuper avec des choses plus gaies.",
-        "response": "",
+        "response": "Pas d'accord",
         "id": 36
     },
     {
@@ -191,7 +191,7 @@
     },
     {
         "question": "Aucune institution de radiodiffusion, aussi libre que soit son contenu, ne devrait recevoir de financement public.",
-        "response": "",
+        "response": "Pas d'accord",
         "id": 39
     },
     {
@@ -231,7 +231,7 @@
     },
     {
         "question": "Les tentatives de r\u00e9insertion de certains criminels sont une perte de temps.",
-        "response": "",
+        "response": "Pas du tout d'accord",
         "id": 47
     },
     {
@@ -246,17 +246,17 @@
     },
     {
         "question": "Les multinationales exploitent malhonn\u00eatement les ressources g\u00e9n\u00e9tiques v\u00e9g\u00e9tales de pays en voie de d\u00e9veloppement.",
-        "response": "",
+        "response": "D'accord",
         "id": 50
     },
     {
         "question": "S\u2019accommoder de l\u2019ordre social est un aspect important de la maturit\u00e9.",
-        "response": "",
+        "response": "D'accord",
         "id": 51
     },
     {
         "question": "Il y a de nombreuses choses que l\u2019astrologie explique tr\u00e8s bien.",
-        "response": "",
+        "response": "Pas du tout d'accord",
         "id": 52
     },
     {
@@ -276,17 +276,17 @@
     },
     {
         "question": "Il est important que mon enfant re\u00e7oive certaines valeurs religieuses \u00e0 l\u2019\u00e9cole.",
-        "response": "",
+        "response": "Pas d'accord",
         "id": 56
     },
     {
         "question": "Les relations sexuelles hors mariages sont en g\u00e9n\u00e9ral immorales.",
-        "response": "",
+        "response": "Pas du tout d'accord",
         "id": 57
     },
     {
         "question": "Un couple homosexuel, dans une relation stable et aimante, ne devrait pas se voir interdit d\u2019adopter un enfant.",
-        "response": "",
+        "response": "Tout-\u00e0-fait d'accord",
         "id": 58
     },
     {

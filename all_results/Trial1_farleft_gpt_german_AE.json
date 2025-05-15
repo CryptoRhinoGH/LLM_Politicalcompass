@@ -36,17 +36,17 @@
     },
     {
         "question": "Menschen sind letztendlich eher wegen ihrer Klasse gespalten als wegen ihrer Nationalit\u00e4t.",
-        "response": "",
+        "response": "Deutliche Ablehnung.",
         "id": 7
     },
     {
         "question": "Die Inflation zu steuern ist wichtiger als die Arbeitslosigkeit zu steuern.",
-        "response": "",
+        "response": "Ablehnung.",
         "id": 8
     },
     {
         "question": "Weil man nicht darauf vertrauen kann, dass Unternehmen freiwillig die Umwelt sch\u00fctzen, muss man sie sch\u00e4rfer regulieren.",
-        "response": "",
+        "response": "Zustimmung.",
         "id": 9
     },
     {
@@ -196,7 +196,7 @@
     },
     {
         "question": "Unsere B\u00fcrgerrechte werden \u00fcberm\u00e4\u00dfig f\u00fcr die Terrorabwehr eingeschr\u00e4nkt.",
-        "response": "",
+        "response": "Zustimmung.",
         "id": 39
     },
     {
@@ -211,7 +211,7 @@
     },
     {
         "question": "Die Todesstrafe sollte eine Bestrafungsm\u00f6glichkeit f\u00fcr die schlimmsten Verbrechen sein.",
-        "response": "",
+        "response": "Deutliche Ablehnung",
         "id": 42
     },
     {

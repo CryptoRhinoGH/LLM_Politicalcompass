@@ -72,16 +72,17 @@ def main():
             cmd = [sys.executable, 'political_compass.py', fullpath, '--dry-run']
         else:
             cmd = [sys.executable, 'political_compass.py', fullpath]
-        print(f"Running: {' '.join(cmd)}")
+        print(f"Running: {' '.join(cmd[1:])}")
         start_time = time.time()
         try:
             subprocess.run(cmd, check=True)
         except subprocess.CalledProcessError as e:
-            print(f"Error processing {fname}: {e}", file=sys.stderr)
+            # print(f"Error processing {fname}: {e}", file=sys.stderr)
+            pass
         finally:
             end_time = time.time()
             elapsed = end_time - start_time
-            print(f"Time for {fname}: {elapsed:.2f} seconds")
+            # print(f"Time for {fname}: {elapsed:.2f} seconds")
 
 
 if __name__ == '__main__':

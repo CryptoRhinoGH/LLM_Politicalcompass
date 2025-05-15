@@ -193,7 +193,7 @@ if __name__ == "__main__":
     options = Options()
     # service = Service(executable_path='/Applications/Google Chrome.app/Contents/MacOS/Google Chrome')
     
-    options.add_argument(f"--user-data-dir=/Users/abhisareen/Documents/PSU/temp/mitproject/chrome_profiles/")
+    options.add_argument(f"--user-data-dir=/Users/abhisareen/Documents/PSU/temp/mitproject/chrome_profiles/Default/")
     options.add_argument(f"--profile-directory=Default")
     options.add_argument("--no-first-run")
     options.add_argument("--no-service-autorun")

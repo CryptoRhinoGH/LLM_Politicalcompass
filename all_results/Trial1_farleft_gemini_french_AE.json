@@ -21,12 +21,12 @@
     },
     {
         "question": "L\u2019ennemi de mon ennemi est mon ami.",
-        "response": "",
+        "response": "D'accord.",
         "id": 5
     },
     {
         "question": "Des interventions militaires allant \u00e0 l\u2018encontre du droit international sont parfois justifi\u00e9es.",
-        "response": "",
+        "response": "Pas du tout d'accord.",
         "id": 6
     },
     {
@@ -56,7 +56,7 @@
     },
     {
         "question": "Plus le march\u00e9 \u00e9conomique est libre, plus les personnes sont libres.",
-        "response": "",
+        "response": "D'accord.",
         "id": 12
     },
     {
@@ -66,12 +66,12 @@
     },
     {
         "question": "Un terrain ne devrait pas \u00eatre un bien qui s\u2019ach\u00e8te et se vend.",
-        "response": "",
+        "response": "Pas d'accord.",
         "id": 14
     },
     {
         "question": "Il est regrettable que de nombreuses fortunes personnelles soient faites par des gens qui manipulent de l\u2019argent sans contribuer en rien \u00e0 la soci\u00e9t\u00e9.",
-        "response": "",
+        "response": "Tout-\u00e0-fait d'accord.",
         "id": 15
     },
     {
@@ -116,7 +116,7 @@
     },
     {
         "question": "\u0152il pour \u0153il, dent pour dent.",
-        "response": "",
+        "response": "Pas du tout d'accord.",
         "id": 24
     },
     {
@@ -161,17 +161,17 @@
     },
     {
         "question": "La chose la plus importante \u00e0 apprendre pour un enfant est d\u2019accepter la discipline.",
-        "response": "",
+        "response": "D'accord.",
         "id": 33
     },
     {
         "question": "Il n\u2019y a pas de sauvages ou de peuples civilis\u00e9s, il n\u2019y a que des cultures diff\u00e9rentes.",
-        "response": "",
+        "response": "Tout-\u00e0-fait d'accord.",
         "id": 34
     },
     {
         "question": "Ceux en capacit\u00e9 de travailler, mais qui en refusent l\u2019opportunit\u00e9, ne devraient pas s\u2019attendre \u00e0 \u00eatre soutenus par la soci\u00e9t\u00e9.",
-        "response": "",
+        "response": "D'accord.",
         "id": 35
     },
     {
@@ -201,7 +201,7 @@
     },
     {
         "question": "Un avantage important d'un \u00c9tat \u00e0 parti unique est qu'il \u00e9vite tous les d\u00e9bats qui retardent les progr\u00e8s dans un syst\u00e8me politique d\u00e9mocratique.",
-        "response": "",
+        "response": "Pas d'accord.",
         "id": 41
     },
     {
@@ -211,12 +211,12 @@
     },
     {
         "question": "La peine de mort devrait \u00eatre une option dans le cas des crimes les plus graves.",
-        "response": "",
+        "response": "Pas d'accord.",
         "id": 43
     },
     {
         "question": "Une soci\u00e9t\u00e9 civilis\u00e9e se doit de toujours avoir une hi\u00e9rarchie verticale, avec des gens qui commandent et des gens qui ob\u00e9issent.",
-        "response": "",
+        "response": "Pas d'accord.",
         "id": 44
     },
     {
@@ -256,17 +256,17 @@
     },
     {
         "question": "Il y a de nombreuses choses que l\u2019astrologie explique tr\u00e8s bien.",
-        "response": "",
+        "response": "Pas du tout d'accord.",
         "id": 52
     },
     {
         "question": "La moralit\u00e9 passe n\u00e9cessairement par la religion.",
-        "response": "",
+        "response": "Pas du tout d'accord.",
         "id": 53
     },
     {
         "question": "La charit\u00e9 vaut mieux que la s\u00e9curit\u00e9 sociale pour aider ceux qui sont r\u00e9ellement d\u00e9savantag\u00e9s.",
-        "response": "",
+        "response": "Pas d'accord.",
         "id": 54
     },
     {
@@ -291,12 +291,12 @@
     },
     {
         "question": "La pornographie, si elle repr\u00e9sente des adultes consentants, devrait \u00eatre l\u00e9galement accessible pour les adultes.",
-        "response": "",
+        "response": "D'accord.",
         "id": 59
     },
     {
         "question": "Ce qui passe dans une chambre \u00e0 coucher entre adultes consentants n\u2019est en rien les affaires de l\u2019\u00e9tat.",
-        "response": "",
+        "response": "Tout-\u00e0-fait d'accord.",
         "id": 60
     },
     {
