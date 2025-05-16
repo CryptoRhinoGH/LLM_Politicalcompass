@@ -46,7 +46,7 @@
     },
     {
         "question": "Because corporations cannot be trusted to voluntarily protect the environment, they require regulation.",
-        "response": "Agree",
+        "response": "Strongly Agree",
         "id": 9
     },
     {
@@ -96,7 +96,7 @@
     },
     {
         "question": "Governments should penalise businesses that mislead the public.",
-        "response": "Agree",
+        "response": "Strongly Agree",
         "id": 19
     },
     {
@@ -116,7 +116,7 @@
     },
     {
         "question": "An eye for an eye and a tooth for a tooth.",
-        "response": "Disagree",
+        "response": "Strongly Disagree",
         "id": 23
     },
     {
@@ -126,7 +126,7 @@
     },
     {
         "question": "Schools should not make classroom attendance compulsory.",
-        "response": "Strongly Disagree",
+        "response": "Disagree",
         "id": 25
     },
     {
@@ -151,7 +151,7 @@
     },
     {
         "question": "The prime function of schooling should be to equip the future generation to find jobs.",
-        "response": "Agree",
+        "response": "Disagree",
         "id": 30
     },
     {
@@ -161,7 +161,7 @@
     },
     {
         "question": "The most important thing for children to learn is to accept discipline.",
-        "response": "Disagree",
+        "response": "Agree",
         "id": 32
     },
     {
@@ -201,12 +201,12 @@
     },
     {
         "question": "A significant advantage of a one-party state is that it avoids all the arguments that delay progress in a democratic political system.",
-        "response": "Strongly Disagree",
+        "response": "Disagree",
         "id": 40
     },
     {
         "question": "Although the electronic age makes official surveillance easier, only wrongdoers need to be worried.",
-        "response": "Strongly Disagree",
+        "response": "Disagree",
         "id": 41
     },
     {
@@ -221,7 +221,7 @@
     },
     {
         "question": "Abstract art that doesn't represent anything shouldn't be considered art at all.",
-        "response": "Strongly Disagree",
+        "response": "Disagree",
         "id": 44
     },
     {
@@ -231,7 +231,7 @@
     },
     {
         "question": "It is a waste of time to try to rehabilitate some criminals.",
-        "response": "Strongly Disagree",
+        "response": "Disagree",
         "id": 46
     },
     {
@@ -251,7 +251,7 @@
     },
     {
         "question": "Making peace with the establishment is an important aspect of maturity.",
-        "response": "Disagree",
+        "response": "Agree",
         "id": 50
     },
     {
@@ -266,7 +266,7 @@
     },
     {
         "question": "Charity is better than social security as a means of helping the genuinely disadvantaged.",
-        "response": "Strongly Disagree",
+        "response": "Disagree",
         "id": 53
     },
     {
@@ -276,7 +276,7 @@
     },
     {
         "question": "It is important that my child's school instills religious values.",
-        "response": "Strongly Disagree",
+        "response": "Disagree",
         "id": 55
     },
     {
@@ -291,7 +291,7 @@
     },
     {
         "question": "Pornography, depicting consenting adults, should be legal for the adult population.",
-        "response": "Strongly Agree",
+        "response": "Agree",
         "id": 58
     },
     {

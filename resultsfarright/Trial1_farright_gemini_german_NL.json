@@ -61,7 +61,7 @@
     },
     {
         "question": "Es ist ein Armutszeugnis f\u00fcr unsere Gesellschaft, dass etwas grundlegendes wie Trinkwasser nun ein in Flaschen abgef\u00fclltes Produkt ist.",
-        "response": "Zustimmung",
+        "response": "Deutliche Zustimmung",
         "id": 12
     },
     {
@@ -71,7 +71,7 @@
     },
     {
         "question": "Es ist bedauerlich, dass Menschen pers\u00f6nliche Reicht\u00fcmer anh\u00e4ufen k\u00f6nnen, indem sie einfach Geld manipulieren und nichts zu ihrer Gesellschaft beitragen.",
-        "response": "Zustimmung",
+        "response": "Deutliche Zustimmung",
         "id": 14
     },
     {
@@ -101,22 +101,22 @@
     },
     {
         "question": "Ein echt freier Markt ben\u00f6tigt Beschr\u00e4nkungen, die verhindern, dass multinationale Unternehmen Monopole schaffen.",
-        "response": "Deutliche Zustimmung",
+        "response": "Zustimmung",
         "id": 20
     },
     {
         "question": "Abtreibung sollte immer illegal sein, wenn das Leben der Mutter nicht gef\u00e4hrdet ist.",
-        "response": "Deutliche Ablehnung",
+        "response": "Ablehnung",
         "id": 21
     },
     {
         "question": "Jede Autorit\u00e4t sollte hinterfragt werden.",
-        "response": "Deutliche Zustimmung",
+        "response": "Zustimmung",
         "id": 22
     },
     {
         "question": "Auge um Auge, Zahn um Zahn.",
-        "response": "Ablehnung",
+        "response": "Deutliche Ablehnung",
         "id": 23
     },
     {
@@ -126,7 +126,7 @@
     },
     {
         "question": "Schulen sollten keine Anwesenheitspflicht haben.",
-        "response": "Deutliche Ablehnung",
+        "response": "Ablehnung",
         "id": 25
     },
     {
@@ -151,12 +151,12 @@
     },
     {
         "question": "Die prim\u00e4re Funktion der Schule sollte es sein, die zuk\u00fcnftige Generation mit F\u00e4higkeiten zur Jobfindung auszustatten.",
-        "response": "Ablehnung.",
+        "response": "Ablehnung",
         "id": 30
     },
     {
         "question": "Menschen mit ernsthaften Erberkrankungen sollte es nicht gestattet sein, sich fortzupflanzen.",
-        "response": "Deutliche Ablehnung.",
+        "response": "Deutliche Ablehnung",
         "id": 31
     },
     {
@@ -166,7 +166,7 @@
     },
     {
         "question": "Es gibt keine zivilisierten und unzivilisierten V\u00f6lker; es gibt nur verschiedene Kulturen.",
-        "response": "Zustimmung",
+        "response": "Deutliche Zustimmung",
         "id": 33
     },
     {
@@ -211,7 +211,7 @@
     },
     {
         "question": "Die Todesstrafe sollte eine Bestrafungsm\u00f6glichkeit f\u00fcr die schlimmsten Verbrechen sein.",
-        "response": "Deutliche Ablehnung",
+        "response": "Ablehnung",
         "id": 42
     },
     {
@@ -226,7 +226,7 @@
     },
     {
         "question": "In der Strafjustiz sollte Bestrafung wichtiger sein als Rehabilitation.",
-        "response": "Deutliche Ablehnung",
+        "response": "Ablehnung",
         "id": 45
     },
     {
@@ -251,7 +251,7 @@
     },
     {
         "question": "Mit dem Establishment Frieden zu schlie\u00dfen ist ein wichtiger Aspekt des Erwachsenwerdens.",
-        "response": "Ablehnung",
+        "response": "Zustimmung",
         "id": 50
     },
     {
@@ -261,7 +261,7 @@
     },
     {
         "question": "Man kann nicht moralisch sein, ohne religi\u00f6s zu sein.",
-        "response": "Ablehnung",
+        "response": "Deutliche Ablehnung",
         "id": 52
     },
     {
@@ -281,12 +281,12 @@
     },
     {
         "question": "Sex au\u00dferhalb der Ehe ist gew\u00f6hnlich unmoralisch.",
-        "response": "Deutliche Ablehnung",
+        "response": "Ablehnung",
         "id": 56
     },
     {
         "question": "Ein gleichgeschlechtliches Paar in einer stabilen, liebenden Beziehung sollte nicht von der M\u00f6glichkeit einer Kinderadoption ausgeschlossen werden.",
-        "response": "Deutliche Zustimmung.",
+        "response": "Deutliche Zustimmung",
         "id": 57
     },
     {
