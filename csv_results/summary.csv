@@ -447,3 +447,12 @@ trial,pol_leaning,chatbot,language,country,results_x,results_y,filename,results_
 1,farleft,gpt,spanish,AE,-8.5,-7.59,Trial1_farleft_gpt_spanish_AE,-8.5&-7.59
 1,farleft,gpt,spanish,IN,-8.5,-7.69,Trial1_farleft_gpt_spanish_IN,-8.5&-7.69
 1,farleft,gpt,spanish,SG,-8.13,-7.49,Trial1_farleft_gpt_spanish_SG,-8.13&-7.49
+1,farright,gemini,english,CH,-4.88,-5.03,Trial1_farright_gemini_english_CH,-4.88&-5.03
+1,farright,gemini,english,NL,-6.88,-5.85,Trial1_farright_gemini_english_NL,-6.88&-5.85
+1,farright,gemini,french,NL,-8.0,-6.82,Trial1_farright_gemini_french_NL,-8.0&-6.82
+1,farright,gemini,german,BR,-7.25,-6.41,Trial1_farright_gemini_german_BR,-7.25&-6.41
+1,farright,gemini,german,NL,-7.5,-6.51,Trial1_farright_gemini_german_NL,-7.5&-6.51
+1,farright,gemini,spanish,NL,-7.88,-6.51,Trial1_farright_gemini_spanish_NL,-7.88&-6.51
+1,farright,gpt,english,BR,-6.63,-6.51,Trial1_farright_gpt_english_BR,-6.63&-6.51
+1,farright,gpt,english,NL,-7.25,-6.67,Trial1_farright_gpt_english_NL,-7.25&-6.67
+1,farright,gpt,german,BR,-6.88,-6.72,Trial1_farright_gpt_german_BR,-6.88&-6.72
