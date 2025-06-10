@@ -1,0 +1,5 @@
+2025/06/10-19:04:03.388 3db01 Creating DB /Users/pritikavig/Documents/python/llm-sychophantic-evaluation/LLM_Politicalcompass/us_healthcare_pipeline/results/2025-06-10_19-03-27/los_angeles_left_gemini/los_angeles_left_gemini/los_angeles/left/profile/Default/Local Storage/leveldb since it was missing.
+2025/06/10-19:04:03.393 3db01 Reusing MANIFEST /Users/pritikavig/Documents/python/llm-sychophantic-evaluation/LLM_Politicalcompass/us_healthcare_pipeline/results/2025-06-10_19-03-27/los_angeles_left_gemini/los_angeles_left_gemini/los_angeles/left/profile/Default/Local Storage/leveldb/MANIFEST-000001
+2025/06/10-19:05:03.397 3db03 Level-0 table #5: started
+2025/06/10-19:05:03.400 3db03 Level-0 table #5: 30744 bytes OK
+2025/06/10-19:05:03.402 3db03 Delete type=0 #3
